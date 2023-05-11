@@ -1,2 +1,2 @@
-# ICI_main
-Repo consist of Front end and backend for ICI Project
+# ICI_Project
+Repo for front-end

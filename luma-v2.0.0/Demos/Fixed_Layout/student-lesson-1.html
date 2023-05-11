@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Luma</title>
+
+    <!-- Prevent the demo from appearing in search engines -->
+    <meta name="robots" content="noindex">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CExo+2:600&display=swap"
+        rel="stylesheet">
+
+    <!-- Preloader -->
+    <link type="text/css" href="../../public/vendor/spinkit.css" rel="stylesheet">
+
+    <!-- Perfect Scrollbar -->
+    <link type="text/css" href="../../public/vendor/perfect-scrollbar.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link type="text/css" href="../../public/css/material-icons.css" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link type="text/css" href="../../public/css/fontawesome.css" rel="stylesheet">
+
+    <!-- Preloader -->
+    <link type="text/css" href="../../public/css/preloader.css" rel="stylesheet">
+
+    <!-- App CSS -->
+    <link rel="stylesheet" href="assetss/css/bootstrap.min.css">
+    <link type="text/css" href="../../public/css/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="assetss/css/animate.css">
+    <link rel="stylesheet" href="assetss/css/icofont.min.css">
+    <link rel="stylesheet" href="assetss/css/swiper.min.css">
+    <link rel="stylesheet" href="assetss/css/lightcase.css">
+    <link rel="stylesheet" href="assetss/css/style.css">
+    <style>
+        .fonsize{
+            font-size:18px;
+            
+
+        }
+    </style>
+</head>
+
+<body class="layout-sticky-subnav layout-default ">
+
+    <div class="preloader">
+        <div class="sk-chase">
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+        </div>
+
+        <!-- <div class="sk-bounce">
+    <div class="sk-bounce-dot"></div>
+    <div class="sk-bounce-dot"></div>
+  </div> -->
+
+        <!-- More spinner examples at https://github.com/tobiasahlin/SpinKit/blob/master/examples.html -->
+    </div>
+
+    <!-- Header Layout -->
+    <div class="mdk-header-layout js-mdk-header-layout">
+
+        <!-- Header -->
+
+        <div id="header" class="mdk-header mdk-header--bg-dark bg-dark js-mdk-header mb-0 "
+            data-effects="parallax-background waterfall" data-fixed data-condenses>
+            <div class="mdk-header__bg">
+                <div class="mdk-header__bg-front"
+                    style="background-image: url(../../public/images/photodune-4161018-group-of-students-m.jpg);"></div>
+            </div>
+            <div class="mdk-header__content justify-content-center">
+
+                <div class="navbar navbar-expand navbar-dark-pickled-bluewood bg-transparent will-fade-background"
+                    id="default-navbar" data-primary>
+
+                    <!-- Navbar toggler -->
+                    <button class="navbar-toggler w-auto mr-16pt d-block rounded-0" type="button" data-toggle="sidebar">
+                        <span class="material-icons">short_text</span>
+                    </button>
+
+                    <!-- Navbar Brand -->
+                    <a href="index.html" class="navbar-brand mr-16pt">
+                        <!-- <img class="navbar-brand-icon" src="../../public/images/logo/white-100@2x.png" width="30" alt="Luma"> -->
+
+                        <span class="avatar avatar-sm navbar-brand-icon mr-0 mr-lg-8pt">
+
+                            <span class="avatar-title rounded bg-primary"><img
+                                    src="../../public/images/illustration/student/128/white.svg" alt="logo"
+                                    class="img-fluid" /></span>
+
+                        </span>
+
+                        <span class="d-none d-lg-block">Luma</span>
+                    </a>
+
+                    <!-- <ul class="nav navbar-nav d-none d-sm-flex flex justify-content-start ml-8pt">
+                            <li class="nav-item active">
+                                <a href="index.html"
+                                   class="nav-link">Home</a>
+                            </li>
+                           
+                            <li class="nav-item dropdown">
+                                <a href="#"
+                                   class="nav-link dropdown-toggle"
+                                   data-toggle="dropdown"
+                                   data-caret="false">Courses List</a>
+                                <div class="dropdown-menu ">
+                                    <a href="courses.html"
+                                       class="dropdown-item ">IX
+                                    </a>
+                                    <a href="student-course.html"
+                                       class="dropdown-item">X
+                                    </a>
+                                    <a href="student-lesson.html"
+                                       class="dropdown-item">XI
+                                    </a>
+                                   
+                                    <a href="student-take-lesson.html"
+                                       class="dropdown-item">XII</a>
+                                    <a href="student-take-quiz.html"
+                                       class="dropdown-item">JEE</a>
+                                    <a href="student-quiz-result-details.html"
+                                       class="dropdown-item">NEET</a>
+                                   
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#"
+                                   class="nav-link dropdown-toggle"
+                                   data-toggle="dropdown"
+                                   data-caret="false">Resources</a>
+                                <div class="dropdown-menu">
+                                    <a href="paths.html"
+                                       class="dropdown-item">NCERT eBook</a>
+                                    <a href="student-path.html"
+                                       class="dropdown-item">Question practice</a>
+                                    <a href="student-path-assessment.html"
+                                       class="dropdown-item">Chapter Journey</a>
+                                    <a href="student-path-assessment-result.html"
+                                       class="dropdown-item">Test</a>
+                                  
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pricing.html"
+                                   class="nav-link">Leaderboard</a>
+                            </li>
+                            
+                            <li class="nav-item ">
+                                <a href="about.html"
+                                   class="nav-link">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="contact.html"
+                                   class="nav-link">Contact</a>
+                            </li>
+                           
+                        </ul> -->
+
+                   
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- // END Header -->
+
+        <!-- Header Layout Content -->
+        <div class="mdk-header-layout__content page-content ">
+
+            <!-- scrollToTop start here -->
+            <a href="#" class="scrollToTop"><i class="icofont-rounded-up"></i></a>
+            <!-- scrollToTop ending here -->
+
+
+
+            <!-- new header -->
+            <!-- header section start here -->
+            <header class="header-section" >
+
+                <div class="header-bottom header01">
+                    <div class="container">
+                        <div class="header-wrapper">
+                            <div class="logo">
+                                <a href="index.html"><img src="assetss/images/logo/01.png" alt="logo"></a>
+                            </div>
+                            <div class="menu-area">
+                                <div class="menu">
+                                    <ul class="lab-ul">
+                                        <li>
+                                            <a href="index.html">Home</a>
+
+                                        </li>
+                                        <li>
+                                            <a href="about.html">About</a>
+                                            <ul class="lab-ul">
+                                                <li><a href="Our-mission.html">Our Mission</a></li>
+                                                <li><a href="Our-vision.html">Our Vission</a></li>
+                                                <li><a href="What-we-do.html">What We DO</a></li>
+                                                <li><a href="our-team.html">Our Team</a></li>
+
+                                            </ul>
+
+                                        </li>
+
+                                        <li>
+                                            <a href="courses-1.html">Courses</a>
+                                            <ul class="lab-ul">
+                                                <li><a href="course-9th.html">IX</a></li>
+                                                <li><a href="course-10th.html">X</a></li>
+                                                <li><a href="course-11.html">XI</a></li>
+                                                <li><a href="course-12th.html">XII</a></li>
+                                                <li><a href="course-jee.html">JEE</a></li>
+                                                <li><a href="course-neet.html">NEET</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#0">Resources</a>
+                                            <ul class="lab-ul">
+                                                <li><a href="ncrt-book.html">NCERT eBOOK</a></li>
+                                                <li><a href="test-form.html">Question Practice</a></li>
+                                                <li><a href="chapter-journey.html">Chapter Journey</a></li>
+                                                <li><a href="mcq.html">Test</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="leaderboard.html">Leaderboard</a>
+
+                                        </li>
+
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </div>
+
+                                <a href="student-dashboard-login.html" class="login"><i class="icofont-user"></i>
+                                    <span>LOG IN</span> </a>
+                                <a href="student-dashboard-signup.html" class="signup"><i class="icofont-users"></i>
+                                    <span>SIGN UP</span>
+                                </a>
+
+                                <!-- toggle icons -->
+                                <div class="header-bar d-lg-none">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="ellepsis-bar d-lg-none">
+                                    <i class="icofont-info-square"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- header section ending here -->
+            <!-- new header end -->
+
+            <!-- Header Layout Content -->
+            <div class="mdk-header-layout__content page-content " style="margin-top: 90px;">
+
+                <div class="navbar navbar-light border-0 navbar-expand ">
+                    <div class="container page__container">
+                        <div class="media flex-nowrap">
+                            <div class="media-left mr-16pt">
+                                <a href="student-course.html"><img src="../../public/images/paths/physics-1.png"
+                                        width="40" height="40" alt="Angular" class="rounded"></a>
+                            </div>
+                            <div class="media-body">
+                                <a href="student-course.html" class="card-title text-body mb-0 fonsize">Physics Fundamentals</a>
+                                <p class="lh-1 d-flex align-items-center mb-0">
+                                    <span class="text-50 small font-weight-bold mr-8pt" style="font-size: 16px;">Elijah Murray</span>
+                                    <span class="text-50 small" style="font-size: 16px;">Teacher and Scientist</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-primary pb-lg-64pt py-32pt">
+                    <div class="container page__container">
+                        <!-- <nav class="course-nav">
+                    <a data-toggle="tooltip"
+                       data-placement="bottom"
+                       data-title="Getting Started with Angular: Introduction"
+                       href=""><span class="material-icons">lock</span></a>
+                    <a data-toggle="tooltip"
+                       data-placement="bottom"
+                       data-title="Getting Started with Angular: Introduction to TypeScript"
+                       href=""><span class="material-icons text-primary">account_circle</span></a>
+                    <a data-toggle="tooltip"
+                       data-placement="bottom"
+                       data-title="Getting Started with Angular: Comparing Angular to AngularJS"
+                       href=""><span class="material-icons">lock</span></a>
+                    <a data-toggle="tooltip"
+                       data-placement="bottom"
+                       data-title="Getting Started with Angular: Lesson 4"
+                       href=""><span class="material-icons">lock</span></a>
+                </nav> -->
+                        <div class="js-player embed-responsive embed-responsive-16by9 mb-32pt">
+                            <div class="player embed-responsive-item">
+                                <div class="player__content">
+                                    <div class="player__image"
+                                        style="--player-image: url(data:image/jpeg;base64,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)">
+                                    </div>
+                                    <!-- <div class="player__image"
+                                 style="--player-image: url(../../public/images/illustration/player.svg)"></div> -->
+                                    <a href="" class="player__play bg-primary">
+                                        <span class="material-icons">play_arrow</span>
+                                    </a>
+                                </div>
+                                <div class="player__embed d-none">
+                                    <!-- <iframe class="embed-responsive-item"
+                                    src="https://player.vimeo.com/video/97243285?title=0&amp;byline=0&amp;portrait=0"
+                                    allowfullscreen="">
+                            </iframe> -->
+
+                                    <iframe width="1076" height="605" src="https://www.youtube.com/embed/FMM7GWnAv0A"
+                                        title="2021's Biggest Breakthroughs in Physics" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-wrap align-items-end mb-16pt">
+                            <h1 class="text-white flex m-0">Introduction to Physics</h1>
+                            <p class="h1 text-white-50 font-weight-light m-0 ">50:13</p>
+                        </div>
+
+                        <p class="hero__lead measure-hero-lead text-white-50 mb-24pt fonsize">JavaScript is now used to power
+                            backends, create hybrid mobile applications, architect cloud solutions, design neural
+                            networks and even control robots. Enter TypeScript: a superset of JavaScript for scalable,
+                            secure, performant and feature-rich applications.</p>
+
+                        <div class="d-flex flex-column flex-sm-row align-items-center justify-content-start">
+                            <!-- <a href="lesson.html"
+                       class="btn btn-outline-white mb-16pt mb-sm-0 mr-sm-16pt">Watch trailer <i class="material-icons icon--right">play_circle_outline</i></a> -->
+                            <a href="pricing.html" class="btn btn-white fonsize">Enrolle Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="navbar navbar-expand-sm navbar-light bg-white border-bottom-2 navbar-list p-0 m-0 align-items-center">
+                    <div class="container page__container">
+                        <ul class="nav navbar-nav flex align-items-sm-center">
+                            <li class="nav-item navbar-list__item">
+                                <div class="media align-items-center">
+                                    <span class="media-left mr-16pt">
+                                        <img src="../../public/images/people/50/guy-6.jpg" width="40" alt="avatar"
+                                            class="rounded-circle">
+                                    </span>
+                                    <div class="media-body">
+                                        <a class="card-title m-0 fonsize" href="teacher-profile.html">Eddie Bryan</a>
+                                        <p class="text-50 lh-1 mb-0 fonsize">Instructor</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item navbar-list__item">
+                                <i class="material-icons text-muted icon--left fonsize">schedule</i>
+                                2h 46m
+                            </li>
+                            <li class="nav-item navbar-list__item">
+                                <i class="material-icons text-muted icon--left fonsize">assessment</i>
+                                Beginner
+                            </li>
+                            <li class="nav-item ml-sm-auto text-sm-center flex-column navbar-list__item">
+                                <div class="rating rating-24">
+                                    <div class="rating__item"><i class="material-icons">star</i></div>
+                                    <div class="rating__item"><i class="material-icons">star</i></div>
+                                    <div class="rating__item"><i class="material-icons">star</i></div>
+                                    <div class="rating__item"><i class="material-icons">star</i></div>
+                                    <div class="rating__item"><i class="material-icons">star_border</i></div>
+                                </div>
+                                <p class="lh-1 mb-0"><small class="text-muted fonsize">20 ratings</small></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <!-- // END Header Layout Content -->
+
+        </div>
+        <!-- // END Header Layout Content -->
+
+        <!-- Footer -->
+
+        <!-- footer -->
+        <div class="news-footer-wrap">
+            <div class="fs-shape">
+                <img src="assetss/images/shape-img/03.png" alt="fst" class="fst-1">
+                <img src="assetss/images/shape-img/04.png" alt="fst" class="fst-2">
+            </div>
+            <!-- Newsletter Section Start Here -->
+            <div class="news-letter">
+                <div class="container">
+                    <div class="section-wrapper">
+                        <div class="news-title">
+                            <h3>Want Us To Email You About Special Offers And Updates?</h3>
+                        </div>
+                        <div class="news-form">
+                            <form action="/">
+                                <div class="nf-list">
+                                    <input type="email" name="email" placeholder="Enter Your Email">
+                                    <input type="submit" name="submit" value="Subscribe Now">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Newsletter Section Ending Here -->
+
+            <!-- Footer Section Start Here -->
+            <footer>
+                <div class="footer-top padding-tb pt-0">
+                    <div class="container">
+                        <div class="row g-4 row-cols-xl-4 row-cols-md-2 row-cols-1 justify-content-center">
+                            <div class="col">
+                                <div class="footer-item">
+                                    <div class="footer-inner">
+                                        <div class="footer-content">
+                                            <div class="title">
+                                                <h4>Site Map</h4>
+                                            </div>
+                                            <div class="content">
+                                                <ul class="lab-ul">
+                                                    <li><a href="#">Documentation</a></li>
+                                                    <li><a href="#">Feedback</a></li>
+                                                    <li><a href="#">Plugins</a></li>
+                                                    <li><a href="#">Support Forums</a></li>
+                                                    <li><a href="#">Themes</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="footer-item">
+                                    <div class="footer-inner">
+                                        <div class="footer-content">
+                                            <div class="title">
+                                                <h4>Useful Links</h4>
+                                            </div>
+                                            <div class="content">
+                                                <ul class="lab-ul">
+                                                    <li><a href="#">About Us</a></li>
+                                                    <li><a href="#">Help Link</a></li>
+                                                    <li><a href="#">Terms & Conditions</a></li>
+                                                    <li><a href="#">Contact Us</a></li>
+                                                    <li><a href="#">Privacy Policy</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="footer-item">
+                                    <div class="footer-inner">
+                                        <div class="footer-content">
+                                            <div class="title">
+                                                <h4>Social Contact</h4>
+                                            </div>
+                                            <div class="content">
+                                                <ul class="lab-ul">
+                                                    <li><a href="#">Facebook</a></li>
+                                                    <li><a href="#">Twitter</a></li>
+                                                    <li><a href="#">Instagram</a></li>
+                                                    <li><a href="#">YouTube</a></li>
+                                                    <li><a href="#">Github</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="footer-item">
+                                    <div class="footer-inner">
+                                        <div class="footer-content">
+                                            <div class="title">
+                                                <h4>Our Support</h4>
+                                            </div>
+                                            <div class="content">
+                                                <ul class="lab-ul">
+                                                    <li><a href="#">Help Center</a></li>
+                                                    <li><a href="#">Paid with Mollie</a></li>
+                                                    <li><a href="#">Status</a></li>
+                                                    <li><a href="#">Changelog</a></li>
+                                                    <li><a href="#">Contact Support</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="footer-bottom style-2">
+                    <div class="container">
+                        <div class="section-wrapper">
+                            <p>&copy; 2021 <a href="index.html">Edukon</a> Designed by <a
+                                    href="https://themeforest.net/user/CodexCoder" target="_blank">CodexCoder</a> </p>
+                        </div>
+                    </div>
+                </div> -->
+            </footer>
+            <!-- Footer Section Ending Here -->
+        </div>
+        <!-- footer -->
+
+        <!-- // END Footer -->
+
+    </div>
+    <!-- // END Header Layout -->
+
+    <!-- Drawer -->
+
+    <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
+        <div class="mdk-drawer__content">
+            <div class="sidebar sidebar-dark-pickled-bluewood sidebar-left" data-perfect-scrollbar>
+
+                <!-- Sidebar Content -->
+
+                <div class="d-flex align-items-center navbar-height">
+                    <form action="index.html" class="search-form search-form--black mx-16pt pr-0 pl-16pt">
+                        <input type="text" class="form-control pl-0" placeholder="Search">
+                        <button class="btn" type="submit"><i class="material-icons">search</i></button>
+                    </form>
+                </div>
+
+                <a href="index.html" class="sidebar-brand ">
+                    <!-- <img class="sidebar-brand-icon" src="../../public/images/illustration/student/128/white.svg" alt="Luma"> -->
+
+                    <span class="avatar avatar-xl sidebar-brand-icon h-auto">
+
+                        <span class="avatar-title rounded bg-primary"><img
+                                src="../../public/images/illustration/student/128/white.svg" class="img-fluid"
+                                alt="logo" /></span>
+
+                    </span>
+
+                    <span>Luma</span>
+                </a>
+
+                <div class="sidebar-heading">Student</div>
+                <ul class="sidebar-menu">
+
+                    <li class="sidebar-menu-item active">
+                        <a class="sidebar-menu-button" href="index.html">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">home</span>
+                            <span class="sidebar-menu-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item ">
+                        <a class="sidebar-menu-button" href="about.html">
+                            <i class="fas fa-address-card material-icons sidebar-menu-icon sidebar-menu-icon--left"></i>
+                            <span class="sidebar-menu-text">About</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="courses.html">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">local_library</span>
+                            <span class="sidebar-menu-text">Browse Courses</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="paths.html">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">style</span>
+                            <span class="sidebar-menu-text">Browse Paths</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="student-dashboard.html">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">account_box</span>
+                            <span class="sidebar-menu-text">Student Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="student-my-courses.html">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">search</span>
+                            <span class="sidebar-menu-text">My Courses</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="student-paths.html">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">timeline</span>
+                            <span class="sidebar-menu-text">My Paths</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="student-path.html">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">change_history</span>
+                            <span class="sidebar-menu-text">Path Details</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="student-course.html">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">face</span>
+                            <span class="sidebar-menu-text">Course Preview</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="student-lesson.html">
+                            <span
+                                class="material-icons sidebar-menu-icon sidebar-menu-icon--left">panorama_fish_eye</span>
+                            <span class="sidebar-menu-text">Lesson Preview</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="student-take-course.html">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">class</span>
+                            <span class="sidebar-menu-text">Take Course</span>
+                            <span class="sidebar-menu-badge badge badge-accent badge-notifications ml-auto">PRO</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="student-take-lesson.html">
+                            <span
+                                class="material-icons sidebar-menu-icon sidebar-menu-icon--left">import_contacts</span>
+                            <span class="sidebar-menu-text">Take Lesson</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="student-take-quiz.html">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">dvr</span>
+                            <span class="sidebar-menu-text">Take Quiz</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="student-quiz-results.html">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">poll</span>
+                            <span class="sidebar-menu-text">My Quizzes</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="student-quiz-result-details.html">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">live_help</span>
+                            <span class="sidebar-menu-text">Quiz Result</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="student-path-assessment.html">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">layers</span>
+                            <span class="sidebar-menu-text">Skill Assessment</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="student-path-assessment-result.html">
+                            <span
+                                class="material-icons sidebar-menu-icon sidebar-menu-icon--left">assignment_turned_in</span>
+                            <span class="sidebar-menu-text">Skill Result</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="contact.html">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">account_box</span>
+                            <span class="sidebar-menu-text">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="sidebar-heading">Instructor</div>
+                <ul class="sidebar-menu">
+
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="instructor-dashboard.html">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">school</span>
+                            <span class="sidebar-menu-text">Instructor Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="instructor-courses.html">
+                            <span
+                                class="material-icons sidebar-menu-icon sidebar-menu-icon--left">import_contacts</span>
+                            <span class="sidebar-menu-text">Manage Courses</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="instructor-quizzes.html">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">help</span>
+                            <span class="sidebar-menu-text">Manage Quizzes</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="instructor-earnings.html">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">trending_up</span>
+                            <span class="sidebar-menu-text">Earnings</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="instructor-statement.html">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">receipt</span>
+                            <span class="sidebar-menu-text">Statement</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="instructor-edit-course.html">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">post_add</span>
+                            <span class="sidebar-menu-text">Edit Course</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" href="instructor-edit-quiz.html">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">format_shapes</span>
+                            <span class="sidebar-menu-text">Edit Quiz</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="sidebar-heading">Applications</div>
+                <ul class="sidebar-menu">
+
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button js-sidebar-collapse" data-toggle="collapse"
+                            href="#enterprise_menu">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">donut_large</span>
+                            Enterprise
+                            <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                        </a>
+                        <ul class="sidebar-submenu collapse sm-indent" id="enterprise_menu">
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="erp-dashboard.html">
+                                    <span class="sidebar-menu-text">ERP Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="crm-dashboard.html">
+                                    <span class="sidebar-menu-text">CRM Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="hr-dashboard.html">
+                                    <span class="sidebar-menu-text">HR Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="employees.html">
+                                    <span class="sidebar-menu-text">Employees</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="staff.html">
+                                    <span class="sidebar-menu-text">Staff</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="leaves.html">
+                                    <span class="sidebar-menu-text">Leaves</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button disabled" href="departments.html">
+                                    <span class="sidebar-menu-text">Departments</span>
+                                </a>
+                            </li>
+                            <!-- <li class="sidebar-menu-item">
+  <a class="sidebar-menu-button disabled" href="documents.html">
+    <span class="sidebar-menu-text">Documents</span>
+  </a>
+</li>
+<li class="sidebar-menu-item">
+  <a class="sidebar-menu-button disabled" href="attendance.html">
+    <span class="sidebar-menu-text">Attendance</span>
+  </a>
+</li>
+<li class="sidebar-menu-item">
+  <a class="sidebar-menu-button disabled" href="recruitment.html">
+    <span class="sidebar-menu-text">Recruitment</span>
+  </a>
+</li>
+<li class="sidebar-menu-item">
+  <a class="sidebar-menu-button disabled" href="payroll.html">
+    <span class="sidebar-menu-text">Payroll</span>
+  </a>
+</li>
+<li class="sidebar-menu-item">
+  <a class="sidebar-menu-button disabled" href="training.html">
+    <span class="sidebar-menu-text">Training</span>
+  </a>
+</li>
+<li class="sidebar-menu-item">
+  <a class="sidebar-menu-button disabled" href="employee-profile.html">
+    <span class="sidebar-menu-text">Employee Profile</span>
+  </a>
+</li>
+<li class="sidebar-menu-item">
+  <a class="sidebar-menu-button disabled" href="accounting.html">
+    <span class="sidebar-menu-text">Accounting</span>
+  </a>
+</li>
+<li class="sidebar-menu-item">
+  <a class="sidebar-menu-button disabled" href="inventory.html">
+    <span class="sidebar-menu-text">Inventory</span>
+  </a>
+</li> -->
+                        </ul>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" data-toggle="collapse" href="#productivity_menu">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">access_time</span>
+                            Productivity
+                            <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                        </a>
+                        <ul class="sidebar-submenu collapse sm-indent" id="productivity_menu">
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="projects.html">
+                                    <span class="sidebar-menu-text">Projects</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="tasks-board.html">
+                                    <span class="sidebar-menu-text">Tasks Board</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="tasks-list.html">
+                                    <span class="sidebar-menu-text">Tasks List</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button disabled" href="kanban.html">
+                                    <span class="sidebar-menu-text">Kanban</span>
+                                </a>
+                            </li>
+                            <!-- <li class="sidebar-menu-item">
+  <a class="sidebar-menu-button disabled" href="task-details.html">
+    <span class="sidebar-menu-text">Task Details</span>
+  </a>
+</li>
+<li class="sidebar-menu-item">
+  <a class="sidebar-menu-button disabled" href="team-members.html">
+    <span class="sidebar-menu-text">Team Members</span>
+  </a>
+</li> -->
+                        </ul>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" data-toggle="collapse" href="#ecommerce_menu">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">shopping_cart</span>
+                            eCommerce
+                            <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                        </a>
+                        <ul class="sidebar-submenu collapse sm-indent" id="ecommerce_menu">
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ecommerce.html">
+                                    <span class="sidebar-menu-text">Shop Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button disabled" href="edit-product.html">
+                                    <span class="sidebar-menu-text">Edit Product</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" data-toggle="collapse" href="#messaging_menu">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">message</span>
+                            Messaging
+                            <span class="sidebar-menu-badge badge badge-accent badge-notifications ml-auto">2</span>
+                            <span class="sidebar-menu-toggle-icon"></span>
+                        </a>
+                        <ul class="sidebar-submenu collapse sm-indent" id="messaging_menu">
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="messages.html">
+                                    <span class="sidebar-menu-text">Messages</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="email.html">
+                                    <span class="sidebar-menu-text">Email</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" data-toggle="collapse" href="#cms_menu">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">content_copy</span>
+                            CMS
+                            <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                        </a>
+                        <ul class="sidebar-submenu collapse sm-indent" id="cms_menu">
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="cms-dashboard.html">
+                                    <span class="sidebar-menu-text">CMS Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="posts.html">
+                                    <span class="sidebar-menu-text">Posts</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" data-toggle="collapse" href="#account_menu">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">account_box</span>
+                            Account
+                            <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                        </a>
+                        <ul class="sidebar-submenu collapse sm-indent" id="account_menu">
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="pricing.html">
+                                    <span class="sidebar-menu-text">Pricing</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="login.html">
+                                    <span class="sidebar-menu-text">Login</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="signup.html">
+                                    <span class="sidebar-menu-text">Signup</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="signup-payment.html">
+                                    <span class="sidebar-menu-text">Payment</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="reset-password.html">
+                                    <span class="sidebar-menu-text">Reset Password</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="change-password.html">
+                                    <span class="sidebar-menu-text">Change Password</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="edit-account.html">
+                                    <span class="sidebar-menu-text">Edit Account</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="edit-account-profile.html">
+                                    <span class="sidebar-menu-text">Profile &amp; Privacy</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="edit-account-notifications.html">
+                                    <span class="sidebar-menu-text">Email Notifications</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="edit-account-password.html">
+                                    <span class="sidebar-menu-text">Account Password</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="billing.html">
+                                    <span class="sidebar-menu-text">Subscription</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="billing-upgrade.html">
+                                    <span class="sidebar-menu-text">Upgrade Account</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="billing-payment.html">
+                                    <span class="sidebar-menu-text">Payment Information</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="billing-history.html">
+                                    <span class="sidebar-menu-text">Payment History</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="billing-invoice.html">
+                                    <span class="sidebar-menu-text">Invoice</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" data-toggle="collapse" href="#community_menu">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">people_outline</span>
+                            Community
+                            <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                        </a>
+                        <ul class="sidebar-submenu collapse sm-indent" id="community_menu">
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="teachers.html">
+
+                                    <span class="sidebar-menu-text">Browse Teachers</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="student-profile.html">
+
+                                    <span class="sidebar-menu-text">Student Profile</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="teacher-profile.html">
+
+                                    <span class="sidebar-menu-text">Teacher Profile</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="blog.html">
+
+                                    <span class="sidebar-menu-text">Blog</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="blog-post.html">
+
+                                    <span class="sidebar-menu-text">Blog Post</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="faq.html">
+                                    <span class="sidebar-menu-text">FAQ</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="help-center.html">
+                                    <!--  -->
+                                    <span class="sidebar-menu-text">Help Center</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="discussions.html">
+                                    <span class="sidebar-menu-text">Discussions</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="discussion.html">
+                                    <span class="sidebar-menu-text">Discussion Details</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="discussions-ask.html">
+                                    <span class="sidebar-menu-text">Ask Question</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="sidebar-heading">UI</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" data-toggle="collapse" href="#components_menu">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">tune</span>
+                            Components
+                            <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                        </a>
+                        <ul class="sidebar-submenu collapse sm-indent" id="components_menu">
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-buttons.html">
+                                    <span class="sidebar-menu-text">Buttons</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-avatars.html">
+                                    <span class="sidebar-menu-text">Avatars</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-forms.html">
+                                    <span class="sidebar-menu-text">Forms</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-loaders.html">
+                                    <span class="sidebar-menu-text">Loaders</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-tables.html">
+                                    <span class="sidebar-menu-text">Tables</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-cards.html">
+                                    <span class="sidebar-menu-text">Cards</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-icons.html">
+                                    <span class="sidebar-menu-text">Icons</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-tabs.html">
+                                    <span class="sidebar-menu-text">Tabs</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-alerts.html">
+                                    <span class="sidebar-menu-text">Alerts</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-badges.html">
+                                    <span class="sidebar-menu-text">Badges</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-progress.html">
+                                    <span class="sidebar-menu-text">Progress</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-pagination.html">
+                                    <span class="sidebar-menu-text">Pagination</span>
+                                </a>
+                            </li>
+                            <!-- <li class="sidebar-menu-item">
+  <a class="sidebar-menu-button disabled" href="ui-typography.html">
+    <span class="sidebar-menu-text">Typography</span>
+  </a>
+</li>
+<li class="sidebar-menu-item">
+  <a class="sidebar-menu-button disabled" href="ui-colors.html">
+    <span class="sidebar-menu-text">Colors</span>
+  </a>
+</li>
+<li class="sidebar-menu-item">
+  <a class="sidebar-menu-button disabled" href="ui-breadcrumb.html">
+    <span class="sidebar-menu-text">Breadcrumb</span>
+  </a>
+</li>
+<li class="sidebar-menu-item">
+  <a class="sidebar-menu-button disabled" href="ui-accordions.html">
+    <span class="sidebar-menu-text">Accordions</span>
+  </a>
+</li>
+<li class="sidebar-menu-item">
+  <a class="sidebar-menu-button disabled" href="ui-modals.html">
+    <span class="sidebar-menu-text">Modals</span>
+  </a>
+</li>
+<li class="sidebar-menu-item">
+  <a class="sidebar-menu-button disabled" href="ui-chips.html">
+    <span class="sidebar-menu-text">Chips</span>
+  </a>
+</li> -->
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button disabled" href="">
+                                    <span class="sidebar-menu-text">Disabled</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" data-toggle="collapse" href="#plugins_menu">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">folder</span>
+                            Plugins
+                            <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                        </a>
+                        <ul class="sidebar-submenu collapse sm-indent" id="plugins_menu">
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-plugin-charts.html">
+                                    <span class="sidebar-menu-text">Charts</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-plugin-flatpickr.html">
+                                    <span class="sidebar-menu-text">Flatpickr</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-plugin-daterangepicker.html">
+                                    <span class="sidebar-menu-text">Date Range Picker</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-plugin-dragula.html">
+                                    <span class="sidebar-menu-text">Dragula</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-plugin-dropzone.html">
+                                    <span class="sidebar-menu-text">Dropzone</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-plugin-range-sliders.html">
+                                    <span class="sidebar-menu-text">Range Sliders</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-plugin-quill.html">
+                                    <span class="sidebar-menu-text">Quill</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-plugin-select2.html">
+                                    <span class="sidebar-menu-text">Select2</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-plugin-nestable.html">
+                                    <span class="sidebar-menu-text">Nestable</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-plugin-fancytree.html">
+                                    <span class="sidebar-menu-text">Fancy Tree</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-plugin-maps-vector.html">
+                                    <span class="sidebar-menu-text">Vector Maps</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-plugin-sweet-alert.html">
+                                    <span class="sidebar-menu-text">Sweet Alert</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="ui-plugin-toastr.html">
+                                    <span class="sidebar-menu-text">Toastr</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button disabled" href="">
+                                    <span class="sidebar-menu-text">Disabled</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a class="sidebar-menu-button" data-toggle="collapse" href="#layouts_menu">
+                            <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">view_compact</span>
+                            Layouts
+                            <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                        </a>
+                        <ul class="sidebar-submenu collapse sm-indent" id="layouts_menu">
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="../Compact_App_Layout/index.html">
+                                    <span class="sidebar-menu-text">Compact</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="../Mini_App_Layout/index.html">
+                                    <span class="sidebar-menu-text">Mini</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="../Mini_Secondary_Layout/index.html">
+                                    <span class="sidebar-menu-text">Mini + Secondary</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="../App_Layout/index.html">
+                                    <span class="sidebar-menu-text">App</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="../Boxed_App_Layout/index.html">
+                                    <span class="sidebar-menu-text">Boxed</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item">
+                                <a class="sidebar-menu-button" href="../Sticky_App_Layout/index.html">
+                                    <span class="sidebar-menu-text">Sticky</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item active">
+                                <a class="sidebar-menu-button" href="../Fixed_Layout/index.html">
+                                    <span class="sidebar-menu-text">Fixed</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- // END Sidebar Content -->
+
+            </div>
+        </div>
+    </div>
+
+    <!-- // END Drawer -->
+
+    <!-- jQuery -->
+    <script src="../../public/vendor/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="../../public/vendor/popper.min.js"></script>
+    <script src="../../public/vendor/bootstrap.min.js"></script>
+
+    <!-- Perfect Scrollbar -->
+    <script src="../../public/vendor/perfect-scrollbar.min.js"></script>
+
+    <!-- DOM Factory -->
+    <script src="../../public/vendor/dom-factory.js"></script>
+
+    <!-- MDK -->
+    <script src="../../public/vendor/material-design-kit.js"></script>
+
+    <!-- App JS -->
+    <script src="../../public/js/app.js"></script>
+
+    <!-- Preloader -->
+    <script src="../../public/js/preloader.js"></script>
+    <script src="assetss/js/jquery.js"></script>
+    <script src="assetss/js/bootstrap.min.js"></script>
+    <script src="assetss/js/swiper.min.js"></script>
+    <script src="assetss/js/progress.js"></script>
+    <script src="assetss/js/lightcase.js"></script>
+    <script src="assetss/js/counter-up.js"></script>
+    <script src="assetss/js/isotope.pkgd.js"></script>
+    <script src="assetss/js/functions.js"></script>
+    <script>
+        (function () {
+            'use strict';
+            var headerNode = document.querySelector('.mdk-header')
+            var layoutNode = document.querySelector('.mdk-header-layout')
+            var componentNode = layoutNode ? layoutNode : headerNode
+            componentNode.addEventListener('domfactory-component-upgraded', function () {
+                headerNode.mdkHeader.eventTarget.addEventListener('scroll', function () {
+                    var progress = headerNode.mdkHeader.getScrollState().progress
+                    var navbarNode = headerNode.querySelector('#default-navbar')
+                    navbarNode.classList.toggle('bg-transparent', progress <= 0.2)
+                })
+            })
+        })()
+    </script>
+
+</body>
+
+</html>
