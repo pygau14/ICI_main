@@ -229,54 +229,36 @@
                             
                             <div class="form-group">
                                 <label class="form-label fonsize"
+                                       for="email">Class</label>
+                                <select id="select_class" onchange="fetchSubjects()" class="form-select form-select-md mb-3" aria-label=".form-select-md example">
+                                    <option selected>Choose Your Class</option>
+                                    <option value="9th">9th</option>
+                                    <option value="10th">10th</option>
+                                    <option value="11th">11th</option>
+                                    <option value="12th">12th</option>
+                                    <option value="JEE">JEE</option>
+                                    <option value="NEET">NEET</option>
+                                  </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label fonsize"
                                        for="email">Subject</label>
-                                <select class="form-select form-select-md mb-3" aria-label=".form-select-md example">
+                                <select id="select_subject" class="form-select form-select-md mb-3" aria-label=".form-select-md example">
                                     <option selected>Choose Your Subject</option>
-                                    <option value="1">Physics</option>
-                                    <option value="2">Maths</option>
-                                    <option value="3">English</option>
-                                    <option value="4">Biology</option>
-                                    <option value="5">Zoology</option>
-                                    <option value="6">Botany</option>
                                   </select>
                             </div>
                             <div class="form-group">
                                 <label class="form-label fonsize"
                                        for="email">Chapter</label>
-                                <select class="form-select form-select-md mb-3" aria-label=".form-select-md example">
+                                <select id="select_chapter" class="form-select form-select-md mb-3" aria-label=".form-select-md example">
                                     <option selected>Choose Your Chapter</option>
-                                    <option value="1">Sets</option>
-                                    <option value="2">Profit and Loss</option>
-                                    <option value="3">Linear Equation</option>
-                                    <option value="4">Graphs</option>
-                                    <option value="5">Trigonometry</option>
-                                    <option value="6">Number System</option>
-                                  </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label fonsize"
-                                       for="email">Question Set</label>
-                                <select class="form-select form-select-md mb-3" aria-label=".form-select-md example">
-                                    <option selected>Choose Your Question Set</option>
-                                    <option value="1">Sets</option>
-                                    <option value="2">Profit and Loss</option>
-                                    <option value="3">Linear Equation</option>
-                                    <option value="4">Graphs</option>
-                                    <option value="5">Trigonometry</option>
-                                    <option value="6">Number System</option>
                                   </select>
                             </div>
                             <div class="form-group">
                                 <label class="form-label fonsize"
                                        for="email">Topic</label>
-                                <select class="form-select form-select-md mb-3" aria-label=".form-select-md example">
+                                <select id="select_topic" class="form-select form-select-md mb-3" aria-label=".form-select-md example">
                                     <option selected>Choose Your Topic</option>
-                                    <option value="1">Sets</option>
-                                    <option value="2">Profit and Loss</option>
-                                    <option value="3">Linear Equation</option>
-                                    <option value="4">Graphs</option>
-                                    <option value="5">Trigonometry</option>
-                                    <option value="6">Number System</option>
                                   </select>
                             </div>
 
@@ -609,6 +591,56 @@
     <script src="assetss/js/counter-up.js"></script>
     <script src="assetss/js/isotope.pkgd.js"></script>
     <script src="assetss/js/functions.js"></script>
+    <script>
+        function fetchSubjects(){
+            document.getElementById('select_subject').addEventListener('change',fetchChapters)
+            const selectedClass = document.getElementById('select_class').value;
+            if(!selectedClass) return ;
+
+            fetch('http://localhost:3000/subjects/'+selectedClass).then((res)=>{
+                return res.json();
+            }).then((data)=>{
+                populateDropDowns('select_subject',data);
+            })
+        }
+        function populateDropDowns(dropdownID,data){
+            const dropdown = document.getElementById(dropdownID);
+            dropdown.innerHTML='';
+            data.forEach(option=>{
+                const optionEle = document.createElement('option');
+                optionEle.value = option;
+                optionEle.innerText = option;
+                dropdown.appendChild(optionEle);
+            });
+        }
+        function fetchChapters(){
+            document.getElementById('select_chapter').addEventListener('change',fetchTopics);
+            const selectedClass = document.getElementById('select_class').value;
+            const subject_name = document.getElementById('select_subject').value;
+
+            if (!selectedClass || !subject_name) return;
+
+            fetch('http://localhost:3000/chapters/'+selectedClass+'/'+subject_name).then((res)=>{
+                return res.json();
+            }).then((data)=>{
+                populateDropDowns('select_chapter',data);
+            })
+        }
+        function fetchTopics(){
+            console.log('running fetchTopics');
+            const selectedClass = document.getElementById('select_class').value;
+            const chapter_name = document.getElementById('select_chapter').value;
+            console.log(selectedClass,chapter_name);
+            if(!selectedClass || !chapter_name)return;
+            const URL = 'http://localhost:3000/topics/'+selectedClass+'/'+chapter_name;
+            fetch(URL).then((res)=>{
+                return res.json()
+            }).then((data)=>{
+                console.log(data);
+                populateDropDowns('select_topic',data);
+            })
+        }
+    </script>
     <script>
         (function () {
             'use strict';
