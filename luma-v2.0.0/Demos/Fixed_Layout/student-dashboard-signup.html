@@ -336,7 +336,7 @@
                             <!-- Email -->
                             <div class="form-group">
                                 <label class="form-label fonsize">Your Email:</label>
-                                <input type="email" class="form-control" style="font-size: 16px;" id="validationSample01" placeholder="Enter your email ..">
+                                <input type="email" class="form-control" style="font-size: 16px;" id="validationSample09" placeholder="Enter your email ..">
                             </div>
                             <!-- Email end -->
 
@@ -464,14 +464,14 @@
                         <!-- Password -->
                         <div class="form-group">
                             <label class="form-label fonsize">Your Password:</label>
-                            <input type="password" class="form-control" style="font-size: 16px;" id="validationSample01" placeholder="Enter your password ..">
+                            <input type="password" class="form-control" style="font-size: 16px;" id="validationSample10" placeholder="Enter your password ..">
                         </div>
                         <!-- Password end -->
 
                         <!-- Password Confirm-->
                         <div class="form-group">
                             <label class="form-label fonsize">Confirm Password:</label>
-                            <input type="password" class="form-control" style="font-size: 16px;" id="validationSample01" placeholder="Confirm your password ..">
+                            <input type="password" class="form-control" style="font-size: 16px;" id="validationSample11" placeholder="Confirm your password ..">
                         </div>
                         <!-- Password  Confirm end -->
 
@@ -857,6 +857,9 @@
             const institute_name  =document.getElementById('validationSample08').value;
             const subjectsELE = document.getElementById('select03');
             const coursesELE = document.getElementById('select02');
+            const email = document.getElementById('validationSample09').value;
+            const password  =document.getElementById('validationSample10').value;
+            const confirmPassword = document.getElementById('validationSample11').value;
 
             const subjects = Array.from(subjectsELE.selectedOptions).map(option => option.outerText);
             const courses = Array.from(coursesELE.selectedOptions).map(option=>option.outerText);
@@ -878,10 +881,7 @@
 
             //console.log(name,mobile_no,dob,country,state, city, street_address, school_name,institute_name,courses,subjects);
 
-        
-            const password = '123456';
-            const confirmPassword  = '123456';
-            const email = 'xyx@gmail.com'
+      
 
             if(password !== confirmPassword){
                 alert('Password do not match');
