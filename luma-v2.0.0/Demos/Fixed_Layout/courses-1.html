@@ -500,7 +500,7 @@
                                 </div>
 
                                 <div class="page-separator">
-                                    <div class="page-separator__text fonsize"> <span class="text-danger mx-2  ">
+                                    <div class="page-separator__text fonsize" id="courses_heading"> <span class="text-danger mx-2  ">
                                             our </span> Popular Courses</div>
                                 </div>
 
@@ -542,7 +542,7 @@
 
                                 <!-- chemistry section start -->
                                 <div class="page-separator">
-                                    <div class="page-separator__text fonsize">Chemistry</div>
+                                    <div class="page-separator__text fonsize" id="chem_course_heading">Chemistry</div>
                                 </div>
 
                                 <div id="chem-course-list" class="row card-group-row course-container">
@@ -580,7 +580,7 @@
                                 </div>
                                 <!-- botany section start -->
                                 <div class="page-separator">
-                                    <div class="page-separator__text fonsize">Botany</div>
+                                    <div class="page-separator__text fonsize" id="bot_course_heading">Botany</div>
                                 </div>
 
                                 <div id="bot-course-list" class="row card-group-row course-container">
@@ -612,7 +612,7 @@
                                 </ul>
                                 <!-- physics section start -->
                                 <div class="page-separator" style="margin-top: 2rem;">
-                                    <div class="page-separator__text fonsize">Physics</div>
+                                    <div class="page-separator__text fonsize" id='phy_course_heading'>Physics</div>
                                 </div>
 
                                 <div id='phy-course-list' class="row card-group-row course-container">
@@ -645,7 +645,7 @@
                                 <!-- zoology section start -->
 
                                 <div class="page-separator" style="margin-top: 2rem;">
-                                    <div class="page-separator__text fonsize">Zoology</div>
+                                    <div class="page-separator__text fonsize" id='zoo_course_heading'>Zoology</div>
                                 </div>
 
                                 <div id="zoo-course-list" class="row card-group-row course-container">
@@ -706,73 +706,44 @@
                                 <ul class="sidebar-menu">
                                     <li class="sidebar-menu-item active">
                                         <a href="" class="sidebar-menu-button">
-                                            <!-- <span
-                                            class="material-icons sidebar-menu-icon sidebar-menu-icon--left">code</span> -->
-                                            <i class="fa-regular fa-flask-vial"></i>
-                                            <span class="sidebar-menu-text fonsize">Chemistry</span>
+                                            <span
+                                            class="material-icons sidebar-menu-icon sidebar-menu-icon--left">code</span>
+                                            <span class="sidebar-menu-text fonsize" onclick="filterCourses(event , 'chemistry')">Chemistry</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item">
                                         <a href="" class="sidebar-menu-button">
                                             <span
                                                 class="material-icons sidebar-menu-icon sidebar-menu-icon--left">brush</span>
-                                            <span class="sidebar-menu-text fonsize">Physics</span>
+                                            <span class="sidebar-menu-text fonsize" onclick="filterCourses(event , 'physics')">Physics</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item">
                                         <a href="" class="sidebar-menu-button">
                                             <span
                                                 class="material-icons sidebar-menu-icon sidebar-menu-icon--left">settings_cell</span>
-                                            <span class="sidebar-menu-text fonsize">Botany</span>
+                                            <span class="sidebar-menu-text fonsize" onclick="filterCourses(event , 'botany')">Botany</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item">
                                         <a href="" class="sidebar-menu-button">
                                             <span
                                                 class="material-icons sidebar-menu-icon sidebar-menu-icon--left">android</span>
-                                            <span class="sidebar-menu-text fonsize">Zoology</span>
+                                            <span class="sidebar-menu-text fonsize" onclick="filterCourses(event , 'zoology')">Zoology</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item">
                                         <a href="" class="sidebar-menu-button">
                                             <span
                                                 class="material-icons sidebar-menu-icon sidebar-menu-icon--left">business_center</span>
-                                            <span class="sidebar-menu-text fonsize">Maths</span>
+                                            <span class="sidebar-menu-text fonsize" onclick="filterCourses(event , 'maths')">Maths</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item">
                                         <a href="" class="sidebar-menu-button">
-                                            <span
-                                                class="material-icons sidebar-menu-icon sidebar-menu-icon--left">crop_original</span>
-                                            <span class="sidebar-menu-text fonsize">Photography</span>
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-menu-item">
-                                        <a href="" class="sidebar-menu-button">
-                                            <span
-                                                class="material-icons sidebar-menu-icon sidebar-menu-icon--left">payment</span>
-                                            <span class="sidebar-menu-text fonsize">Marketing</span>
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-menu-item">
-                                        <a href="" class="sidebar-menu-button">
-                                            <span
-                                                class="material-icons sidebar-menu-icon sidebar-menu-icon--left">store</span>
-                                            <span class="sidebar-menu-text fonsize">eCommerce</span>
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-menu-item">
-                                        <a href="" class="sidebar-menu-button">
-                                            <span
-                                                class="material-icons sidebar-menu-icon sidebar-menu-icon--left">redeem</span>
-                                            <span class="sidebar-menu-text fonsize">Health &amp; Fitness</span>
-                                        </a>
-                                    </li>
-                                    <li class="sidebar-menu-item">
-                                        <a href="" class="sidebar-menu-button">
-                                            <span
-                                                class="material-icons sidebar-menu-icon sidebar-menu-icon--left">music_note</span>
-                                            <span class="sidebar-menu-text fonsize">Music</span>
+                                            <!-- <span
+                                                class="material-icons sidebar-menu-icon sidebar-menu-icon--left">business_center</span> -->
+                                            <span class="sidebar-menu-text fonsize" onclick="resetCourses()">RESET</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -1166,6 +1137,12 @@
         <script src="assetss/js/isotope.pkgd.js"></script>
         <script src="assetss/js/functions.js"></script>
         <script>
+            let chemData = [];
+            let botData = [];
+            let phyData =[];
+            let zooData = [];
+            let mathData = [];
+            let bioData = [];
             window.addEventListener('DOMContentLoaded',()=>{
                 fetchCourses();
             })
@@ -1175,33 +1152,96 @@
                    await fetch('http://localhost:3000/api/courses').then((res)=>{
                         return res.json();
                     }).then((data)=>{
-                        let chemData = [];
-                        let botData = [];
-                        let phyData =[];
-                        let zooData = [];
-                        let mathData = [];
-                        displayCourses(data,'course-list','.pagination_popular');
-                        data.map((obj)=>{
-                            if(obj.subject_name.toLowerCase() === 'chemistry'){
-                                chemData.push(obj);
-                            }else if(obj.subject_name.toLowerCase() === 'botany'){
-                                botData.push(obj);
-                            }else if(obj.subject_name.toLowerCase() === 'physics'){
-                                phyData.push(obj);
-                            }else if(obj.subject_name.toLowerCase() === 'zoology'){
-                                zooData.push(obj);
-                            }else{
-                                mathData.push(obj);
-                            }
-                        })
-                        displayCourses(chemData,'chem-course-list','.pagination_chem');
-                        displayCourses(botData,'bot-course-list','.pagination_bot');
-                        displayCourses(phyData,'phy-course-list','.pagination_phy');
-                        displayCourses(zooData,'zoo-course-list','.pagination_zoo');
+                   
+                            displayCourses(data,'course-list','.pagination_popular');
+                            data.map((obj)=>{
+                                if(obj.subject_name.toLowerCase() === 'chemistry'){
+                                    chemData.push(obj);
+                                }else if(obj.subject_name.toLowerCase() === 'botany'){
+                                    botData.push(obj);
+                                }else if(obj.subject_name.toLowerCase() === 'physics'){
+                                    phyData.push(obj);
+                                }else if(obj.subject_name.toLowerCase() === 'zoology'){
+                                    zooData.push(obj);
+                                }else if(obj.subject_name.toLowerCase() === 'biology'){
+                                    bioData.push(obj);
+                                }else{
+                                    mathData.push(obj);
+                                }
+                            })
+                            displayCourses(chemData,'chem-course-list','.pagination_chem');
+                            displayCourses(botData,'bot-course-list','.pagination_bot');
+                            displayCourses(phyData,'phy-course-list','.pagination_phy');
+                            displayCourses(zooData,'zoo-course-list','.pagination_zoo');
+                        
+                        
                     });
                 }catch(error){
                     console.log(error);
                 }
+            }
+            function filterCourses(event,subject_name){
+                console.log(subject_name)
+                event.preventDefault();
+                let dataArr = [];
+                if (subject_name === 'chemistry'){
+                    console.log('chemDATA is selected');
+                    dataArr = chemData;
+                }else if(subject_name === 'physics'){
+                    dataArr = phyData;
+                }else if(subject_name === 'biology'){
+                    dataArr = bioData;
+                }else if(subject_name === 'botany'){
+                    dataArr = botData;
+                }else if(subject_name === 'zoology'){
+                    dataArr = zooData;
+                }else {
+                    dataArr = mathData;
+                }
+                document.getElementById('chem-course-list').style.display = 'none';
+                document.getElementById('bot-course-list').style.display = 'none';
+                document.getElementById('phy-course-list').style.display = 'none';
+                document.getElementById('zoo-course-list').style.display = 'none';
+
+                document.getElementById('courses_heading').innerText ='our '+ subject_name +' Courses' ;
+
+                document.querySelector('.pagination_chem').style.display = 'none';
+                document.querySelector('.pagination_bot').style.display = 'none';
+                document.querySelector('.pagination_phy').style.display = 'none';
+                document.querySelector('.pagination_zoo').style.display = 'none';
+
+                document.getElementById('chem_course_heading').style.display = 'none';
+                document.getElementById('phy_course_heading').style.display = 'none';
+                document.getElementById('bot_course_heading').style.display = 'none';
+                document.getElementById('zoo_course_heading').style.display = 'none';
+
+                
+                
+
+                displayCourses(dataArr,'course-list','.pagination_popular');
+                
+                
+            }
+            function resetCourses(){
+                document.getElementById('chem-course-list').style.display = 'block';
+                document.getElementById('bot-course-list').style.display = 'block';
+                document.getElementById('phy-course-list').style.display = 'block';
+                document.getElementById('zoo-course-list').style.display = 'block';
+
+                document.getElementById('courses_heading').innerText ='Our Popular Courses' ;
+
+                document.querySelector('.pagination_chem').style.display = 'block';
+                document.querySelector('.pagination_bot').style.display = 'block';
+                document.querySelector('.pagination_phy').style.display = 'block';
+                document.querySelector('.pagination_zoo').style.display = 'block';
+
+                document.getElementById('chem_course_heading').style.display = 'block';
+                document.getElementById('phy_course_heading').style.display = 'block';
+                document.getElementById('bot_course_heading').style.display = 'block';
+                document.getElementById('zoo_course_heading').style.display = 'block';
+
+
+
             }
             function displayCourses(courses, parentID ,pagination_class){
                 // Render course list
