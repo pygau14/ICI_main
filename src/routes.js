@@ -65,40 +65,46 @@ router.use(bodyParser.json());
 router.post('/login',upload.none(),async(req,res)=>{
   const {email , password} = req.body;
   console.log('data received from front end ');
-  console.log(email, password);
-  console.log(req.body);
   
 
   try {
-    const client = await pool.connect();
+      const results = null;
     try{
-      const result = await client.query('SELECT * FROM users WHERE email = $1', [email]);
-      if (result.rows.length === 0) {
-        console.log('email is wrong')
-        return res.status(401).json({ message: 'Invalid email or password' });
-      }
-      const user = result.rows[0];
+      await pool.query('SELECT * FROM users WHERE email = ?', [email],async (error,result)=>{
+        if(error){
+          console.log('ERROR')
+          console.log(error);
 
-      const passwordMatch = await bcrypt.compare(password, user.password);
+        }
+        else{
+          if(result.length > 0){
+            const passwordMatch = await bcrypt.compare(password, result[0].password);
+            if(!passwordMatch){
+              console.log('password is wrong');
+              return res.status(401).json({message : 'Invalid email and password'});
+            }
+            else{
+              const token = jwt.sign({userID : result[0].id},'secret',{ expiresIn: '1h' });
+              res.cookie('token', token, { httpOnly: true });
+              res.status(200).json({message : 'Login Sucessful'});
+            }
+          }
+          else{
+            console.log('email is wrong');
+            return res.status(401).json({message:'Invalid email and password'});
+          }
+        }
+        
+        
+      });
 
-      if (!passwordMatch) {
-        console.log('password is wrong');
-        return res.status(401).json({ message: 'Invalid email or password' });
-      }
-
-      //jwt token
-      const token = jwt.sign({ userId: user.id }, 'secret', { expiresIn: '1h' });
-
-      res.cookie('token', token, { httpOnly: true });
-
-      res.status(200).json({staus :true, message: 'Login successful' });
     }catch (e) {
+      console.log('internal catch error');
       console.error(e);
       res.status(500).json({ message: 'Internal server error' });
-    }finally{
-      client.release();
     }
   }catch (e) {
+    console.log('outer catch erro');
     console.error(e);
     res.status(500).json({ message: 'Internal server error' });
   }
