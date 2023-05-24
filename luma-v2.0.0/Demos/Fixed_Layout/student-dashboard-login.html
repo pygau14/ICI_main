@@ -247,6 +247,8 @@
                                     <span>SIGN UP</span>
                                 </a>
 
+
+
                                 <!-- toggle icons -->
                                 <div class="header-bar d-lg-none">
                                     <span></span>
@@ -301,6 +303,9 @@
                             <a href="student-dashboard-signup.html" class="btn btn-outline-warning"><i class="fas fa-user-plus"></i></a>
                         </div>
                     </div>
+
+
+                    <h4 id="message"></h4>
                  <!-- stats start -->
                  <div class="pt-32pt pt-sm-64pt pb-32pt">
                     <div class="container page__container">
@@ -625,6 +630,8 @@
     <script src="assetss/js/counter-up.js"></script>
     <script src="assetss/js/isotope.pkgd.js"></script>
     <script src="assetss/js/functions.js"></script>
+      <!-- Include the jsonwebtoken library -->
+    <script src="https://cdn.jsdelivr.net/npm/jsonwebtoken@8.5.1"></script>
     <script>
         async function login(){
             const email = document.getElementById('email').value;
@@ -646,20 +653,27 @@
             });
 
             if(response.ok){
-                alert('Login Successful')
+                const data = await response.json();
+                alert('login Successful');
+                localStorage.setItem('token',data.token);
+                // Store the JWT in a cookie
+                document.cookie = `token=${data.token}`;
+                document.getElementById('message').style.display = 'none';
+                document.getElementById('login_btn').innerText = 'Setting';
+                document.getElementById('signup_btn').innerText = data.name;
                 window.location.href = 'http://127.0.0.1:5500/ICI_main/luma-v2.0.0/Demos/Fixed_Layout/index.html'
             }else{
                 const data = await response.json();
                 console.log(data.message);
+                document.getElementById('message').innerText = data.message;
             }
+
+
+
 
             // const login_one =Document.getElementById(login_btn);
             // document.getElementById(login_btn).style.display = "none";
             // console.log(login_one)
-            const login_successful = true;
-            if (login_successful){
-                
-            }
         }
 
     </script>

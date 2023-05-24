@@ -128,7 +128,8 @@
       padding: 20px;
       position: absolute;
       top: calc(100% - 100px);
-      left: 60px;
+      left: 50px;
+      width : 200px;
       z-index: 1;
       display: none;
     }
@@ -163,7 +164,7 @@
       cursor: pointer;
     }
 
-    #wishlist_btn{
+    .wishlist_btn{
       width : 100%;
       height : 50px;
       border: 1px solid white;
@@ -173,7 +174,20 @@
       transition: background-color .3s;
     }
 
-    #wishlist_btn:hover{
+    .wishlist_btn:hover{
+      background-color: rgb(5, 61, 5);
+    }
+    .moreinfo_btn{
+      width : 100%;
+      height : 50px;
+      border: 1px solid white;
+      background-color: rgb(44, 226, 44);
+      color: white;
+      text-align: center;
+      transition: background-color .3s;
+    }
+
+    .moreinfo_btn:hover{
       background-color: rgb(5, 61, 5);
     }
 
@@ -1137,14 +1151,40 @@
         <script src="assetss/js/isotope.pkgd.js"></script>
         <script src="assetss/js/functions.js"></script>
         <script>
+            let isLoggedIn = false;
             let chemData = [];
             let botData = [];
             let phyData =[];
             let zooData = [];
             let mathData = [];
             let bioData = [];
+            let name = '';
+            let email = ''
             window.addEventListener('DOMContentLoaded',()=>{
                 fetchCourses();
+                const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+            console.log(token);
+            isLoggedIn = !!token;
+            
+
+            if (isLoggedIn) {
+                const jwtvalue = token.split('=')[1];
+               // Decode the JWT manually
+                const decodedToken = JSON.parse(atob(jwtvalue.split('.')[1]));
+                name = decodedToken.name;
+                email = decodedToken.email;
+                document.getElementById('login_btn').innerText = name;
+                document.getElementById('login_btn').setAttribute('href','#');
+                document.getElementById('signup_btn').innerText = 'Logout';
+                document.getElementById('signup_btn').setAttribute('href','#');
+                document.getElementById('signup_btn').addEventListener('click',()=>{
+                    // Remove the token cookie
+                    document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+                    window.location.href = 'http://127.0.0.1:5500/ICI_main/luma-v2.0.0/Demos/Fixed_Layout/student-dashboard-login.html'
+                })
+
+            }
+                
             })
             async function fetchCourses(){
                 console.log('fetching the course')
@@ -1152,7 +1192,7 @@
                    await fetch('http://localhost:3000/api/courses').then((res)=>{
                         return res.json();
                     }).then((data)=>{
-                   
+                            console.log(data);
                             displayCourses(data,'course-list','.pagination_popular');
                             data.map((obj)=>{
                                 if(obj.subject_name.toLowerCase() === 'chemistry'){
@@ -1239,9 +1279,6 @@
                 document.getElementById('phy_course_heading').style.display = 'block';
                 document.getElementById('bot_course_heading').style.display = 'block';
                 document.getElementById('zoo_course_heading').style.display = 'block';
-
-
-
             }
             function displayCourses(courses, parentID ,pagination_class){
                 // Render course list
@@ -1312,7 +1349,7 @@
                     courseMeta.classList.add("course-meta");
 
                     const courseMetaText = document.createElement("p");
-                    courseMetaText.textContent = `${course.topic_list.length} courses`;
+                    courseMetaText.textContent = `${course.topic_list.length} Lessons`;
                     courseMeta.appendChild(courseMetaText);
 
                     courseInfo.appendChild(courseMeta);
@@ -1339,9 +1376,10 @@
                     popoverList.classList.add("popover-list");
 
                     course.topic_list.forEach((topic,index) => {
+                        console.log(topic.topic_name);
                         const popoverListItem = document.createElement("li");
                         popoverListItem.classList.add("popover-list-item");
-                        popoverListItem.textContent =index+1+" "+ topic.topic;
+                        popoverListItem.textContent =(index+1)+" "+ topic.topic_name;
                         popoverListItem.addEventListener("mouseover", () => {
                         popoverListItem.style.color = "blue";
                         });
@@ -1358,21 +1396,16 @@
                     popoverMeta.classList.add("course-meta");
 
                     const avgRatingText = document.createElement("p");
-                    avgRatingText.textContent = `Rating: ${avgRating.toFixed(1)}`;
+                    avgRatingText.textContent = `Rating: ${avgRating.toFixed(1)}`+" ";
 
                     const courseCountText = document.createElement("p");
-                    courseCountText.textContent = `Courses: ${course.topic_list.length}`;
-
-                    const wishlistButton = document.createElement('button');
-                    wishlistButton.setAttribute('id','wishlist_btn');
-                    wishlistButton.innerText = 'Add to Cart';
+                    courseCountText.textContent =" "+` Courses: ${course.topic_list.length}`;
 
 
                     popoverMeta.appendChild(avgRatingText);
                     popoverMeta.appendChild(courseCountText);
 
                     popover.appendChild(popoverMeta);
-                    popover.appendChild(wishlistButton);
                     courseElement.appendChild(popover);
 
                     courseElement.addEventListener("click", (event) => {
@@ -1382,11 +1415,58 @@
 
                     });
 
+                    
 
 
                     courseList.appendChild(courseElement);
                     });
                 }
+                //function for wishlist functionality -
+                async function wishlist(course){
+                    const wishlist_btn = document.getElementById('wishlist_btn');
+                    if(isLoggedIn){
+                        console.log(course);
+                        const nameValue  = name;
+                        const emailValue  = email;
+                        const className = course.class;
+                        const subject_name = course.subject_name;
+                        const chapter_name = course.chapter_name;
+                        let topics_name = "";
+                        let course_url = "";
+                        course.topic_list.map((topic)=>{
+                            topics_name+=topic.topic_name+"+";
+                            course_url += topic.course_url+"+";
+                        })
+
+                        const formData = new FormData();
+
+                        formData.append('name',name);
+                        formData.append('email',email);
+                        formData.append('className',className);
+                        formData.append('subject_name',subject_name);
+                        formData.append('chapter_name',chapter_name);
+                        formData.append('topics_name',topics_name);
+                        formData.append('course_url',course_url);
+
+                        const response  = await fetch('http://localhost:3000/api/add-course',{
+                            method : 'POST',
+                            body : formData
+                        })
+
+                        if(response.ok){
+                            const idValue = "id_wish"+course_chapter_name;
+                            document.getElementById(idValue).innerText = 'Added';
+                        }
+                        else{
+                            alert('Error adding course, trying again.....')
+                            wishlist(course);
+                        }
+                    }
+                    else{
+                        window.location.href = 'http://127.0.0.1:5500/ICI_main/luma-v2.0.0/Demos/Fixed_Layout/student-dashboard-login.html'
+                    }
+                }
+
                 function renderPagination(){
                     paginationContainer.innerHTML = "";
 

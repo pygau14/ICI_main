@@ -861,9 +861,11 @@
             const password  =document.getElementById('validationSample10').value;
             const confirmPassword = document.getElementById('validationSample11').value;
 
-            const subjects = Array.from(subjectsELE.selectedOptions).map(option => option.outerText);
-            const courses = Array.from(coursesELE.selectedOptions).map(option=>option.outerText);
+            const subjectsArr = Array.from(subjectsELE.selectedOptions).map(option => option.outerText);
+            const coursesArr = Array.from(coursesELE.selectedOptions).map(option=>option.outerText);
 
+
+            console.log(subjectsArr,coursesArr)
             // let profile_picture  = new Dropzone('#myDropZone',{
             //     url : 'http://',
             //     paramName: "file", // the name of the file parameter
@@ -873,6 +875,11 @@
             // profile_picture.on("success", function(file, response) {
             //     console.log("Uploaded file:", file);
             // });
+            let subStr =""
+            const subjects = subjectsArr.map(option=>subStr+=option+"/");
+            let couStr ="";
+            const courses = coursesArr.map(option=>couStr+=option+'/');
+            console.log(subjects,courses);
 
            const profile_picture = new Image();
            profile_picture.src = './sir.png';
@@ -902,8 +909,8 @@
             formData.append('street_address', street_address);
             formData.append('school_name', school_name);
             formData.append('institute_name', institute_name);
-            formData.append('courses', courses);
-            formData.append('subjects', subjects);
+            formData.append('courses', couStr);
+            formData.append('subjects', subStr);
             formData.append('profile_picture', profile_picture);
 
             const response  = await fetch('http://localhost:3000/signup',{
