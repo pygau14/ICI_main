@@ -1280,7 +1280,7 @@
         <script src="assetss/js/isotope.pkgd.js"></script>
         <script src="assetss/js/functions.js"></script>
         <script>
-            let isLoggedIn = false;
+            
             let chemData = [];
             let botData = [];
             let phyData =[];
@@ -1288,7 +1288,8 @@
             let mathData = [];
             let bioData = [];
             let name = '';
-            let email = ''
+            let email = '';
+            let isLoggedIn = false;
             window.addEventListener('DOMContentLoaded',()=>{
                 fetchCourses();
                 const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
@@ -1318,7 +1319,7 @@
             async function fetchCourses(){
                 console.log('fetching the course')
                 try {
-                   await fetch('http://localhost:3000/api/courses').then((res)=>{
+                   await fetch('https://ici-backend.onrender.com/api/courses').then((res)=>{
                         return res.json();
                     }).then((data)=>{
                             console.log(data);
@@ -1481,8 +1482,30 @@
                     courseMetaText.textContent = `${course.topic_list.length} Lessons`;
                     courseMeta.appendChild(courseMetaText);
 
+                    const wishlistBtn = document.createElement('button');
+                    wishlistBtn.setAttribute('class','wishlist_btn');
+                    wishlistBtn.innerText = 'Add to Profile';
+                    const id = 'id_wish'+course.chapter_name;
+                    wishlistBtn.setAttribute('id',id);
+
+                    const moreinfoBtn = document.createElement('button');
+                    moreinfoBtn.setAttribute('class','moreinfo_btn');
+                    moreinfoBtn.innerText = 'More Info';
+                    const id2 = 'id_more'+course.chapter_name;
+                    moreinfoBtn.setAttribute('id',id2);
+
                     courseInfo.appendChild(courseMeta);
                     courseElement.appendChild(courseInfo);
+                    courseElement.appendChild(wishlistBtn);
+                    courseElement.appendChild(moreinfoBtn);
+
+                    wishlistBtn.addEventListener('click',()=>{
+                        wishlist(course);
+                    })
+                    
+                    moreinfoBtn.addEventListener('click',()=>{
+                        moreinfo(course);
+                    })
 
                     const popover = document.createElement("div");
                     popover.classList.add("popover");
@@ -1552,7 +1575,6 @@
                 }
                 //function for wishlist functionality -
                 async function wishlist(course){
-                    const wishlist_btn = document.getElementById('wishlist_btn');
                     if(isLoggedIn){
                         console.log(course);
                         const nameValue  = name;
@@ -1569,21 +1591,22 @@
 
                         const formData = new FormData();
 
-                        formData.append('name',name);
-                        formData.append('email',email);
+                        formData.append('name',nameValue);
+                        formData.append('email',emailValue);
                         formData.append('className',className);
                         formData.append('subject_name',subject_name);
                         formData.append('chapter_name',chapter_name);
                         formData.append('topics_name',topics_name);
                         formData.append('course_url',course_url);
 
-                        const response  = await fetch('http://localhost:3000/api/add-course',{
+                        const response  = await fetch('https://ici-backend.onrender.com/api/add-course',{
                             method : 'POST',
                             body : formData
                         })
 
                         if(response.ok){
-                            const idValue = "id_wish"+course_chapter_name;
+                            console.log('response was okay')
+                            const idValue = "id_wish"+course.chapter_name;
                             document.getElementById(idValue).innerText = 'Added';
                         }
                         else{
@@ -1592,10 +1615,13 @@
                         }
                     }
                     else{
-                        window.location.href = 'http://127.0.0.1:5500/ICI_main/luma-v2.0.0/Demos/Fixed_Layout/student-dashboard-login.html'
+                        window.location.href ='student-dashboard-login.html'
                     }
                 }
-
+                function moreinfo(course){
+                    localStorage.setItem('course', JSON.stringify(course));
+                    window.location.href = 'student-course-1.html'
+                }
                 function renderPagination(){
                     paginationContainer.innerHTML = "";
 

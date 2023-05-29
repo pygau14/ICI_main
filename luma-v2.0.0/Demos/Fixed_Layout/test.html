@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .timer {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .question {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .options {
+      list-style-type: decimal;
+      padding: 0;
+    }
+
+    .options li {
+      margin-bottom: 10px;
+    }
+
+    .option {
+      display: block;
+      background-color: #f2f2f2;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .option:hover {
+      background-color: #e6e6e6;
+    }
+
+    .end-test-btn {
+      display: block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #f44336;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .end-test-btn:hover {
+      background-color: #d32f2f;
+    }
+
+  .option.selected {
+    background-color: #ffc107; /* Change to your desired highlight color */
+  }
+  .progress {
+    font-size: 18px;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="title">Test</div>
+      <div class="timer"></div>
+    </div>
+    <div id="question-container"></div>
+    <button class="end-test-btn">End Test</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script>
+    // Fetch questions from the backend (Node.js)
+    fetch("https://ici-backend.onrender.com/question-test")
+      .then(response => response.json())
+      .then(questions => {
+        var questionContainer = document.getElementById("question-container");
+        var questionNumber = 1;
+
+        questions.forEach(function(questionObj) {
+          var questionHTML = "<p class='question'>" + questionNumber + ". " + questionObj.question + "</p>";
+          questionNumber++;
+
+          var optionsHTML = "<ul class='options'>";
+            optionsHTML += "<li class='option'>" + questionObj.option1 + "</li>";
+            optionsHTML += "<li class='option'>" + questionObj.option2 + "</li>";
+            optionsHTML += "<li class='option'>" + questionObj.option3 + "</li>";
+            optionsHTML += "<li class='option'>" + questionObj.option4 + "</li>";
+            optionsHTML += "</ul>";
+
+          questionHTML += optionsHTML;
+          questionContainer.innerHTML += questionHTML;
+        });
+
+        options.forEach(function(option) {
+      var optionElement = document.createElement("li");
+      optionElement.className = "option";
+      optionElement.textContent = option;
+      optionElement.addEventListener("click", function() {
+        // Remove "selected" class from all options
+        var allOptions = document.querySelectorAll(".option");
+        allOptions.forEach(function(option) {
+          option.classList.remove("selected");
+        });
+  
+        // Add "selected" class to the clicked option
+        this.classList.add("selected");
+      });
+  
+      optionsList.appendChild(optionElement);
+    });
+
+
+        // Render MathJax syntax
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub, "question-container"]);
+      })
+      .catch(error => console.error("Error fetching questions:", error));
+
+      // Decode username from token
+// var token = "example_token"; // Replace with your actual token
+// var username = atob(token); // Decodes the token
+
+// Display username
+var headerElement = document.querySelector(".header");
+var usernameElement = document.createElement("div");
+usernameElement.textContent = "Username: " + "Test User 2";
+headerElement.appendChild(usernameElement);
+
+// Timer countdown
+var timerElement = document.querySelector(".timer");
+var endTime = new Date().getTime() + 60 * 60 * 1000; // 1 hour from current time
+
+function updateTimer() {
+  var now = new Date().getTime();
+  var distance = endTime - now;
+
+  // Calculate minutes and seconds
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display remaining time
+  timerElement.textContent = "Time Remaining: " + minutes + "m " + seconds + "s";
+
+  // Check if time is up
+  if (distance < 0) {
+    clearInterval(timerInterval);
+    alert("The test has ended due to the time limit.");
+    window.location.href = "score.html";
+  }
+}
+
+// Update timer every second
+var timerInterval = setInterval(updateTimer, 1000);
+
+// End test button event listener
+var endTestBtn = document.querySelector(".end-test-btn");
+endTestBtn.addEventListener("click", function() {
+  clearInterval(timerInterval);
+  alert("You have ended the test.");
+  window.location.href = "score.html";
+});
+
+  </script>
+  <script>
+    // Inside the fetch questions loop, add a click event listener to each option
+    options.forEach(function(option) {
+      var optionElement = document.createElement("li");
+      optionElement.className = "option";
+      optionElement.textContent = option;
+      optionElement.addEventListener("click", function() {
+        // Remove "selected" class from all options
+        var allOptions = document.querySelectorAll(".option");
+        allOptions.forEach(function(option) {
+          option.classList.remove("selected");
+        });
+  
+        // Add "selected" class to the clicked option
+        this.classList.add("selected");
+      });
+  
+      optionsList.appendChild(optionElement);
+    });
+
+    // After fetching questions, calculate the total number of questions
+  var totalQuestions = questions.length;
+
+// Inside the fetch questions loop, update the progress indicator
+var progressElement = document.createElement("div");
+progressElement.className = "progress";
+questionContainer.insertBefore(progressElement, questionContainer.firstChild);
+
+function updateProgress(currentQuestion) {
+  progressElement.textContent = "Question " + currentQuestion + " of " + totalQuestions;
+}
+
+questions.forEach(function(questionObj, index) {
+  // ...
+
+  // Call the updateProgress function for each question
+  updateProgress(index + 1);
+});
+  </script>
+
+  
+</body>
+</html>
+
