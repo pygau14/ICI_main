@@ -283,10 +283,8 @@
                                     </ul>
                                 </div>
 
-                                <a href="student-dashboard-login.html" id="login_btn" class="login"><i class="icofont-user"></i>
+                                <a href="" id="admin_login_btn" class="login"><i class="icofont-user"></i>
                                     <span>LOG IN</span> </a>
-                                <a href="student-dashboard-signup.html" id="signup_btn" class="signup"><i class="icofont-users"></i>
-                                    <span>SIGN UP</span>
                                 </a>
 
                                 <!-- toggle icons -->
@@ -966,6 +964,53 @@
     <script src="assetss/js/counter-up.js"></script>
     <script src="assetss/js/isotope.pkgd.js"></script>
     <script src="assetss/js/functions.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded',()=>{
+            fetchDashboardData();
+        })
+        async function fetchDashboardData(){
+            await fetch('https://ici-backend.onrender.com/api/totalStudents').then((res)=>{
+                return res.json();
+            }).then((data)=>{
+                console.log("total students",data);
+            }).catch((err)=>{
+                console.log(err);
+            })
+
+            await fetch('https://ici-backend.onrender.com/api/paidStudents').then((res)=>{
+                return res.json();
+            }).then((data)=>{
+                console.log("total paid students",data);
+            }).catch((err)=>{
+                console.log(err);
+            })
+            await fetch('https://ici-backend.onrender.com/api/courses').then((res)=>{
+                return res.json();
+            }).then((data)=>{
+                console.log('total courses', data)
+            }).catch((err)=>{
+                console.log(err);
+            })
+
+            await fetch('https://ici-backend.onrender.com/totalTests').then((res)=>{
+                return res.json();
+            }).then((data)=>{
+                console.log('total test', data);
+            }).catch((err)=>{
+                console.log(err);
+            })
+            await fetch('https://ici-backend.onrender.com/api/ncert-books').then((res)=>{
+                return res.json();
+            }).then((data)=>{
+                console.log("total books",data);
+            }).catch((err)=>{
+                console.log(err);
+            })
+
+
+        }
+    </script>
+
     <script>
         (function () {
             'use strict';
