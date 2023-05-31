@@ -646,6 +646,8 @@
     <script src="assetss/js/counter-up.js"></script>
     <script src="assetss/js/isotope.pkgd.js"></script>
     <script src="assetss/js/functions.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
         let isLoggedIn = false;
         window.addEventListener('DOMContentLoaded',()=>{
@@ -668,7 +670,7 @@
                 document.getElementById('signup_btn').addEventListener('click',()=>{
                     // Remove the token cookie
                     document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-                    window.location.href = 'http://127.0.0.1:5500/ICI_main/luma-v2.0.0/Demos/Fixed_Layout/student-dashboard-login.html'
+                    window.location.href = '  student-dashboard-login.html'
                 })
 
             }
@@ -737,10 +739,10 @@
         function submitForm(){
             if(isLoggedIn){
                 localStorage.setItem('question_set',document.getElementById('question_option').value);
-                window.location.href = 'http://127.0.0.1:5500/ICI_main/luma-v2.0.0/Demos/Fixed_Layout/mcq.html';
+                window.location.href = 'mcq.html';
             }
             else {
-                window.location.href = 'http://127.0.0.1:5500/ICI_main/luma-v2.0.0/Demos/Fixed_Layout/student-dashboard-login.html';
+                window.location.href = 'student-dashboard-login.html';
             }
         }
     </script>

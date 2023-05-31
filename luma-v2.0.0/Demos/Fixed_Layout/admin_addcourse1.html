@@ -285,11 +285,9 @@
                         </ul>
                     </div>
 
-                    <a href="student-dashboard-login.html" id="login_btn" class="login"><i class="icofont-user"></i>
+                    <a href="admin-dashboard-login.html" id="admin_login_btn" class="login"><i class="icofont-user"></i>
                         <span>LOG IN</span> </a>
-                    <a href="student-dashboard-signup.html" id="signup_btn" class="signup"><i class="icofont-users"></i>
-                        <span>SIGN UP</span>
-                    </a>
+                    
 
                     <!-- toggle icons -->
                     <div class="header-bar d-lg-none">
@@ -794,12 +792,33 @@
     <script src="assetss/js/isotope.pkgd.js"></script>
     <script src="assetss/js/functions.js"></script>
     <script>
+        window.addEventListener('DOMContentLoaded',()=>{
+            const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+             console.log(token);
+             const isLoggedIn = !!token;
+             let name = '';
+             let email ='';
+ 
+             if (isLoggedIn) {
+                 const jwtvalue = token.split('=')[1];
+                // Decode the JWT manually
+                 const decodedToken = JSON.parse(atob(jwtvalue.split('.')[1]));
+                 name = decodedToken.name;
+                 email = decodedToken.email;
+                 document.getElementById('admin_login_btn').innerText = name;
+                 document.getElementById('admin_login_btn').setAttribute('href','#');
+                 
+ 
+             }
+        })
+    </script>
+    <script>
         function fetchSubjects(){
             document.getElementById('select_subject').addEventListener('change',fetchChapters)
             const selectedClass = document.getElementById('select_class').value;
             if(!selectedClass) return ;
 
-            fetch('http://localhost:3000/subjects/'+selectedClass).then((res)=>{
+            fetch('https://ici-backend.onrender.com/subjects/'+selectedClass).then((res)=>{
                 return res.json();
             }).then((data)=>{
                 populateDropDowns('select_subject',data);
@@ -822,7 +841,7 @@
 
             if (!selectedClass || !subject_name) return;
 
-            fetch('http://localhost:3000/chapters/'+selectedClass+'/'+subject_name).then((res)=>{
+            fetch('https://ici-backend.onrender.com/chapters/'+selectedClass+'/'+subject_name).then((res)=>{
                 return res.json();
             }).then((data)=>{
                 populateDropDowns('select_chapter',data);
@@ -834,7 +853,7 @@
             const chapter_name = document.getElementById('select_chapter').value;
             console.log(selectedClass,chapter_name);
             if(!selectedClass || !chapter_name)return;
-            const URL = 'http://localhost:3000/topics/'+selectedClass+'/'+chapter_name;
+            const URL = 'https://ici-backend.onrender.com/topics/'+selectedClass+'/'+chapter_name;
             fetch(URL).then((res)=>{
                 return res.json()
             }).then((data)=>{

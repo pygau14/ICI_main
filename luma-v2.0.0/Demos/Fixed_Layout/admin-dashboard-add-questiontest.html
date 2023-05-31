@@ -5,15 +5,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+
+
+
+      
     <title>INTELLIGENCE CAREER INSTITUTE: Premier Institute for Academic and Competitive Exam Preparation in Lucknow,
         Uttar Pradesh</title>
     <link rel="shortcut icon" href="assetss/images/about/favicon.png" type="image/x-icon">
 
     <!-- Prevent the demo from appearing in search engines -->
     <meta name="robots" content="noindex">
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CExo+2:600&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css">
+    
 
     <!-- Preloader -->
     <link type="text/css" href="../../public/vendor/spinkit.css" rel="stylesheet">
@@ -38,16 +43,203 @@
     <link rel="stylesheet" href="assetss/css/swiper.min.css">
     <link rel="stylesheet" href="assetss/css/lightcase.css">
     <link rel="stylesheet" href="assetss/css/style.css">
-    <style>
-        .fonsize {
-            font-size: 18px;
-        }
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
 
-        .wish {
-            margin-left: 877px;
+    .avtar {
+        width: 20%;
+    }
 
-        }
-        /* <!-- Footer CSS --> */
+    .avtar img {
+        margin-top: 1rem;
+    }
+
+    .range {
+        width: 70%;
+        border-right: 2px solid gray;
+        padding: 20px
+    }
+
+    .rank {
+        width: 20%;
+        text-align: center;
+    }
+
+    .pooj {
+        border: 2px solid gray;
+    }
+
+    .range {
+        padding: auto 30px;
+    }
+
+    .www {
+        background-color: rgba(0, 0, 0, 0.5);
+        height: 0.6rem;
+        width: 100%;
+        border-radius: 8px;
+        display: none;
+
+    }
+
+    .fonsize {
+        font-size: 18px;
+    }
+
+    /* .search1 {
+        
+        margin-left: -156px;
+        height: 46px;
+    } */
+    .popup {
+        display: none;
+        position: fixed;
+        padding: 10px;
+        width: 280px;
+        left: 50%;
+        margin-left: -150px;
+        height: 180px;
+        top: 50%;
+        margin-top: -100px;
+        background: #FFF;
+
+        z-index: 20;
+    }
+
+    #popup:after {
+        position: fixed;
+        content: "";
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -2;
+    }
+
+    #popup:before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: #FFF;
+        z-index: -1;
+    }
+
+    /* Styling buttons & webpage */
+
+    body {
+        background: offwhite;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    button {
+        margin-top: 50px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border: 3px solid #F04A49;
+        color: #F04A49;
+        font-size: 25px;
+        padding: 10px 20px;
+
+    }
+
+    button:hover {
+        background-color: #F04A49;
+        color: #FFF;
+        border: 3px solid #F04A49;
+        transition: all 0.3s ease 0s;
+    }
+
+    p {
+        margin: 1em 0;
+        font-size: 16px;
+    }
+
+
+    .popupk {
+        display: none;
+        position: fixed;
+        padding: 10px;
+        width: 280px;
+        left: 50%;
+        margin-left: -150px;
+        height: 180px;
+        top: 50%;
+        margin-top: -100px;
+        background: #FFF;
+        border: 3px solid #F04A49;
+        z-index: 20;
+    }
+
+    #popupk:after {
+        position: fixed;
+        content: "";
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -2;
+    }
+
+    #popupk:before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: #FFF;
+        z-index: -1;
+    }
+
+    /* Styling buttons & webpage */
+
+    body {
+        background: offwhite;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    button {
+        margin-top: 50px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border: 3px solid #F04A49;
+        color: #F04A49;
+        font-size: 25px;
+        padding: 10px 20px;
+
+    }
+
+    button:hover {
+        background-color: #F04A49;
+        color: #FFF;
+        border: 3px solid #F04A49;
+        transition: all 0.3s ease 0s;
+    }
+
+    p {
+        margin: 1em 0;
+        font-size: 16px;
+    }
+
+    .close-1 {
+        margin-left: 249px;
+        font-size: 24px;
+        margin-top: -13px;
+        
+    }
+    /* <!-- Footer CSS --> */
     .footer-bottom {
             padding: 0px 0;
             background: #fff;
@@ -89,16 +281,9 @@
             .footer06{
             margin-left:0px!important;
         }
-        .wish {
-                margin-left: 110px !important;
-
-            }
         
         }
-
-        
-    </style>
-</head>
+</style>
 
 <body class="layout-sticky-subnav layout-default ">
 
@@ -121,9 +306,10 @@
     </div>
 
     <!-- Header Layout -->
-    <div class="mdk-header-layout js-mdk-header-layout ">
+    <div class="mdk-header-layout js-mdk-header-layout">
 
         <!-- Header -->
+
         <div id="header" class="mdk-header mdk-header--bg-dark bg-dark js-mdk-header mb-0 "
             data-effects="parallax-background waterfall" data-fixed data-condenses>
             <div class="mdk-header__bg">
@@ -156,68 +342,68 @@
                     </a>
 
                     <!-- <ul class="nav navbar-nav d-none d-sm-flex flex justify-content-start ml-8pt">
-                        <li class="nav-item active">
-                            <a href="index.html"
-                               class="nav-link">Home</a>
-                        </li>
-                       
-                        <li class="nav-item dropdown">
-                            <a href="#"
-                               class="nav-link dropdown-toggle"
-                               data-toggle="dropdown"
-                               data-caret="false">Courses List</a>
-                            <div class="dropdown-menu ">
-                                <a href="courses.html"
-                                   class="dropdown-item ">IX
-                                </a>
-                                <a href="student-course.html"
-                                   class="dropdown-item">X
-                                </a>
-                                <a href="student-lesson.html"
-                                   class="dropdown-item">XI
-                                </a>
-                               
-                                <a href="student-take-lesson.html"
-                                   class="dropdown-item">XII</a>
-                                <a href="student-take-quiz.html"
-                                   class="dropdown-item">JEE</a>
-                                <a href="student-quiz-result-details.html"
-                                   class="dropdown-item">NEET</a>
-                               
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a href="#"
-                               class="nav-link dropdown-toggle"
-                               data-toggle="dropdown"
-                               data-caret="false">Resources</a>
-                            <div class="dropdown-menu">
-                                <a href="paths.html"
-                                   class="dropdown-item">NCERT eBook</a>
-                                <a href="student-path.html"
-                                   class="dropdown-item">Question practice</a>
-                                <a href="student-path-assessment.html"
-                                   class="dropdown-item">Chapter Journey</a>
-                                <a href="student-path-assessment-result.html"
-                                   class="dropdown-item">Test</a>
-                              
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pricing.html"
-                               class="nav-link">Leaderboard</a>
-                        </li>
-                        
-                        <li class="nav-item ">
-                            <a href="about.html"
-                               class="nav-link">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="contact.html"
-                               class="nav-link">Contact</a>
-                        </li>
-                       
-                    </ul> -->
+                            <li class="nav-item active">
+                                <a href="index.html"
+                                   class="nav-link">Home</a>
+                            </li>
+                           
+                            <li class="nav-item dropdown">
+                                <a href="#"
+                                   class="nav-link dropdown-toggle"
+                                   data-toggle="dropdown"
+                                   data-caret="false">Courses List</a>
+                                <div class="dropdown-menu ">
+                                    <a href="courses.html"
+                                       class="dropdown-item ">IX
+                                    </a>
+                                    <a href="student-course.html"
+                                       class="dropdown-item">X
+                                    </a>
+                                    <a href="student-lesson.html"
+                                       class="dropdown-item">XI
+                                    </a>
+                                   
+                                    <a href="student-take-lesson.html"
+                                       class="dropdown-item">XII</a>
+                                    <a href="student-take-quiz.html"
+                                       class="dropdown-item">JEE</a>
+                                    <a href="student-quiz-result-details.html"
+                                       class="dropdown-item">NEET</a>
+                                   
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#"
+                                   class="nav-link dropdown-toggle"
+                                   data-toggle="dropdown"
+                                   data-caret="false">Resources</a>
+                                <div class="dropdown-menu">
+                                    <a href="paths.html"
+                                       class="dropdown-item">NCERT eBook</a>
+                                    <a href="student-path.html"
+                                       class="dropdown-item">Question practice</a>
+                                    <a href="student-path-assessment.html"
+                                       class="dropdown-item">Chapter Journey</a>
+                                    <a href="student-path-assessment-result.html"
+                                       class="dropdown-item">Test</a>
+                                  
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pricing.html"
+                                   class="nav-link">Leaderboard</a>
+                            </li>
+                            
+                            <li class="nav-item ">
+                                <a href="about.html"
+                                   class="nav-link">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="contact.html"
+                                   class="nav-link">Contact</a>
+                            </li>
+                           
+                        </ul> -->
 
 
                 </div>
@@ -237,7 +423,7 @@
 
 
 
-            <!-- new header -->
+             <!-- new header -->
             <!-- header section start here -->
             <header class="header-section">
 
@@ -295,11 +481,9 @@
                                     </ul>
                                 </div>
 
-                                <a href="student-dashboard-login.html" id="login_btn" class="login"><i class="icofont-user"></i>
+                                <a href="admin-dashboard-login.html" id="admin_login_btn" class="login"><i class="icofont-user"></i>
                                     <span>LOG IN</span> </a>
-                                <a href="student-dashboard-signup.html" id="signup_btn" class="signup"><i class="icofont-users"></i>
-                                    <span>SIGN UP</span>
-                                </a>
+                                
 
                                 <!-- toggle icons -->
                                 <div class="header-bar d-lg-none">
@@ -318,141 +502,76 @@
 
 
 
-            <div class="pt-32pt" style="margin:6rem;margin-top: 140px;">
-                <div
-                    class="container page__container d-flex flex-column flex-md-row align-items-center text-center text-sm-left">
-                    <div class="flex d-flex flex-column flex-sm-row align-items-center mb-24pt mb-md-0 ">
 
-                        <div class="mb-24pt mb-sm-0 mr-sm-24pt">
-                            <h2 class="mb-0 ">Dashboard</h2>
 
-                            <ol class="breadcrumb p-0 m-0">
-                                <li class="breadcrumb-item fonsize"><a href="admin-dashboard-1.html">Dashboard</a></li>
 
-                                <li class="breadcrumb-item active fonsize">
 
-                                    Question Bank
 
-                                </li>
+            <!-- leader board started -->
 
-                            </ol>
 
+            <div class="container " style="margin-top:150px;">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3 class="text-center">All Questions</h3>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                aria-labelledby="pills-home-tab" tabindex="0">
+                                <div class="container">
+                                    <div class="row text-center pooj mb-3">
+
+                                        <form action="/action_page.php">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <input type="text" placeholder="Search.." name="search">
+                                                </div>
+
+                                            </div>
+
+
+
+                                        </form>
+
+
+                                    </div>
+
+
+
+                                    <div class="row" id="parentDiv">
+                                        
+                                        
+                                    </div>
+                                    <div class="text-center">
+                                        <button class="btn btn-primary fonsize" onclick="generateQuestions('save')">Save</button>
+                                        <!-- <button class="btn btn-primary fonsize" ><a href="#" style="color:white">Publish</a></button> -->
+                                        <button class="button btn btn-primary fonsize" href="#"
+                                            onclick="generateQuestions('publish')">Publish</button>
+
+                                      
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination ">
+                                    <li class="page-item fonsize"><a class="page-link" href="#">Previous</a></li>
+                                    <li class="page-item fonsize"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item fonsize"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item fonsize"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item fonsize"><a class="page-link" href="#">Next</a></li>
+                                </ul>
+                            </nav>
 
 
                         </div>
-
                     </div>
-
-
-
                 </div>
             </div>
 
-            <div class="container page__container">
-                <div class="page-section">
-
-                    <div class="page-separator justify-content-between">
-                        <div class="page-separator__text fonsize">Overview</div>
-
-                    </div>
-                    <!-- stats start -->
-                    <div class="row card-group-row mb-lg-8pt justify-content-center">
-                        <div class="col-lg-6 col-md-6 card-group-row__col">
-                            <div class="card card-group-row__card">
-                                <div class="card-body d-flex align-items-center">
-                                    <div class="flex d-flex  align-items-center">
-
-                                        <div class="h2 mb-0 mr-3 ">Create Question Paper</div>
-
-                                    </div>
-                                    <button class="btn btn-primary"><a href="admin-dashboard-add-question-bank.html"
-                                            style="color:white;">Click Here</a></button>
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 card-group-row__col">
-                            <div class="card card-group-row__card">
-                                <div class="card-body d-flex align-items-center">
-                                    <div class="flex d-flex align-items-center">
-                                        <div class="h2 mb-0 mr-3">Manage Question Paper</div>
-
-                                    </div>
-                                    <button class="btn btn-primary"><a
-                                            href="admin-dashboard-add-manage-question-paper.html"
-                                            style="color:white;">Click Here</a></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 card-group-row__col">
-                            <div class="card card-group-row__card">
-                                <div class="card-body d-flex align-items-center">
-                                    <div class="flex d-flex align-items-center">
-                                        <div class="h2 mb-0 mr-3">Previous Question Paper</div>
-
-                                    </div>
-
-
-                                    <button class="btn btn-primary"><a
-                                            href="admin-dashboard-add-previous-question-paper.html"
-                                            style="color:white;">Click Here</a></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 card-group-row__col">
-                            <div class="card card-group-row__card">
-                                <div class="card-body d-flex align-items-center">
-                                    <div class="flex d-flex align-items-center">
-                                        <div class="h2 mb-0 mr-3">Saved Test Paper</div>
-
-                                    </div>
-
-                                    <button class="btn btn-primary"><a
-                                            href="admin-dashboard-add-saved-question-paper.html"
-                                            style="color:white;">Click Here</a></button>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- stats end -->
-
-
-
-
-
-
-
-
-
-
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <!-- leadr board end -->
 
         </div>
         <!-- // END Header Layout Content -->
@@ -788,6 +907,7 @@
 
 
 
+
                 <!-- // END Sidebar Content -->
 
             </div>
@@ -795,7 +915,7 @@
     </div>
 
     <!-- // END Drawer -->
-
+   
     <!-- jQuery -->
     <script src="../../public/vendor/jquery.min.js"></script>
 
@@ -825,6 +945,190 @@
     <script src="assetss/js/counter-up.js"></script>
     <script src="assetss/js/isotope.pkgd.js"></script>
     <script src="assetss/js/functions.js"></script>
+    
+
+
+    <script>
+        let mainArr = [];
+        let test_id = null;
+        window.addEventListener('DOMContentLoaded',()=>{
+            const question_set = localStorage.getItem('admin_question_set');
+            test_id = localStorage.getItem('test_id');
+            console.log(question_set,test_id);
+            
+
+            const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+             console.log(token);
+             const isLoggedIn = !!token;
+             let name = '';
+             let email ='';
+ 
+             if (isLoggedIn) {
+                 const jwtvalue = token.split('=')[1];
+                // Decode the JWT manually
+                 const decodedToken = JSON.parse(atob(jwtvalue.split('.')[1]));
+                 name = decodedToken.name;
+                 email = decodedToken.email;
+                 document.getElementById('admin_login_btn').innerText = name;
+                 document.getElementById('admin_login_btn').setAttribute('href','#');
+                 
+ 
+             }
+
+            fetchSets(question_set);
+
+        })
+        async function fetchSets(question_set ){
+            await fetch(`https://ici-backend.onrender.com/question-paper?questionSet=${question_set}`).then((res)=>{
+                return res.json();
+            }).then((data)=>{
+                mainArr = data;
+                console.log(data);
+                data.forEach((questionObj)=>{
+                    createQuestionElement(questionObj);
+                })
+            }).catch((err)=>{
+                console.log(err);
+            })
+        };
+       
+      
+        
+        
+        
+            // Function to create the DOM structure
+            function createQuestionElement(questionObj) {
+                const parentDiv = document.getElementById("parentDiv");
+
+                // Create the main container div
+                const containerDiv = document.createElement("div");
+                containerDiv.className = "col-lg-12 d-flex pooj align-items-center mb-3";
+                containerDiv.style.display = 'flex';
+                containerDiv.style.justifyContent = 'space-between';
+
+                // Create the avtar div
+                const avtarDiv = document.createElement("div");
+                avtarDiv.className = "avtar text-center";
+
+                // Create the h4 element for question number
+                const questionNoH4 = document.createElement("h4");
+                questionNoH4.id = "question_no";
+                questionNoH4.innerText = "Q. " + questionObj.question_no;
+
+
+                // Append the h4 element to the avtar div
+                avtarDiv.appendChild(questionNoH4);
+
+                // Create the div for question and options
+                const questionDiv = document.createElement("div");
+                questionDiv.className = "";
+
+                // Create the question paragraph element
+                const questionP = document.createElement("p");
+                questionP.id = "question";
+                questionP.innerText = questionObj.question;
+
+                questionP.style.marginLeft = '-10px';
+
+                // Append the question paragraph to the question div
+                questionDiv.appendChild(questionP);
+
+                // Create the rank div for checkbox
+                const rankDiv = document.createElement("div");
+                rankDiv.className = "rank";
+
+                // Create the form check div
+                const formCheckDiv = document.createElement("div");
+                formCheckDiv.className = "form-check";
+
+                // Create the checkbox input
+                const checkboxInput = document.createElement("input");
+                checkboxInput.className = "form-check-input";
+                checkboxInput.type = "checkbox";
+                checkboxInput.value = "";
+                checkboxInput.id = questionObj.question_no;
+
+                // Create the label for the checkbox
+                const checkboxLabel = document.createElement("label");
+                checkboxLabel.className = "form-check-label";
+                checkboxLabel.htmlFor = "flexCheckDefault";
+                checkboxLabel.innerText = "Yes";
+
+                // Append the checkbox input and label to the form check div
+                formCheckDiv.appendChild(checkboxInput);
+                formCheckDiv.appendChild(checkboxLabel);
+
+                // Append the form check div to the rank div
+                rankDiv.appendChild(formCheckDiv);
+
+                // Append the avtar div and question div to the main container div
+                containerDiv.appendChild(avtarDiv);
+                containerDiv.appendChild(questionDiv);
+
+                // Append the rank div to the main container div
+                containerDiv.appendChild(rankDiv);
+
+                // Append the main container div to the parent div
+                parentDiv.appendChild(containerDiv);
+
+            MathJax.typeset([questionP]);
+     
+
+            
+      }
+
+      function generateQuestions(status){
+        const selectedQuestions = [];
+
+        const checkboxes = document.querySelectorAll(".form-check-input");
+
+        checkboxes.forEach((checkbox)=>{
+            if(checkbox.checked){
+                const questionNo = checkbox.id;
+          const selectedQuestion = mainArr.find(
+            (question) => question.question_no === parseInt(questionNo)
+          );
+            selectedQuestions.push(selectedQuestion);
+            }
+        });
+        console.log(selectedQuestions);
+        let msg ="";
+        if(status === 'save'){
+            msg = "Are you sure about saving the Test?";
+        }else {
+            msg = "Are you sure about publish the Test?"
+        }
+        // Show the confirmation popup
+        const confirmation = confirm(msg);
+        if(confirmation){
+            const data = {
+                test_id : test_id,
+                status : status,
+                questions : selectedQuestions
+            };
+
+            // Make a POST request to the backend API
+            fetch("https://ici-backend.onrender.com/save-selected-questions", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data.message); 
+                alert(data.message);
+                window.location.href = 'admin-dashboard-1.html';
+                
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+            }
+      }
+  
+    </script>
     <script>
         (function () {
             'use strict';
@@ -839,6 +1143,19 @@
                 })
             })
         })()
+    </script>
+
+    <script>
+        $ = function (id) {
+            return document.getElementById(id);
+        }
+
+        var show = function (id) {
+            $(id).style.display = 'block';
+        }
+        var hide = function (id) {
+            $(id).style.display = 'none';
+        }
     </script>
 
 </body>

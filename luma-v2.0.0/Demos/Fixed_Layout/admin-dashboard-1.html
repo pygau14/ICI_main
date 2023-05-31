@@ -283,10 +283,8 @@
                                     </ul>
                                 </div>
 
-                                <a href="student-dashboard-login.html" id="login_btn" class="login"><i class="icofont-user"></i>
+                                <a href="admin-dashboard-login.html" id="admin_login_btn" class="login"><i class="icofont-user"></i>
                                     <span>LOG IN</span> </a>
-                                <a href="student-dashboard-signup.html" id="signup_btn" class="signup"><i class="icofont-users"></i>
-                                    <span>SIGN UP</span>
                                 </a>
 
                                 <!-- toggle icons -->
@@ -352,7 +350,7 @@
                                     
                                     <div class="h2 mb-0 ">Total Students </div>
                                     <div class="flex">
-                                        <div class="card-title text-warning fs-2 ">10K</div>
+                                        <div class="card-title text-warning fs-2 " id="total_students">10K</div>
                                         <!-- <p class="card-subtitle text-50 d-flex align-items-center">
                                             31.5%
                                             <i class="material-icons text-accent ml-4pt icon-16pt">keyboard_arrow_up</i>
@@ -371,7 +369,7 @@
                                 <div class="flex d-flex align-items-center">
                                     <div class="h2 mb-0 mr-3">Paid Students</div>
                                     <div class="flex">
-                                        <div class="card-title text-warning fs-2">5K</div>
+                                        <div class="card-title text-warning fs-2" id="total_paid_students" >5K</div>
                                         <!-- <p class="card-subtitle text-50 d-flex align-items-center">
                                             31.5%
                                             <i class="material-icons text-accent ml-4pt icon-16pt">keyboard_arrow_up</i>
@@ -389,7 +387,7 @@
                                 <div class="flex d-flex align-items-center">
                                     <div class="h2 mb-0 mr-3">Courses(Videos)</div>
                                     <div class="flex ">
-                                        <div class="card-title text-warning fs-2">100</div>
+                                        <div class="card-title text-warning fs-2" id="total_courses">100</div>
                                         <!-- <p class="card-subtitle text-50 d-flex align-items-center">
                                             31.5%
                                             <i class="material-icons text-accent ml-4pt icon-16pt">keyboard_arrow_up</i>
@@ -408,7 +406,7 @@
                                 <div class="flex d-flex align-items-center">
                                     <div class="h2 mb-0 mr-3">Total Test</div>
                                     <div class="flex ">
-                                        <div class="card-title text-warning fs-2" style="margin-left:60px;">10K</div>
+                                        <div class="card-title text-warning fs-2" style="margin-left:60px;" id="total_test">10K</div>
                                         <!-- <p class="card-subtitle text-50 d-flex align-items-center">
                                             31.5%
                                             <i class="material-icons text-accent ml-4pt icon-16pt">keyboard_arrow_up</i>
@@ -427,7 +425,7 @@
                                 <div class="flex d-flex align-items-center">
                                     <div class="h2 mb-0 mr-3">Total Question</div>
                                     <div class="flex ">
-                                        <div class="card-title text-warning fs-2">10K</div>
+                                        <div class="card-title text-warning fs-2" id="total_question">10K</div>
                                         <!-- <p class="card-subtitle text-50 d-flex align-items-center">
                                             31.5%
                                             <i class="material-icons text-accent ml-4pt icon-16pt">keyboard_arrow_up</i>
@@ -446,7 +444,7 @@
                                 <div class="flex d-flex align-items-center">
                                     <div class="h2 mb-0 mr-3">Total E-Books</div>
                                     <div class="flex ">
-                                        <div class="card-title text-warning fs-2">500</div>
+                                        <div class="card-title text-warning fs-2" id="total_books">500</div>
                                         <!-- <p class="card-subtitle text-50 d-flex align-items-center">
                                             31.5%
                                             <i class="material-icons text-accent ml-4pt icon-16pt">keyboard_arrow_up</i>
@@ -776,368 +774,10 @@
                <!-- sales end -->
 
                 <!-- corses start -->
-            <div class="row mb-lg-16pt">
+            <div class="row mb-lg-16pt" id="parentDiv">
                 <div class="page-separator">
                     <div class="page-separator__text fonsize">Total Courses</div>
                 </div>
-                    <div class="col-lg-3">
-                        <div class="card card-sm card--elevated p-relative o-hidden overlay overlay--primary-dodger-blue js-overlay mdk-reveal js-mdk-reveal "
-                                                 data-partial-height="44"
-                                                 data-toggle="popover"
-                                                 data-trigger="click">
-
-                                                <a href=""
-                                                   class="js-image"
-                                                   data-position="">
-                                                    <img src="../../public/images/paths/angular_430x168.png"
-                                                         alt="course">
-                                                    <span class="overlay__content align-items-start justify-content-start">
-                                                        <span class="overlay__action card-body d-flex align-items-center">
-                                                            <i class="material-icons mr-4pt">play_circle_outline</i>
-                                                            <span class="card-title text-white">Resume</span>
-                                                        </span>
-                                                    </span>
-                                                </a>
-
-
-                                                <div class="mdk-reveal__content">
-                                                    <div class="card-body">
-                                                        <div class="d-flex">
-                                                            <div class="flex">
-                                                                <a class="card-title"
-                                                                   href="#">Learn Angular </a>
-                                                                <small class="text-50 font-weight-bold mb-4pt">Elijah Murray</small>
-                                                            </div>
-                                                            
-                                                        </div>
-                                                        <div class="d-flex">
-                                                            <div class="rating flex">
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star_border</span></span>
-                                                            </div>
-                                                            <small class="text-50">6 hours</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                    </div>  
-                    
-                    <div class="col-lg-3">
-                        <div class="card card-sm card--elevated p-relative o-hidden overlay overlay--primary-dodger-blue js-overlay mdk-reveal js-mdk-reveal "
-                                                 data-partial-height="44"
-                                                 data-toggle="popover"
-                                                 data-trigger="click">
-
-                                                <a href=""
-                                                   class="js-image"
-                                                   data-position="">
-                                                    <img src="../../public/images/paths/angular_430x168.png"
-                                                         alt="course">
-                                                    <span class="overlay__content align-items-start justify-content-start">
-                                                        <span class="overlay__action card-body d-flex align-items-center">
-                                                            <i class="material-icons mr-4pt">play_circle_outline</i>
-                                                            <span class="card-title text-white">Resume</span>
-                                                        </span>
-                                                    </span>
-                                                </a>
-
-
-                                                <div class="mdk-reveal__content">
-                                                    <div class="card-body">
-                                                        <div class="d-flex">
-                                                            <div class="flex">
-                                                                <a class="card-title"
-                                                                   href="#">Learn Angular </a>
-                                                                <small class="text-50 font-weight-bold mb-4pt">Elijah Murray</small>
-                                                            </div>
-                                                            
-                                                        </div>
-                                                        <div class="d-flex">
-                                                            <div class="rating flex">
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star_border</span></span>
-                                                            </div>
-                                                            <small class="text-50">6 hours</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                    </div> 
-                    <div class="col-lg-3">
-                        <div class="card card-sm card--elevated p-relative o-hidden overlay overlay--primary-dodger-blue js-overlay mdk-reveal js-mdk-reveal "
-                                                 data-partial-height="44"
-                                                 data-toggle="popover"
-                                                 data-trigger="click">
-
-                                                <a href=""
-                                                   class="js-image"
-                                                   data-position="">
-                                                    <img src="../../public/images/paths/angular_430x168.png"
-                                                         alt="course">
-                                                    <span class="overlay__content align-items-start justify-content-start">
-                                                        <span class="overlay__action card-body d-flex align-items-center">
-                                                            <i class="material-icons mr-4pt">play_circle_outline</i>
-                                                            <span class="card-title text-white">Resume</span>
-                                                        </span>
-                                                    </span>
-                                                </a>
-
-                                          
-
-                                                <div class="mdk-reveal__content">
-                                                    <div class="card-body">
-                                                        <div class="d-flex">
-                                                            <div class="flex">
-                                                                <a class="card-title"
-                                                                   href="#">Learn Angular</a>
-                                                                <small class="text-50 font-weight-bold mb-4pt">Elijah Murray</small>
-                                                            </div>
-                                                           
-                                                        </div>
-                                                        <div class="d-flex">
-                                                            <div class="rating flex">
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star_border</span></span>
-                                                            </div>
-                                                            <small class="text-50">6 hours</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                    </div> 
-                    <div class="col-lg-3">
-                        <div class="card card-sm card--elevated p-relative o-hidden overlay overlay--primary-dodger-blue js-overlay mdk-reveal js-mdk-reveal "
-                                                 data-partial-height="44"
-                                                 data-toggle="popover"
-                                                 data-trigger="click">
-
-                                                <a href=""
-                                                   class="js-image"
-                                                   data-position="">
-                                                    <img src="../../public/images/paths/angular_430x168.png"
-                                                         alt="course">
-                                                    <span class="overlay__content align-items-start justify-content-start">
-                                                        <span class="overlay__action card-body d-flex align-items-center">
-                                                            <i class="material-icons mr-4pt">play_circle_outline</i>
-                                                            <span class="card-title text-white">Resume</span>
-                                                        </span>
-                                                    </span>
-                                                </a>
-
-                                                
-
-                                                <div class="mdk-reveal__content">
-                                                    <div class="card-body">
-                                                        <div class="d-flex">
-                                                            <div class="flex">
-                                                                <a class="card-title"
-                                                                   href="#">Learn Angular </a>
-                                                                <small class="text-50 font-weight-bold mb-4pt">Elijah Murray</small>
-                                                            </div>
-                                                            
-                                                        </div>
-                                                        <div class="d-flex">
-                                                            <div class="rating flex">
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star_border</span></span>
-                                                            </div>
-                                                            <small class="text-50">6 hours</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                    </div> 
-                    <div class="col-lg-3">
-                        <div class="card card-sm card--elevated p-relative o-hidden overlay overlay--primary-dodger-blue js-overlay mdk-reveal js-mdk-reveal "
-                                                 data-partial-height="44"
-                                                 data-toggle="popover"
-                                                 data-trigger="click">
-
-                                                <a href=""
-                                                   class="js-image"
-                                                   data-position="">
-                                                    <img src="../../public/images/paths/angular_430x168.png"
-                                                         alt="course">
-                                                    <span class="overlay__content align-items-start justify-content-start">
-                                                        <span class="overlay__action card-body d-flex align-items-center">
-                                                            <i class="material-icons mr-4pt">play_circle_outline</i>
-                                                            <span class="card-title text-white">Resume</span>
-                                                        </span>
-                                                    </span>
-                                                </a>
-
-                                            
-
-                                                <div class="mdk-reveal__content">
-                                                    <div class="card-body">
-                                                        <div class="d-flex">
-                                                            <div class="flex">
-                                                                <a class="card-title"
-                                                                   href="#">Learn Angular </a>
-                                                                <small class="text-50 font-weight-bold mb-4pt">Elijah Murray</small>
-                                                            </div>
-                                                            
-                                                        </div>
-                                                        <div class="d-flex">
-                                                            <div class="rating flex">
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star_border</span></span>
-                                                            </div>
-                                                            <small class="text-50">6 hours</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                    </div>  
-                    
-                    <div class="col-lg-3">
-                        <div class="card card-sm card--elevated p-relative o-hidden overlay overlay--primary-dodger-blue js-overlay mdk-reveal js-mdk-reveal "
-                                                 data-partial-height="44"
-                                                 data-toggle="popover"
-                                                 data-trigger="click">
-
-                                                <a href=""
-                                                   class="js-image"
-                                                   data-position="">
-                                                    <img src="../../public/images/paths/angular_430x168.png"
-                                                         alt="course">
-                                                    <span class="overlay__content align-items-start justify-content-start">
-                                                        <span class="overlay__action card-body d-flex align-items-center">
-                                                            <i class="material-icons mr-4pt">play_circle_outline</i>
-                                                            <span class="card-title text-white">Resume</span>
-                                                        </span>
-                                                    </span>
-                                                </a>
-
-                                                
-
-                                                <div class="mdk-reveal__content">
-                                                    <div class="card-body">
-                                                        <div class="d-flex">
-                                                            <div class="flex">
-                                                                <a class="card-title"
-                                                                   href="#">Learn Angular </a>
-                                                                <small class="text-50 font-weight-bold mb-4pt">Elijah Murray</small>
-                                                            </div>
-                                                            
-                                                        </div>
-                                                        <div class="d-flex">
-                                                            <div class="rating flex">
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star_border</span></span>
-                                                            </div>
-                                                            <small class="text-50">6 hours</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                    </div> 
-                    <div class="col-lg-3">
-                        <div class="card card-sm card--elevated p-relative o-hidden overlay overlay--primary-dodger-blue js-overlay mdk-reveal js-mdk-reveal "
-                                                 data-partial-height="44"
-                                                 data-toggle="popover"
-                                                 data-trigger="click">
-
-                                                <a href=""
-                                                   class="js-image"
-                                                   data-position="">
-                                                    <img src="../../public/images/paths/angular_430x168.png"
-                                                         alt="course">
-                                                    <span class="overlay__content align-items-start justify-content-start">
-                                                        <span class="overlay__action card-body d-flex align-items-center">
-                                                            <i class="material-icons mr-4pt">play_circle_outline</i>
-                                                            <span class="card-title text-white">Resume</span>
-                                                        </span>
-                                                    </span>
-                                                </a>
-
-
-                                                <div class="mdk-reveal__content">
-                                                    <div class="card-body">
-                                                        <div class="d-flex">
-                                                            <div class="flex">
-                                                                <a class="card-title"
-                                                                   href="#">Learn Angular </a>
-                                                                <small class="text-50 font-weight-bold mb-4pt">Elijah Murray</small>
-                                                            </div>
-                                                            
-                                                        </div>
-                                                        <div class="d-flex">
-                                                            <div class="rating flex">
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star_border</span></span>
-                                                            </div>
-                                                            <small class="text-50">6 hours</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                    </div> 
-                    <div class="col-lg-3">
-                        <div class="card card-sm card--elevated p-relative o-hidden overlay overlay--primary-dodger-blue js-overlay mdk-reveal js-mdk-reveal "
-                                                 data-partial-height="44"
-                                                 data-toggle="popover"
-                                                 data-trigger="click">
-
-                                                <a href=""
-                                                   class="js-image"
-                                                   data-position="">
-                                                    <img src="../../public/images/paths/angular_430x168.png"
-                                                         alt="course">
-                                                    <span class="overlay__content align-items-start justify-content-start">
-                                                        <span class="overlay__action card-body d-flex align-items-center">
-                                                            <i class="material-icons mr-4pt">play_circle_outline</i>
-                                                            <span class="card-title text-white">Resume</span>
-                                                        </span>
-                                                    </span>
-                                                </a>
-
-
-                                                <div class="mdk-reveal__content">
-                                                    <div class="card-body">
-                                                        <div class="d-flex">
-                                                            <div class="flex">
-                                                                <a class="card-title"
-                                                                   href="#">Learn Angular </a>
-                                                                <small class="text-50 font-weight-bold mb-4pt">Elijah Murray</small>
-                                                            </div>
-                                                            
-                                                        </div>
-                                                        <div class="d-flex">
-                                                            <div class="rating flex">
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star</span></span>
-                                                                <span class="rating__item"><span class="material-icons">star_border</span></span>
-                                                            </div>
-                                                            <small class="text-50">6 hours</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                    </div> 
                </div>
 
                <!-- courses end -->
@@ -1151,7 +791,7 @@
                         <a href="admin_addstudent1.html" class="btn btn-primary" role="button" style="color:white;">Add Student</a>
                     </div>
                 </div>
-                <table class="table caption-top">
+                <table class="table caption-top" id="table_student_list">
                     <caption>List of Latest Users</caption>
                     <thead>
                       <tr>
@@ -1160,75 +800,13 @@
                         <th scope="col">Name</th>
                         <th scope="col">Email Id</th>
                         <th scope="col">Phone No.</th>
+                        <th scope="col">User Type</th>
                         <th scope="col">Registrstion No.</th>
                         
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>12/02/2023</td>
-                        <td>Mark</td>
-                        <td>abc@mail.com</td>
-                        <td>1234567895</td>
-                        <td>12345K</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>12/02/2023</td>
-                        <td>Mark</td>
-                        <td>abc@mail.com</td>
-                        <td>1234567895</td>
-                        <td>12345K</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>12/02/2023</td>
-                        <td>Mark</td>
-                        <td>abc@mail.com</td>
-                        <td>1234567895</td>
-                        <td>12345K</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">4</th>
-                        <td>12/02/2023</td>
-                        <td>Mark</td>
-                        <td>abc@mail.com</td>
-                        <td>1234567895</td>
-                        <td>12345K</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">5</th>
-                        <td>12/02/2023</td>
-                        <td>Mark</td>
-                        <td>abc@mail.com</td>
-                        <td>1234567895</td>
-                        <td>12345K</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">6</th>
-                        <td>12/02/2023</td>
-                        <td>Mark</td>
-                        <td>abc@mail.com</td>
-                        <td>1234567895</td>
-                        <td>12345K</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">7</th>
-                        <td>12/02/2023</td>
-                        <td>Mark</td>
-                        <td>abc@mail.com</td>
-                        <td>1234567895</td>
-                        <td>12345K</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">8</th>
-                        <td>12/02/2023</td>
-                        <td>Mark</td>
-                        <td>abc@mail.com</td>
-                        <td>1234567895</td>
-                        <td>12345K</td>
-                      </tr>
+                     
                     </tbody>
                   </table>
 
@@ -1642,6 +1220,173 @@
     <script src="assetss/js/counter-up.js"></script>
     <script src="assetss/js/isotope.pkgd.js"></script>
     <script src="assetss/js/functions.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded',()=>{
+            fetchDashboardData();
+            const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+             console.log(token);
+             const isLoggedIn = !!token;
+             let name = '';
+             let email ='';
+ 
+             if (isLoggedIn) {
+                 const jwtvalue = token.split('=')[1];
+                // Decode the JWT manually
+                 const decodedToken = JSON.parse(atob(jwtvalue.split('.')[1]));
+                 name = decodedToken.name;
+                 email = decodedToken.email;
+                 document.getElementById('admin_login_btn').innerText = name;
+                 document.getElementById('admin_login_btn').setAttribute('href','#');
+                 
+ 
+             }
+        })
+        async function fetchDashboardData(){
+            await fetch('https://ici-backend.onrender.com/api/totalStudents').then((res)=>{
+                return res.json();
+            }).then((data)=>{
+                console.log("total students",data);
+                displayEle(data,'total_students');
+                populateTable(data,'Free');
+            }).catch((err)=>{
+                console.log(err);
+            })
+
+            await fetch('https://ici-backend.onrender.com/api/paidStudents').then((res)=>{
+                return res.json();
+            }).then((data)=>{
+                console.log("total paid students",data);
+                displayEle(data,'total_paid_students');
+            }).catch((err)=>{
+                console.log(err);
+            })
+            await fetch('https://ici-backend.onrender.com/api/courses').then((res)=>{
+                return res.json();
+            }).then((data)=>{
+                console.log('total courses', data);
+                displayEle(data,'total_courses');
+                displayCourses(data);
+            }).catch((err)=>{
+                console.log(err);
+            })
+
+            await fetch('https://ici-backend.onrender.com/api/totalTests').then((res)=>{
+                return res.json();
+            }).then((data)=>{
+                console.log('total test', data);
+                displayEle(data,'total_test');
+            }).catch((err)=>{
+                console.log(err);
+            })
+            await fetch('https://ici-backend.onrender.com/api/ncert-books').then((res)=>{
+                return res.json();
+            }).then((data)=>{
+                console.log("total books",data);
+                displayEle(data,'total_books');
+            }).catch((err)=>{
+                console.log(err);
+            })
+        }
+        function displayEle(data,id){
+            const parentEle  = document.getElementById(id);
+            parentEle.innerText =" "+ data.length;
+            if (id=== 'total_test'){
+                document.getElementById('total_question').innerText = data.length * 20;
+
+            }
+        }
+        function populateTable(data,userType){
+
+            console.log("running table");
+            console.log(data);
+//             {
+//   "id": 5,
+//   "name": "Test user 2",
+//   "email": "user2@gmail.com",
+//   "password": "$2b$10$2TpyEZ/iGhUYVnQRXNOkQOr2adPUdAyBEUGs3WUjq2vCfEoqdQsXu",
+//   "doj": "2023-05-24T18:30:00.000Z"
+// }
+            const tablebody  =document.querySelector('#table_student_list tbody');
+            for(let i=0;i<data.length;i++){
+                const student  = data[i];
+
+                const row = document.createElement('tr');
+
+                const idcell = document.createElement('td');
+                idcell.setAttribute('scope','row');
+                idcell.textContent = i+1;
+                row.appendChild(idcell);
+
+                const dojcell = document.createElement('td');
+                let dataObj = new Date(student.doj).toDateString();
+                dojcell.textContent = dataObj;
+                row.appendChild(dojcell);
+
+                const namecell  =document.createElement('td');
+                namecell.textContent = student.name;
+                row.appendChild(namecell);
+
+                const emailcell = document.createElement('td');
+                emailcell.textContent = student.email;
+                row.appendChild(emailcell);
+
+                const mobilecell = document.createElement('td');
+                mobilecell.textContent = student.mobile_no;
+                row.appendChild(mobilecell);
+
+                const typecell = document.createElement('td');
+                typecell.textContent = userType;
+                row.appendChild(typecell);
+
+
+                const useridcell = document.createElement('td');
+                useridcell.textContent = student.id;
+                row.appendChild(useridcell);
+
+
+                tablebody.appendChild(row);
+
+            }
+        }
+
+        function displayCourses(data) {
+  var parentDiv = document.getElementById('parentDiv');
+
+  // Iterate over the data array
+  data.forEach(function(course) {
+    // Create the div elements and set their attributes and innerHTML
+    var div = document.createElement('div');
+    div.className = 'col-lg-3';
+    div.innerHTML = `
+      <div class="card card-sm card--elevated p-relative o-hidden overlay overlay--primary-dodger-blue js-overlay mdk-reveal js-mdk-reveal"
+           data-partial-height="44"
+           data-toggle="popover"
+           data-trigger="click">
+        <a href="" class="js-image" data-position="">
+          <img src="../../public/images/paths/angular_430x168.png" alt="course">
+        </a>
+        <div class="mdk-reveal__content">
+          <div class="card-body">
+            <div class="d-flex">
+              <div class="flex">
+                <a class="card-title" href="#" id="text_content">Learn Angular</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Update the text content of the card title
+    var cardTitle = div.querySelector('#text_content');
+    cardTitle.textContent = course.chapter_name +"->" +course.subject_name+"::"+course.class;
+
+    // Append the created div to the parent div
+    parentDiv.appendChild(div);
+  });
+}
+        
+    </script>
     <script>
         (function () {
             'use strict';

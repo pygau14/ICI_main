@@ -284,11 +284,9 @@
                                     </ul>
                                 </div>
 
-                                <a href="student-dashboard-login.html" id="login_btn" class="login"><i class="icofont-user"></i>
+                                <a href="student-dashboard-login.html" id="admin_login_btn" class="login"><i class="icofont-user"></i>
                                     <span>LOG IN</span> </a>
-                                <a href="student-dashboard-signup.html" id="signup_btn" class="signup"><i class="icofont-users"></i>
-                                    <span>SIGN UP</span>
-                                </a>
+                               
 
                                 <!-- toggle icons -->
                                 <div class="header-bar d-lg-none">
@@ -351,7 +349,7 @@
                         <a href="admin_addstudent1.html" class="btn btn-primary" role="button" style="color:white;">Add Student</a>
                     </div> -->
                 </div>
-                <table class="table caption-top">
+                <table class="table caption-top" id="table_manage_test">
                     <!-- <caption>List of Latest Users</caption> -->
                     <thead>
                       <tr>
@@ -365,70 +363,6 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>JEE</td>
-                        <td>Science</td>
-                        <td><a href="admin-dashboard-manage-question-paper.html" >Chemistry</a></td>
-                        <td>100</td>
-                        <td><a href="admin-dashboard-manage-question-paper-students-attempted-paper.html" >21</a></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>JEE</td>
-                        <td>Science</td>
-                        <td><a href="admin-dashboard-manage-question-paper.html" >Chemistry</a></td>
-                        <td>100</td>
-                        <td><a href="admin-dashboard-manage-question-paper-students-attempted-paper.html" >21</a></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>JEE</td>
-                        <td>Science</td>
-                        <td><a href="admin-dashboard-manage-question-paper.html" >Chemistry</a></td>
-                        <td>100</td>
-                        <td><a href="admin-dashboard-manage-question-paper-students-attempted-paper.html" >21</a></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">4</th>
-                        <td>JEE</td>
-                        <td>Science</td>
-                        <td><a href="admin-dashboard-manage-question-paper.html" >Chemistry</a></td>
-                        <td>100</td>
-                        <td><a href="admin-dashboard-manage-question-paper-students-attempted-paper.html" >21</a></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">5</th>
-                        <td>JEE</td>
-                        <td>Science</td>
-                        <td><a href="admin-dashboard-manage-question-paper.html" >Chemistry</a></td>
-                        <td>100</td>
-                        <td><a href="admin-dashboard-manage-question-paper-students-attempted-paper.html" >21</a></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">6</th>
-                        <td>JEE</td>
-                        <td>Science</td>
-                        <td><a href="admin-dashboard-manage-question-paper.html" >Chemistry</a></td>
-                        <td>100</td>
-                        <td><a href="admin-dashboard-manage-question-paper-students-attempted-paper.html" >21</a></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">7</th>
-                        <td>JEE</td>
-                        <td>Science</td>
-                        <td><a href="admin-dashboard-manage-question-paper.html" >Chemistry</a></td>
-                        <td>100</td>
-                        <td><a href="admin-dashboard-manage-question-paper-students-attempted-paper.html" >21</a></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">8</th>
-                        <td>JEE</td>
-                        <td>Science</td>
-                        <td><a href="admin-dashboard-manage-question-paper.html" >Chemistry</a></td>
-                        <td>100</td>
-                        <td><a href="admin-dashboard-manage-question-paper-students-attempted-paper.html" >21</a></td>
-                      </tr>
                     </tbody>
                   </table>
 
@@ -849,6 +783,78 @@
     <script src="assetss/js/counter-up.js"></script>
     <script src="assetss/js/isotope.pkgd.js"></script>
     <script src="assetss/js/functions.js"></script>
+    <script>
+        let mainArr_test = []
+        window.addEventListener('DOMContentLoaded',()=>{
+            mainArr_test =localStorage.getItem('list_test'); 
+            const data = JSON.parse(mainArr_test);
+            console.log(data);
+
+            displayList(data);
+
+        });
+
+        function displayList(data){
+            const tableEle = document.querySelector("#table_manage_test tbody");
+
+            for (let i=0;i<data.length;i++){
+                const test = data[i];
+
+                const row = document.createElement('tr');
+
+
+                const snocell = document.createElement('td');
+                snocell.setAttribute('scope','row');
+                snocell.innerText = i+1;
+
+                row.appendChild(snocell);
+
+                const classcell = document.createElement('td');
+                classcell.innerText = test.class;
+                row.appendChild(classcell);
+
+                const subjectcell = document.createElement('td');
+                subjectcell.innerText = test.subject_name;
+                row.appendChild(subjectcell);
+
+                const chaptercell = document.createElement('td');
+                
+
+                const atag = document.createElement('a');
+                atag.setAttribute('href','admin-dashboard-manage-question-paper.html');
+                atag.innerText = test.chapter_name;
+
+                chaptercell.appendChild(atag);
+
+                
+                row.appendChild(chaptercell);
+
+
+                const markcell  = document.createElement('td');
+                markcell.innerText = test.full_marks;
+                row.appendChild(markcell);
+
+                const attempt = document.createElement('td');
+                
+                const aele = document.createElement('a');
+                aele.setAttribute('href',"admin-dashboard-manage-question-paper-students-attempted-paper.html");
+                aele.innerText = test.pass_marks;
+
+                attempt.appendChild(aele);
+
+                row.appendChild(attempt);
+
+                
+
+                tableEle.appendChild(row);
+
+                chaptercell.addEventListener('click', function() {
+                    // Store the test object in local storage
+                    localStorage.setItem('clickedTest', JSON.stringify(test));
+                });
+            }
+        }
+    </script>
     <script>
         (function () {
             'use strict';

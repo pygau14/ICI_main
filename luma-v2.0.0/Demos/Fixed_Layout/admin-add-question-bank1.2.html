@@ -424,11 +424,9 @@
                                     </ul>
                                 </div>
 
-                                <a href="student-dashboard-login.html" id="login_btn" class="login"><i class="icofont-user"></i>
+                                <a href="student-dashboard-login.html" id="admin_login_btn" class="login"><i class="icofont-user"></i>
                                     <span>LOG IN</span> </a>
-                                <a href="student-dashboard-signup.html" id="signup_btn" class="signup"><i class="icofont-users"></i>
-                                    <span>SIGN UP</span>
-                                </a>
+                               
 
                                 <!-- toggle icons -->
                                 <div class="header-bar d-lg-none">
@@ -478,25 +476,25 @@
                 <div class="page-section" style="margin-top: 113px;">
 
                     <div class="page-separator justify-content-between">
-                        <div class="page-separator__text fonsize">Create Question Paper</div>
+                        <div class="page-separator__text fonsize">Manage Question Paper</div>
 
                     </div>
                     <!-- form start -->
                     <div class="pt-32pt pt-sm-64pt pb-32pt">
                         <div class="container page__container">
-                            <form action="index.html" class="col-md-5 p-0 mx-auto">
+                            <div class="col-md-5 p-0 mx-auto">
 
                                 <div class="form-group">
                                     <label class="form-label fonsize" for="email">Categories</label>
                                     <select class="form-select form-select-md mb-3"
-                                        aria-label=".form-select-md example">
+                                        aria-label=".form-select-md example" id="class_option" onchange="fetchChapters()">
                                         <option selected>Choose Your Class</option>
-                                        <option value="1">Grade 9th</option>
-                                        <option value="2">Grade 10th</option>
-                                        <option value="3">Grade 11th</option>
-                                        <option value="4">Grade 12th</option>
-                                        <option value="5">JEE</option>
-                                        <option value="6">NEET</option>
+                                        <option value="9th">Grade 9th</option>
+                                        <option value="10th">Grade 10th</option>
+                                        <option value="11th">Grade 11th</option>
+                                        <option value="12th">Grade 12th</option>
+                                        <option value="JEE">JEE</option>
+                                        <option value="NEET">NEET</option>
                                     </select>
                                 </div>
 
@@ -504,14 +502,14 @@
                                 <div class="form-group">
                                     <label class="form-label fonsize" for="email">Subject</label>
                                     <select class="form-select form-select-md mb-3"
-                                        aria-label=".form-select-md example">
+                                        aria-label=".form-select-md example" id="subject_option" onchange="fetchChapters()">
                                         <option selected>Choose Your Subject</option>
-                                        <option value="1">Physics</option>
-                                        <option value="2">Maths</option>
-                                        <option value="3">English</option>
-                                        <option value="4">Biology</option>
-                                        <option value="5">Zoology</option>
-                                        <option value="6">Botany</option>
+                                        <option value="Physics">Physics</option>
+                                        <option value="Maths">Maths</option>
+                                        <option value="Chemistry">Chemistry</option>
+                                        <option value="Biology">Biology</option>
+                                        <option value="Zoology">Zoology</option>
+                                        <option value="Botany">Botany</option>
                                     </select>
                                 </div>
                                 
@@ -529,98 +527,33 @@
                                   </select>
                             </div> -->
                                 <div class="form-group">
-                                    <label class="form-label fonsize" for="email">Topic</label>
+                                    <label class="form-label fonsize" for="email">Chapter</label>
                                     <select class="form-select form-select-md mb-3"
-                                        aria-label=".form-select-md example">
-                                        <option selected>Choose Your Topic</option>
-                                        <option value="1">Sets</option>
-                                        <option value="2">Profit and Loss</option>
-                                        <option value="3">Linear Equation</option>
-                                        <option value="4">Graphs</option>
-                                        <option value="5">Trigonometry</option>
-                                        <option value="6">Number System</option>
+                                        aria-label=".form-select-md example" id="chapter_option" onchange="fetchTopics()">
+                                        <option selected>Choose Your Chapter</option>
+                                       
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label fonsize" for="email">Duration</label>
-                                    <input type="time">
-                                    <!-- <select class="form-select form-select-md mb-3"
-                                        aria-label=".form-select-md example">
-                                        <option selected>Choose Exam Duration</option>
-                                        <option value="1">30 min</option>
-                                        <option value="2">1 hrs</option>
-                                        <option value="3">1:30 hrs</option>
-                                        <option value="4">3 hrs</option>
-                                    </select> -->
+                                    <label class="form-label fonsize" for="email">Topic</label>
+                                    <select class="form-select form-select-md mb-3"
+                                        aria-label=".form-select-md example" id="topic_option" onchange="fetchTests()" >
+                                        <option selected>Choose Your Topic</option>
+                                       
+                                    </select>
                                 </div>
-                                <div class="form-group">
-                                    <label class="form-label fonsize" for="email">Full Marks</label>
-                                    <input type="number">
-                                    <!-- <select class="form-select form-select-md mb-3"
-                                        aria-label=".form-select-md example">
-                                        <option selected>Choose Full Marks</option>
-                                        <option value="1">30 Marks</option>
-                                        <option value="2">50 Marks</option>
-                                        <option value="3">75 Marks</option>
-                                        <option value="4">100 Marks</option>
-                                    </select> -->
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label fonsize" for="email">Pass Marks</label>
-                                    <input type="number">
-                                    <!-- <select class="form-select form-select-md mb-3"
-                                        aria-label=".form-select-md example">
-                                        <option selected>Choose Pass Marks</option>
-                                        <option value="1">10 Marks</option>
-                                        <option value="2">20 Marks</option>
-                                        <option value="3">32 Marks</option>
-                                        <option value="4">50 Marks</option>
-                                    </select> -->
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label fonsize" for="email">Minus Marking</label>
-                                    <input type="number">
-                                    <!-- <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                         Yes
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                                        <label class="form-check-label" for="flexCheckChecked">
-                                          No
-                                        </label>
-                                      </div> -->
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlTextarea1" class="form-label fonsize">Add Instruction</label>
-                                    <!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="12" style="border: 2px solid grey;"></textarea> -->
-                                    
-                                        <div class="flex" style="max-width: 100%">
-        
-                                            <!-- <label class="form-label" style="font-size: 22px;">Add Your Question</label> -->
-                                            <div style="height: 150px;" data-toggle="quill"
-                                                data-quill-placeholder="Quill WYSIWYG editor">
-                                                <h1>Hello World!</h1>
-                                                <p>Some initial <strong>bold</strong> text</p>
-                                                <p><br></p>
-                                            </div>
-        
-                                        </div>
-                                    
-                                </div>
-                                
+
+                              
+                              
                                
 
 
 
 
                                 <div class="text-center">
-                                    <button class="btn btn-primary fonsize"><a href="admin-dashboard-manage-question-paper-detail.html"
-                                            style="color:white"> Submit</a></button>
+                                    <button class="btn btn-primary fonsize" onclick="manageTest()">Submit</button>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
 
@@ -1026,6 +959,98 @@
     <script src="assetss/js/counter-up.js"></script>
     <script src="assetss/js/isotope.pkgd.js"></script>
     <script src="assetss/js/functions.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded',()=>{
+            const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+             console.log(token);
+             const isLoggedIn = !!token;
+             let name = '';
+             let email ='';
+ 
+             if (isLoggedIn) {
+                 const jwtvalue = token.split('=')[1];
+                // Decode the JWT manually
+                 const decodedToken = JSON.parse(atob(jwtvalue.split('.')[1]));
+                 name = decodedToken.name;
+                 email = decodedToken.email;
+                 document.getElementById('admin_login_btn').innerText = name;
+                 document.getElementById('admin_login_btn').setAttribute('href','#');
+                 
+ 
+             }
+        })
+    </script>
+
+    <script>
+        let mainArr_test = [];
+        async function fetchChapters() {
+            const classValue = document.getElementById('class_option').value;
+            const subjectValue = document.getElementById('subject_option').value;
+            console.log(classValue, subjectValue);
+            if (classValue !== "" && subjectValue !== "") {
+                await fetch(`https://ici-backend.onrender.com/chapters?class=${classValue}&subject=${subjectValue}`).then((res) => {
+                    return res.json();
+                }).then((data) => {
+                    const chapters = [...new Set(data)];
+                    loadoptions(chapters, 'chapter_option');
+                }).catch((e) => {
+                    console.log(e);
+                })
+            }
+        }
+        function loadoptions(data, id) {
+            const parentEle = document.getElementById(id);
+
+            parentEle.innerHTML = "";
+
+            data.map((element) => {
+                const optionEle = document.createElement('option');
+                optionEle.innerText = element;
+                optionEle.setAttribute('value', element);
+
+                parentEle.appendChild(optionEle);
+            })
+        }
+
+        async function fetchTopics() {
+            const classValue = document.getElementById('class_option').value;
+            const subjectValue = document.getElementById('subject_option').value;
+            const chapterValue = document.getElementById('chapter_option').value;
+
+            await fetch(`https://ici-backend.onrender.com/topics?class=${classValue}&subject=${subjectValue}&chapter=${chapterValue}`).then((res) => {
+                return res.json();
+            }).then((data) => {
+                console.log(data);
+                const topics = [...new Set(data)];
+                loadoptions(topics, 'topic_option');
+            }).catch((err) => {
+                console.log(err);
+            })
+
+        }
+
+        async function fetchTests() {
+            const classValue = document.getElementById('class_option').value;
+            const subjectValue = document.getElementById('subject_option').value;
+            const chapterValue = document.getElementById('chapter_option').value;
+            const topicValue = document.getElementById('topic_option').value;
+            console.log(classValue,subjectValue,chapterValue,topicValue);
+            await fetch(`https://ici-backend.onrender.com/test?class=${classValue}&subject=${subjectValue}&chapter=${chapterValue}&topic=${topicValue}`).then((res) => {
+                return res.json();
+            }).then((data) => {
+                mainArr_test = data;
+                console.log(mainArr_test);
+            }).catch((err) => {
+                console.log(err);
+            })
+        }
+        function manageTest(){
+            localStorage.setItem('list_test',JSON.stringify(mainArr_test));
+            window.location.href = 'admin-dashboard-manage-question-paper-detail.html';
+        }
+
+    </script>
+
     <!-- Dropzone -->
     <script src="../../public/vendor/dropzone.min.js"></script>
     <script src="../../public/js/dropzone.js"></script>

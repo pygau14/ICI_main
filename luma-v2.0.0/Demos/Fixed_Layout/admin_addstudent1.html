@@ -284,10 +284,8 @@
                                     </ul>
                                 </div>
 
-                                <a href="student-dashboard-login.html" id="login_btn" class="login"><i class="icofont-user"></i>
+                                <a href="admin-dashboard-login.html"  id="admin_login_btn" class="login"><i class="icofont-user"></i>
                                     <span>LOG IN</span> </a>
-                                <a href="student-dashboard-signup.html" id="signup_btn" class="signup"><i class="icofont-users"></i>
-                                    <span>SIGN UP</span>
                                 </a>
 
                                 <!-- toggle icons -->
@@ -344,34 +342,32 @@
                     </div>
                   <!-- form start -->
                   <div class="pt-32pt pt-sm-64pt pb-32pt">
-                    <div class="container page__container">
-                        <form action="index.html"
-                              class="col-md-5 p-0 mx-auto">
+                    <div class="container page__container"></div>
                               
                             
                             <div class="form-group">
                                 <label class="form-label fonsize"
                                        for="email">Student Name</label>
-                                       <input type="text" class="form-control fonsize" placeholder="Enter Name" aria-label="First name">
+                                       <input type="text" class="form-control fonsize" id="student_admin_name" placeholder="Enter Name" aria-label="First name">
                             </div>
                             <div class="form-group">
                                 <label class="form-label fonsize"
                                        for="email">Student Email</label>
-                                       <input type="email" class="form-control fonsize" placeholder="Enter Email" aria-label="First name">
+                                       <input type="email" class="form-control fonsize" id="student_admin_email"  placeholder="Enter Email" aria-label="First name">
                             </div>
                             <div class="form-group">
                                 <label class="form-label fonsize"
                                        for="email">Student Mobile Number</label>
-                                       <input type="tel" class="form-control fonsize" placeholder="Enter Number" aria-label="First name">
+                                       <input type="tel" class="form-control fonsize" id="student_admin_mobile" placeholder="Enter Number" aria-label="First name">
                             </div>
                             <div class="form-group">
                                 <label class="form-label fonsize"
-                                       for="email">Student Registrstion Number</label>
-                                       <input type="text" class="form-control fonsize" placeholder="Enter Registrstion No." aria-label="First name">
+                                       for="email">Student Password</label>
+                                       <input type="text" class="form-control fonsize" id="student_admin_password" placeholder="Enter Password" aria-label="First name">
                             </div>
 
                             <div class="text-center">
-                                <button class="btn btn-primary fonsize" ><a href="admin-dashboard-student-added.html" style="color:white"> Submit</a></button>
+                                <button class="btn btn-primary fonsize" onclick="addStudent()">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -783,6 +779,71 @@
     <script src="assetss/js/counter-up.js"></script>
     <script src="assetss/js/isotope.pkgd.js"></script>
     <script src="assetss/js/functions.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded',()=>{
+            const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+             console.log(token);
+             const isLoggedIn = !!token;
+             let name = '';
+             let email ='';
+ 
+             if (isLoggedIn) {
+                 const jwtvalue = token.split('=')[1];
+                // Decode the JWT manually
+                 const decodedToken = JSON.parse(atob(jwtvalue.split('.')[1]));
+                 name = decodedToken.name;
+                 email = decodedToken.email;
+                 document.getElementById('admin_login_btn').innerText = name;
+                 document.getElementById('admin_login_btn').setAttribute('href','#');
+                 
+ 
+             }
+        })
+    </script>
+    <script>
+        async function addStudent(){
+
+            console.log('add student is called');
+            const name  = document.getElementById('student_admin_name').value;
+            const email = document.getElementById('student_admin_email').value;
+            const password  = document.getElementById('student_admin_password').value;
+            const mobile_no = document.getElementById('student_admin_mobile').value;
+
+            let today  = new Date();
+
+            const year = today.getFullYear();
+            const month =  String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate()).padStart(2, '0');
+
+            const formattedDate = year + '-' + month + '-' + day;
+            
+            const formdata = new FormData();
+
+            formdata.append('name',name);
+            formdata.append('email',email);
+            formdata.append('password',password);
+            formdata.append('mobile_no',mobile_no);
+            formdata.append('doj',formattedDate);
+
+            console.log(formdata);
+
+            await fetch('https://ici-backend.onrender.com/admin/add-student',{
+                method : 'POST',
+                body : formdata
+            }).then((res)=>{
+                return res.json();
+            }).then((data)=>{
+                console.log(data);
+            })
+
+            // if(response.ok){
+            //     alert('Student added');
+            //     location.reload();
+            // }
+
+
+        }
+    </script>
     <script>
         (function () {
             'use strict';
