@@ -1,0 +1,27 @@
+ /* CSS styles for the loader and background blur */
+ .loader {
+  display: none;
+  position: fixed;
+  left: 500px;
+  top: 300px;
+  width: 10%;
+  height: 10%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.loader-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+}
+
+/* Additional styles for the background blur effect */
+.blur {
+  filter: blur(5px);
+  pointer-events: none;
+}

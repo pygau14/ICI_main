@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="assetss/css/swiper.min.css">
     <link rel="stylesheet" href="assetss/css/lightcase.css">
     <link rel="stylesheet" href="assetss/css/style.css">
+    <link rel="stylesheet" type="text/css" href="loader.css">
     <style>
         .fonsize{
             font-size:18px;
@@ -1245,7 +1246,8 @@
                 </div>
             </div>
             <!-- Newsletter Section Ending Here -->
-
+            <div class="loader"></div>
+            <script src="loader.js"></script>
             <!-- Footer Section Start Here -->
             
             <footer>
@@ -1605,6 +1607,9 @@
                  document.getElementById('admin_login_btn').setAttribute('href','#');
                  
  
+             }
+             else{
+                window.location.href = 'admin-dashboard-login.html';
              }
         })
     </script>

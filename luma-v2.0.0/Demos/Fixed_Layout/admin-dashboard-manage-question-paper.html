@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="assetss/css/swiper.min.css">
     <link rel="stylesheet" href="assetss/css/lightcase.css">
     <link rel="stylesheet" href="assetss/css/style.css">
+    <link rel="stylesheet" type="text/css" href="loader.css">
     <style>
         .fonsize {
             font-size: 18px;
@@ -452,7 +453,8 @@
         <!-- // END Header Layout Content -->
 
         <!-- Footer -->
-
+        <div class="loader"></div>
+        <script src="loader.js"></script>
         <!-- footer -->
         <div class="news-footer-wrap">
             <div class="fs-shape">
@@ -838,21 +840,26 @@
                  email = decodedToken.email;
                  document.getElementById('admin_login_btn').innerText = name;
                  document.getElementById('admin_login_btn').setAttribute('href','#');
-                 
+                 fetchQuestionTest(data.test_id);
  
+             }else{
+                window.location.href = 'admin-dashboard-login.html';
              }
 
-        fetchQuestionTest(data.test_id);
+        
 
 
        })
        async function fetchQuestionTest(test_id){
+        // Show the loader before fetching data
+  showLoader();
         await fetch(`https://ici-backend.onrender.com/fetch/test-questions?test_id=${test_id}`).then((res)=>{
             return res.json();
         }).then((data)=>{
             console.log(data);
             localStorage.setItem('test_questions',JSON.stringify(data));
             displayQuestions(data);
+            hideLoader();
         }).catch((err)=>{
             console.log(err);
         })

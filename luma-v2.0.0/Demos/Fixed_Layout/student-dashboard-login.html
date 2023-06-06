@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="assetss/css/swiper.min.css">
     <link rel="stylesheet" href="assetss/css/lightcase.css">
     <link rel="stylesheet" href="assetss/css/style.css">
+    <link rel="stylesheet" type="text/css" href="loader.css">
     <style>
         .fonsize{
             font-size:18px;
@@ -123,6 +124,10 @@
 
     <!-- Header Layout -->
     <div class="mdk-header-layout js-mdk-header-layout">
+        <div class="loader-overlay">
+            <div class="loader"></div>
+          </div>
+            <script src="loader.js"></script>
 
         <!-- Header -->
 
@@ -229,6 +234,11 @@
         </div>
 
         <!-- // END Header -->
+        <div class="mdk-header-layout js-mdk-header-layout">
+            <div class="loader-overlay">
+                <div class="loader"></div>
+              </div>
+                <script src="loader.js"></script>
 
         <!-- Header Layout Content -->
         <div class="mdk-header-layout__content page-content ">
@@ -411,9 +421,7 @@
 
       
 
-
-
-
+            
 
 
            
@@ -766,6 +774,8 @@
     <script src="https://cdn.jsdelivr.net/npm/jsonwebtoken@8.5.1"></script>
     <script>
         async function login(){
+            // Show the loader before fetching data
+            showLoader();
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
@@ -786,6 +796,7 @@
 
             if(response.ok){
                 const data = await response.json();
+                hideLoader();
                 alert('login Successful');
                 localStorage.setItem('token',data.token);
                 // Store the JWT in a cookie

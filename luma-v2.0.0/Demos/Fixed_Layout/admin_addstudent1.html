@@ -38,12 +38,30 @@
     <link rel="stylesheet" href="assetss/css/swiper.min.css">
     <link rel="stylesheet" href="assetss/css/lightcase.css">
     <link rel="stylesheet" href="assetss/css/style.css">
+    <link rel="stylesheet" type="text/css" href="loader.css">
     <style>
         .fonsize{
             font-size:18px;
             
 
         }
+        /* Loader styles */
+    .loader {
+      border: 8px solid #f3f3f3; /* Light gray */
+      border-top: 8px solid #3498db; /* Blue */
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 2s linear infinite;
+      margin: 0 auto;
+      margin-top: 50vh;
+    }
+
+    /* Loader animation */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
          /* <!-- Footer CSS --> */
          .footer-bottom {
             padding: 0px 0;
@@ -623,7 +641,8 @@
 
     </div>
     <!-- // END Header Layout -->
-
+    <div class="loader"></div>
+    <script src="loader.js"></script>
     <!-- Drawer -->
 
     <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
@@ -798,11 +817,15 @@
                  
  
              }
+             else{
+                window.location.href = 'admin-dashboard-login.html';
+             }
         })
     </script>
     <script>
         async function addStudent(){
-
+            // Show the loader before fetching data
+  showLoader();
             console.log('add student is called');
             const name  = document.getElementById('student_admin_name').value;
             const email = document.getElementById('student_admin_email').value;
@@ -834,6 +857,9 @@
                 return res.json();
             }).then((data)=>{
                 console.log(data);
+                hideLoader();
+                alert('Student added');
+                location.reload();
             })
 
             // if(response.ok){

@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="assetss/css/swiper.min.css">
     <link rel="stylesheet" href="assetss/css/lightcase.css">
     <link rel="stylesheet" href="assetss/css/style.css">
+    <link rel="stylesheet" type="text/css" href="loader.css">
     <style>
         .fonsize{
             font-size: 18px;
@@ -876,7 +877,8 @@
                 </ul>
              
               
-
+                <div class="loader"></div>
+                <script src="loader.js"></script>
                 
               
 
@@ -936,6 +938,9 @@
                  document.getElementById('admin_login_btn').innerText = name;
                  document.getElementById('admin_login_btn').setAttribute('href','#');
                  
+             }
+             else{
+                window.location.href = 'admin-dashboard-login.html';
              }
         })
     </script>

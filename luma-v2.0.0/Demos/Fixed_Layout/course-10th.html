@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="assetss/css/swiper.min.css">
     <link rel="stylesheet" href="assetss/css/lightcase.css">
     <link rel="stylesheet" href="assetss/css/style.css">
+    <link rel="stylesheet" type="text/css" href="loader.css">
     <style>
         .fonsize{
             font-size: 18px;
@@ -321,7 +322,10 @@
     <div class="mdk-header-layout js-mdk-header-layout">
 
         <!-- Header -->
-
+        <div class="loader-overlay">
+            <div class="loader"></div>
+          </div>
+        <script src="loader.js"></script>
         <div id="header" class="mdk-header mdk-header--bg-dark bg-dark js-mdk-header mb-0 "
             data-effects="parallax-background waterfall" data-fixed data-condenses style="display: none;">
             <div class="mdk-header__bg">
@@ -928,7 +932,7 @@
             <!-- // END Header Layout Content -->
 
             <!-- Footer -->
-
+         
             <!-- footer -->
             <div class="news-footer-wrap footer-wrapper01">
                 <div class="fs-shape">
@@ -1294,6 +1298,8 @@
 
             })
             async function fetchCourses(){
+                // Show the loader before fetching data
+  showLoader();
                 console.log('fetching the course')
                 try {
                    await fetch('https://ici-backend.onrender.com/api/courses').then((res)=>{
@@ -1330,7 +1336,7 @@
                             displayCourses(bioData,'bio-course-list','.pagination_bio');
                             displayCourses(phyData,'phy-course-list','.pagination_phy');
                             displayCourses(matData,'mat-course-list','.pagination_mat');
-                        
+                            hideLoader();
                         
                     });
                 }catch(error){

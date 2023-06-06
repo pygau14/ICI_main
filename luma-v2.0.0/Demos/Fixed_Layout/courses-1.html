@@ -15,28 +15,29 @@
         rel="stylesheet">
 
     <!-- Preloader -->
-    <link type="text/css" href="../../public/vendor/spinkit.css" rel="stylesheet">
+    <link type="text/css" href="public/vendor/spinkit.css" rel="stylesheet">
 
     <!-- Perfect Scrollbar -->
-    <link type="text/css" href="../../public/vendor/perfect-scrollbar.css" rel="stylesheet">
+    <link type="text/css" href="public/vendor/perfect-scrollbar.css" rel="stylesheet">
 
     <!-- Material Design Icons -->
-    <link type="text/css" href="../../public/css/material-icons.css" rel="stylesheet">
+    <link type="text/css" href="public/css/material-icons.css" rel="stylesheet">
 
     <!-- Font Awesome Icons -->
-    <link type="text/css" href="../../public/css/fontawesome.css" rel="stylesheet">
+    <link type="text/css" href="public/css/fontawesome.css" rel="stylesheet">
 
     <!-- Preloader -->
-    <link type="text/css" href="../../public/css/preloader.css" rel="stylesheet">
+    <link type="text/css" href="public/css/preloader.css" rel="stylesheet">
 
     <!-- App CSS -->
     <link rel="stylesheet" href="assetss/css/bootstrap.min.css">
-    <link type="text/css" href="../../public/css/app.css" rel="stylesheet">
+    <link type="text/css" href="public/css/app.css" rel="stylesheet">
     <link rel="stylesheet" href="assetss/css/animate.css">
     <link rel="stylesheet" href="assetss/css/icofont.min.css">
     <link rel="stylesheet" href="assetss/css/swiper.min.css">
     <link rel="stylesheet" href="assetss/css/lightcase.css">
     <link rel="stylesheet" href="assetss/css/style.css">
+    <link rel="stylesheet" type="text/css" href="loader.css">
     <style>
         .fonsize{
             font-size:18px;
@@ -332,9 +333,12 @@
 
         <!-- More spinner examples at https://github.com/tobiasahlin/SpinKit/blob/master/examples.html -->
     </div>
+    <div class="loader">
+        <div class="loader-content"></div>
+      </div>
 
     <!-- Header Layout -->
-    <div class="mdk-header-layout js-mdk-header-layout">
+    <div class="mdk-header-layout js-mdk-header-layout blur" >
 
         <!-- Header -->
 
@@ -342,7 +346,7 @@
             data-effects="parallax-background waterfall" data-fixed data-condenses style="display: none;">
             <div class="mdk-header__bg">
                 <div class="mdk-header__bg-front"
-                    style="background-image: url(../../public/images/photodune-4161018-group-of-students-m.jpg);"></div>
+                    style="background-image: url(public/images/photodune-4161018-group-of-students-m.jpg);"></div>
             </div>
             <div class="mdk-header__content justify-content-center">
 
@@ -356,12 +360,12 @@
 
                     <!-- Navbar Brand -->
                     <a href="index.html" class="navbar-brand mr-16pt">
-                        <!-- <img class="navbar-brand-icon" src="../../public/images/logo/white-100@2x.png" width="30" alt="Luma"> -->
+                        <!-- <img class="navbar-brand-icon" src="public/images/logo/white-100@2x.png" width="30" alt="Luma"> -->
 
                         <span class="avatar avatar-sm navbar-brand-icon mr-0 mr-lg-8pt">
 
                             <span class="avatar-title rounded bg-primary"><img
-                                    src="../../public/images/illustration/student/128/white.svg" alt="logo"
+                                    src="public/images/illustration/student/128/white.svg" alt="logo"
                                     class="img-fluid" /></span>
 
                         </span>
@@ -529,7 +533,8 @@
             </header>
             <!-- header section ending here -->
             <!-- new header end -->
-
+     
+            <!-- <script src="loader.js"></script> -->
 
             <!-- Header Layout Content -->
             <div class="mdk-header-layout__content page-content " style="margin-top: 100px;">
@@ -1180,12 +1185,12 @@
                     </div>
     
                     <a href="index.html" class="sidebar-brand ">
-                        <!-- <img class="sidebar-brand-icon" src="../../public/images/illustration/student/128/white.svg" alt="Luma"> -->
+                        <!-- <img class="sidebar-brand-icon" src="public/images/illustration/student/128/white.svg" alt="Luma"> -->
     
                         <span class="avatar avatar-xl sidebar-brand-icon h-auto">
     
                             <span class="avatar-title rounded bg-primary"><img
-                                    src="../../public/images/illustration/student/128/white.svg" class="img-fluid"
+                                    src="public/images/illustration/student/128/white.svg" class="img-fluid"
                                     alt="logo" /></span>
     
                         </span>
@@ -1251,26 +1256,26 @@
         <!-- // END Drawer -->
 
         <!-- jQuery -->
-        <script src="../../public/vendor/jquery.min.js"></script>
+        <script src="public/vendor/jquery.min.js"></script>
 
         <!-- Bootstrap -->
-        <script src="../../public/vendor/popper.min.js"></script>
-        <script src="../../public/vendor/bootstrap.min.js"></script>
+        <script src="public/vendor/popper.min.js"></script>
+        <script src="public/vendor/bootstrap.min.js"></script>
 
         <!-- Perfect Scrollbar -->
-        <script src="../../public/vendor/perfect-scrollbar.min.js"></script>
+        <script src="public/vendor/perfect-scrollbar.min.js"></script>
 
         <!-- DOM Factory -->
-        <script src="../../public/vendor/dom-factory.js"></script>
+        <script src="public/vendor/dom-factory.js"></script>
 
         <!-- MDK -->
-        <script src="../../public/vendor/material-design-kit.js"></script>
+        <script src="public/vendor/material-design-kit.js"></script>
 
         <!-- App JS -->
-        <script src="../../public/js/app.js"></script>
+        <script src="public/js/app.js"></script>
 
         <!-- Preloader -->
-        <script src="../../public/js/preloader.js"></script>
+        <script src="public/js/preloader.js"></script>
         <script src="assetss/js/jquery.js"></script>
         <script src="assetss/js/bootstrap.min.js"></script>
         <script src="assetss/js/swiper.min.js"></script>
@@ -1317,6 +1322,8 @@
                 
             })
             async function fetchCourses(){
+                // Show the loader before fetching data
+//  showLoader();
                 console.log('fetching the course')
                 try {
                    await fetch('https://ici-backend.onrender.com/api/courses').then((res)=>{
@@ -1344,7 +1351,7 @@
                             displayCourses(phyData,'phy-course-list','.pagination_phy');
                             displayCourses(zooData,'zoo-course-list','.pagination_zoo');
                         
-                        
+                            // setTimeout(hideLoader(),55000);
                     });
                 }catch(error){
                     console.log(error);
@@ -1675,6 +1682,37 @@
                 })
             })()
         </script>
+        <script>
+            // Show the loader and apply background blur when the page starts loading
+            window.addEventListener('load',async function() {
+                console.log('loader is loaded')
+              const loader = document.querySelector('.loader');
+              const content = document.querySelector('.blur');
+              
+              loader.style.display = 'block';
+              content.classList.add('blur');
+              
+            
+               // Hide the loader and remove background blur after 10 seconds
+                setTimeout(function() {
+                    console.log('stopping the loader')
+                    loader.style.display = 'none';
+                    content.classList.remove('blur');
+                }, 25000);
+            });
+        
+            // Hide the loader and remove background blur when the page finishes loading
+            // window.addEventListener('DOMContentLoaded', function() {
+             
+            // });
+            function hideLoader(){
+                const loader = document.querySelector('.loader');
+              const content = document.querySelector('.blur');
+              
+              loader.style.display = 'none';
+              content.classList.remove('blur');
+            }
+          </script>
 
 </body>
 

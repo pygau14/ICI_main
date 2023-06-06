@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="assetss/css/swiper.min.css">
     <link rel="stylesheet" href="assetss/css/lightcase.css">
     <link rel="stylesheet" href="assetss/css/style.css">
+    <link rel="stylesheet" type="text/css" href="loader.css">
     <style>
         .fonsize{
              font-size:18px;
@@ -546,7 +547,8 @@
             </div>
 
            
-
+            <div class="loader"></div>
+            <script src="loader.js"></script>
         
 
 
@@ -941,6 +943,7 @@
     <script src="assetss/js/counter-up.js"></script>
     <script src="assetss/js/isotope.pkgd.js"></script>
     <script src="assetss/js/functions.js"></script>
+    
     <script>
          const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
              console.log(token);
@@ -958,6 +961,9 @@
                  document.getElementById('admin_login_btn').setAttribute('href','#');
                  
  
+             }
+             else{
+                window.location.href = 'admin-dashboard-login.html';
              }
     </script>
     <script>

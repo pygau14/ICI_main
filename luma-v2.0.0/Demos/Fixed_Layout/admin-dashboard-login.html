@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="assetss/css/swiper.min.css">
     <link rel="stylesheet" href="assetss/css/lightcase.css">
     <link rel="stylesheet" href="assetss/css/style.css">
+    <link rel="stylesheet" type="text/css" href="loader.css">
     <style>
         .fonsize{
             font-size:18px;
@@ -644,7 +645,8 @@
 
     </div>
     <!-- // END Header Layout -->
-
+    <div class="loader"></div>
+    <script src="loader.js"></script>
     <!-- Drawer -->
 
     <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
@@ -785,6 +787,8 @@
     </script>
     <script>
         async function login(){
+            // Show the loader before fetching data
+  showLoader();
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
@@ -805,6 +809,7 @@
 
             if(response.ok){
                 const data = await response.json();
+                hideLoader();
                 alert('login Successful');
                 localStorage.setItem('token',data.token);
                 // Store the JWT in a cookie

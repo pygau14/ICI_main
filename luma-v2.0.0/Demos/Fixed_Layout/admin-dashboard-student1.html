@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="assetss/css/swiper.min.css">
     <link rel="stylesheet" href="assetss/css/lightcase.css">
     <link rel="stylesheet" href="assetss/css/style.css">
+    <link rel="stylesheet" type="text/css" href="loader.css">
     <style>
         .fonsize{
              font-size:18px;
@@ -535,7 +536,8 @@
         <!-- // END Header Layout Content -->
 
         <!-- Footer -->
-
+        <div class="loader"></div>
+        <script src="loader.js"></script>
         <!-- footer -->
         <div class="news-footer-wrap">
             <div class="fs-shape">
@@ -918,12 +920,16 @@
                  email = decodedToken.email;
                  document.getElementById('admin_login_btn').innerText = name;
                  document.getElementById('admin_login_btn').setAttribute('href','#');
-                 
+                 fetchDashboardData();
  
+             }else{
+                window.location.href = 'admin-dashboard-login.html';
              }
-            fetchDashboardData();
+            
         })
         async function fetchDashboardData(){
+            // Show the loader before fetching data
+  showLoader();
             await fetch('https://ici-backend.onrender.com/api/totalStudents').then((res)=>{
                 return res.json();
             }).then((data)=>{
@@ -964,6 +970,7 @@
             }).then((data)=>{
                 console.log("total books",data);
                 displayEle(data,'total_books');
+                hideLoader();
             }).catch((err)=>{
                 console.log(err);
             })

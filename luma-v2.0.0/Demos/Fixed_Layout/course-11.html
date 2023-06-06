@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="assetss/css/swiper.min.css">
     <link rel="stylesheet" href="assetss/css/lightcase.css">
     <link rel="stylesheet" href="assetss/css/style.css">
+    <link rel="stylesheet" type="text/css" href="loader.css">
     <style>
         .fonsize{
             font-size: 18px;
@@ -1141,7 +1142,10 @@
 
         </div>
         <!-- // END Header Layout -->
-
+        <div class="loader-overlay">
+            <div class="loader"></div>
+          </div>
+        <script src="loader.js"></script>
         <!-- Drawer -->
 
         <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
@@ -1295,6 +1299,8 @@
 
             })
             async function fetchCourses(){
+                // Show the loader before fetching data
+  showLoader();
                 console.log('fetching the course')
                 try {
                    await fetch('https://ici-backend.onrender.com/api/courses').then((res)=>{
@@ -1331,7 +1337,7 @@
                             displayCourses(bioData,'bio-course-list','.pagination_bio');
                             displayCourses(phyData,'phy-course-list','.pagination_phy');
                             displayCourses(matData,'mat-course-list','.pagination_mat');
-                        
+                            hideLoader();
                         
                     });
                 }catch(error){

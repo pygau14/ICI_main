@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="assetss/css/swiper.min.css">
     <link rel="stylesheet" href="assetss/css/lightcase.css">
     <link rel="stylesheet" href="assetss/css/style.css">
+    <link rel="stylesheet" type="text/css" href="loader.css">
     <style>
         .fonsize {
             font-size: 18px;
@@ -554,7 +555,8 @@
                 </div>
             </div>
             <!-- Newsletter Section Ending Here -->
-
+            <div class="loader"></div>
+            <script src="loader.js"></script>
             <!-- Footer Section Start Here -->
             <footer>
 
@@ -927,12 +929,17 @@
                  document.getElementById('admin_login_btn').setAttribute('href','#');
                  
  
+             }
+             else{
+                window.location.href = 'admin-dashboard-login.html';
              } 
 
         })
     </script>
     <script>
         async function fetchChapters() {
+            // Show the loader before fetching data
+  showLoader();
             const classValue = document.getElementById('class_option').value;
             const subjectValue = document.getElementById('subject_option').value;
             console.log(classValue, subjectValue);
@@ -942,6 +949,7 @@
                 }).then((data) => {
                     const chapters = [...new Set(data)];
                     loadoptions(chapters, 'chapter_option');
+                    hideLoader();
                 }).catch((e) => {
                     console.log(e);
                 })
@@ -963,6 +971,8 @@
         }
 
         async function fetchTopics() {
+            // Show the loader before fetching data
+  showLoader();
             const classValue = document.getElementById('class_option').value;
             const subjectValue = document.getElementById('subject_option').value;
             const chapterValue = document.getElementById('chapter_option').value;
@@ -973,6 +983,7 @@
                 console.log(data);
                 const topics = [...new Set(data)];
                 loadoptions(topics, 'topic_option');
+                hideLoader();
             }).catch((err) => {
                 console.log(err);
             })
@@ -980,6 +991,8 @@
         }
 
         async function addQuestionTest() {
+            // Show the loader before fetching data
+  showLoader();
             fetchQuestions();
             const classValue = document.getElementById('class_option').value;
             const subjectValue = document.getElementById('subject_option').value;
@@ -1029,6 +1042,7 @@
                 const questionSets = [...new Set(data)];
                 console.log(questionSets);
                 localStorage.setItem('admin_question_set',questionSets[0]);
+                hideLoader();
             }).catch((err)=>{
                 console.log(err);
             })

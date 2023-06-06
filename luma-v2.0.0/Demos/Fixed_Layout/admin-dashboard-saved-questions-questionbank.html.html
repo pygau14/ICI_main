@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="assetss/css/swiper.min.css">
     <link rel="stylesheet" href="assetss/css/lightcase.css">
     <link rel="stylesheet" href="assetss/css/style.css">
+    <link rel="stylesheet" type="text/css" href="loader.css">
 </head>
 <style>
     * {
@@ -561,7 +562,8 @@
         <!-- // END Header Layout Content -->
 
         <!-- Footer -->
-
+        <div class="loader"></div>
+        <script src="loader.js"></script>
         <!-- footer -->
         <div class="news-footer-wrap">
             <div class="fs-shape">
@@ -947,13 +949,17 @@
                  email = decodedToken.email;
                  document.getElementById('admin_login_btn').innerText = name;
                  document.getElementById('admin_login_btn').setAttribute('href','#');
-                 
- 
-             }
-            console.log(data);
+                 console.log(data);
+                 // Show the loader before fetching data
+  showLoader();
             data.map((question)=>{
                 createQuestionElement(question);
             })
+            hideLoader();
+             }else{
+                window.location.href = 'admin-dashboard-login.html';
+             }
+           
         })
 
 

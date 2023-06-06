@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="assetss/css/swiper.min.css">
     <link rel="stylesheet" href="assetss/css/lightcase.css">
     <link rel="stylesheet" href="assetss/css/style.css">
+    <link rel="stylesheet" type="text/css" href="loader.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
@@ -603,7 +604,8 @@
                 </div>
             </div>
             <!-- Newsletter Section Ending Here -->
-
+            <div class="loader"></div>
+            <script src="loader.js"></script>
             <!-- Footer Section Start Here -->
             <footer>
 
@@ -971,14 +973,19 @@
                  email = decodedToken.email;
                  document.getElementById('admin_login_btn').innerText = name;
                  document.getElementById('admin_login_btn').setAttribute('href','#');
-                 
+                 fetchSets(question_set);
  
              }
+             else{
+                window.location.href = 'admin-dashboard-login.html';
+             }
 
-            fetchSets(question_set);
+           
 
         })
         async function fetchSets(question_set ){
+            // Show the loader before fetching data
+  showLoader();
             await fetch(`https://ici-backend.onrender.com/question-paper?questionSet=${question_set}`).then((res)=>{
                 return res.json();
             }).then((data)=>{
@@ -986,6 +993,7 @@
                 console.log(data);
                 data.forEach((questionObj)=>{
                     createQuestionElement(questionObj);
+                    hideLoader();
                 })
             }).catch((err)=>{
                 console.log(err);
@@ -1100,6 +1108,8 @@
         }
         // Show the confirmation popup
         const confirmation = confirm(msg);
+        // Show the loader before fetching data
+  showLoader();
         if(confirmation){
             const data = {
                 test_id : test_id,
@@ -1118,6 +1128,7 @@
             .then((response) => response.json())
             .then((data) => {
                 console.log(data.message); 
+                hideLoader();
                 alert(data.message);
                 window.location.href = 'admin-dashboard-1.html';
                 

@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="assetss/css/swiper.min.css">
     <link rel="stylesheet" href="assetss/css/lightcase.css">
     <link rel="stylesheet" href="assetss/css/style.css">
+    <link rel="stylesheet" type="text/css" href="loader.css">
 
     <!-- Flatpickr -->
     <link type="text/css"
@@ -144,7 +145,10 @@
 
     <!-- Header Layout -->
     <div class="mdk-header-layout js-mdk-header-layout">
-
+        <div class="loader-overlay">
+            <div class="loader"></div>
+          </div>
+        <script src="loader.js"></script>
         <!-- Header -->
 
         <div id="header" class="mdk-header mdk-header--bg-dark bg-dark js-mdk-header mb-0 "
@@ -339,7 +343,7 @@
             <!-- header section ending here -->
             <!-- new header end -->
 
-
+          
 
             <div class="pt-32pt" style="margin:6rem;">
                 <div class="container page__container d-flex flex-column flex-md-row align-items-center text-center text-sm-left">
@@ -980,6 +984,8 @@
     <script src="assetss/js/functions.js"></script>
     <script >
        async function  signup(){
+        // Show the loader before fetching data
+  showLoader();
             const name = document.getElementById('validationSample01').value;
             const mobile_no = document.getElementById('validationSample02').value;
             const dob = document.getElementById('flatpickrSample01').value;
@@ -1063,6 +1069,7 @@
 
 
             if(response.ok){
+                 hideLoader();
                 alert('Sign Up Sucessful');
                 window.location.href = 'student-dashboard-login.html'
             }else {

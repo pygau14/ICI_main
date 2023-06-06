@@ -42,6 +42,7 @@
     <link rel="stylesheet" href="assetss/css/swiper.min.css">
     <link rel="stylesheet" href="assetss/css/lightcase.css">
     <link rel="stylesheet" href="assetss/css/style.css">
+    <link rel="stylesheet" type="text/css" href="loader.css">
     <style>
         .fonsize{
             font-size: 18px;
@@ -658,7 +659,8 @@
         <!-- // END Header Layout Content -->
 
         <!-- Footer -->
-
+        <div class="loader"></div>
+        <script src="loader.js"></script>
         <!-- footer -->
         <div class="news-footer-wrap">
             <div class="fs-shape">
@@ -1029,6 +1031,30 @@
         <!-- Dropzone -->
         <script src="../../public/vendor/dropzone.min.js"></script>
         <script src="../../public/js/dropzone.js"></script>
+        <script>
+            window.addEventListener('DOMContentLoaded',()=>{
+                const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+                 console.log(token);
+                 const isLoggedIn = !!token;
+                 let name = '';
+                 let email ='';
+     
+                 if (isLoggedIn) {
+                     const jwtvalue = token.split('=')[1];
+                    // Decode the JWT manually
+                     const decodedToken = JSON.parse(atob(jwtvalue.split('.')[1]));
+                     name = decodedToken.name;
+                     email = decodedToken.email;
+                     document.getElementById('admin_login_btn').innerText = name;
+                     document.getElementById('admin_login_btn').setAttribute('href','#');
+                     
+     
+                 }
+                 else{
+                    window.location.href = 'admin-dashboard-login.html';
+                 }
+            })
+        </script>
     <script>
         (function () {
             'use strict';

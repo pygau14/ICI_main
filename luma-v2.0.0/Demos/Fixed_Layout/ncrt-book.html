@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="assetss/css/swiper.min.css">
     <link rel="stylesheet" href="assetss/css/lightcase.css">
     <link rel="stylesheet" href="assetss/css/style.css">
+    <link rel="stylesheet" type="text/css" href="loader.css">
     <style>
         .fonsize{
             font-size: 18px;
@@ -181,8 +182,10 @@
             <a href="#" class="scrollToTop"><i class="icofont-rounded-up"></i></a>
             <!-- scrollToTop ending here -->
 
-
-
+            <div class="loader-overlay">
+                <div class="loader"></div>
+              </div>
+            <script src="loader.js"></script>
             <!-- new header -->
             <!-- header section start here -->
             <header class="header-section" style="top:-2px;">
@@ -968,6 +971,8 @@
             }
             })
             async function fetchBooks(){
+// Show the loader before fetching data
+showLoader();
                 await fetch('https://ici-backend.onrender.com/api/ncert-books').then((res)=>{
                     return res.json();
                 }).then((data)=>{
@@ -992,6 +997,7 @@
                     displayBooks(science.concat(chemistry),'parentDiv_chemistry');
                     displayBooks(botany,'parentDiv_botany');
                     displayBooks(maths,'parentDiv_maths');
+                    hideLoader();
                 }).catch((err)=>{
                     console.error(err);
                 })
