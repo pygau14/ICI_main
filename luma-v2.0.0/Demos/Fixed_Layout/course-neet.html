@@ -525,7 +525,7 @@
                 <div data-push data-responsive-width="992px" class="mdk-drawer-layout js-mdk-drawer-layout">
                     <div class="mdk-drawer-layout__content">
 
-                        <div class="page-section" style="margin-top: 112px;">
+                        <div class="page-section" style="margin-top: 67px;">
                             <div class="container page__container">
 
                                 <div class="d-flex flex-column flex-sm-row align-items-sm-center mb-24pt"
@@ -1684,6 +1684,38 @@
                 })
             })()
         </script>
+
+<script>
+    // Show the loader and apply background blur when the page starts loading
+    window.addEventListener('load',async function() {
+        console.log('loader is loaded')
+      const loader = document.querySelector('.loader');
+      const content = document.querySelector('.blur');
+      
+      loader.style.display = 'block';
+      content.classList.add('blur');
+      
+    
+       // Hide the loader and remove background blur after 10 seconds
+        setTimeout(function() {
+            console.log('stopping the loader')
+            loader.style.display = 'none';
+            content.classList.remove('blur');
+        }, 25000);
+    });
+
+    // Hide the loader and remove background blur when the page finishes loading
+    // window.addEventListener('DOMContentLoaded', function() {
+     
+    // });
+    function hideLoader(){
+        const loader = document.querySelector('.loader');
+      const content = document.querySelector('.blur');
+      
+      loader.style.display = 'none';
+      content.classList.remove('blur');
+    }
+  </script>
 
 </body>
 
