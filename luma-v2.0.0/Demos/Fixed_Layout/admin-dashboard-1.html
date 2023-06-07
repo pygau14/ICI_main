@@ -40,28 +40,33 @@
     <link rel="stylesheet" href="assetss/css/style.css">
     <link rel="stylesheet" type="text/css" href="loader.css">
     <style>
-        .fonsize{
-            font-size:18px;
+        .fonsize {
+            font-size: 18px;
         }
+
         /* <!-- Footer CSS --> */
         .footer-bottom {
             padding: 0px 0;
             background: #fff;
         }
+
         .contact-item {
             border-radius: 0px;
             padding: 0px 0px;
             box-shadow: 0 0px 0px rgba(136, 136, 136, 0.1);
             background: transparent;
         }
+
         .footer-content11 {
             margin-left: 35px;
         }
+
         .para {
             color: white;
             margin: 2px 16px 4px -24px;
             text-align: justify;
         }
+
         @media only screen and (max-width:600px) {
             .lab-ul01 {
                 margin-left: 1px !important;
@@ -71,6 +76,7 @@
             .header01 {
                 margin-top: 1px !important;
             }
+
             .fone {
                 margin-top: -64px !important;
             }
@@ -82,10 +88,11 @@
             .para {
                 margin: 32px 16px 4px -1px !important;
             }
-            .footer06{
-            margin-left:0px!important;
-        }
-        
+
+            .footer06 {
+                margin-left: 0px !important;
+            }
+
         }
     </style>
 </head>
@@ -109,6 +116,12 @@
 
         <!-- More spinner examples at https://github.com/tobiasahlin/SpinKit/blob/master/examples.html -->
     </div>
+     <!-- Loader container -->
+  <div id="loader-container">
+    <div id="loader"></div>
+  </div>
+
+      
 
     <!-- Header Layout -->
     <div class="mdk-header-layout js-mdk-header-layout">
@@ -210,7 +223,7 @@
                            
                         </ul> -->
 
-                  
+
                 </div>
 
 
@@ -284,7 +297,8 @@
                                     </ul>
                                 </div>
 
-                                <a href="admin-dashboard-login.html" id="admin_login_btn" class="login"><i class="icofont-user"></i>
+                                <a href="admin-dashboard-login.html" id="admin_login_btn" class="login"><i
+                                        class="icofont-user"></i>
                                     <span>LOG IN</span> </a>
                                 </a>
 
@@ -305,12 +319,13 @@
 
 
 
-            
+
 
 
 
             <div class="pt-32pt" style="margin-top: 140px;">
-                <div class="container page__container d-flex flex-column flex-md-row align-items-center text-center text-sm-left">
+                <div
+                    class="container page__container d-flex flex-column flex-md-row align-items-center text-center text-sm-left">
                     <div class="flex d-flex flex-column flex-sm-row align-items-center mb-24pt mb-md-0">
 
                         <div class="mb-24pt mb-sm-0 mr-sm-24pt">
@@ -330,7 +345,7 @@
                         </div>
                     </div>
 
-                   
+
 
                 </div>
             </div>
@@ -340,512 +355,529 @@
 
                     <div class="page-separator justify-content-between">
                         <div class="page-separator__text fonsize">Overview</div>
-                       
-                    </div>
-                 <!-- stats start -->
-                 <div class="row card-group-row mb-lg-8pt justify-content-center">
-                    <div class="col-lg-4 col-md-4 card-group-row__col">
-                        <div class="card card-group-row__card">
-                            <div class="card-body d-flex align-items-center">
-                                <div class="flex d-flex  align-items-center">
-                                    
-                                    <div class="h2 mb-0 ">Total Students </div>
-                                    <div class="flex">
-                                        <div class="card-title text-warning fs-2 " id="total_students">10K</div>
-                                        <!-- <p class="card-subtitle text-50 d-flex align-items-center">
-                                            31.5%
-                                            <i class="material-icons text-accent ml-4pt icon-16pt">keyboard_arrow_up</i>
-                                        </p> -->
-                                    </div>
-                                </div>
-                                <!-- <i class="material-icons icon-32pt text-20 ml-8pt">assessment</i> -->
-                                
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 card-group-row__col">
-                        <div class="card card-group-row__card">
-                            <div class="card-body d-flex align-items-center">
-                                <div class="flex d-flex align-items-center">
-                                    <div class="h2 mb-0 mr-3">Paid Students</div>
-                                    <div class="flex">
-                                        <div class="card-title text-warning fs-2" id="total_paid_students" >5K</div>
-                                        <!-- <p class="card-subtitle text-50 d-flex align-items-center">
-                                            31.5%
-                                            <i class="material-icons text-accent ml-4pt icon-16pt">keyboard_arrow_up</i>
-                                        </p> -->
-                                    </div>
-                                </div>
-                                <!-- <i class="material-icons icon-32pt text-20 ml-8pt">assessment</i> -->
-                                <!-- <i class="fas fa-trophy  icon-32pt text-20 "></i> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 card-group-row__col">
-                        <div class="card card-group-row__card">
-                            <div class="card-body d-flex align-items-center">
-                                <div class="flex d-flex align-items-center">
-                                    <div class="h2 mb-0 mr-3">Courses(Videos)</div>
-                                    <div class="flex ">
-                                        <div class="card-title text-warning fs-2" id="total_courses">100</div>
-                                        <!-- <p class="card-subtitle text-50 d-flex align-items-center">
-                                            31.5%
-                                            <i class="material-icons text-accent ml-4pt icon-16pt">keyboard_arrow_up</i>
-                                        </p> -->
-                                    </div>
-                                </div>
-                                
-                               
-                                <!-- <i class="fas fa-keyboard icon-32pt text-20 "></i> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 card-group-row__col">
-                        <div class="card card-group-row__card">
-                            <div class="card-body d-flex align-items-center">
-                                <div class="flex d-flex align-items-center">
-                                    <div class="h2 mb-0 mr-3">Total Test</div>
-                                    <div class="flex ">
-                                        <div class="card-title text-warning fs-2" style="margin-left:60px;" id="total_test">10K</div>
-                                        <!-- <p class="card-subtitle text-50 d-flex align-items-center">
-                                            31.5%
-                                            <i class="material-icons text-accent ml-4pt icon-16pt">keyboard_arrow_up</i>
-                                        </p> -->
-                                    </div>
-                                </div>
-                                
-                                <!-- <i class="fas fa-video icon-32pt text-20"></i> -->
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 card-group-row__col">
-                        <div class="card card-group-row__card">
-                            <div class="card-body d-flex align-items-center">
-                                <div class="flex d-flex align-items-center">
-                                    <div class="h2 mb-0 mr-3">Total Question</div>
-                                    <div class="flex ">
-                                        <div class="card-title text-warning fs-2" id="total_question">10K</div>
-                                        <!-- <p class="card-subtitle text-50 d-flex align-items-center">
-                                            31.5%
-                                            <i class="material-icons text-accent ml-4pt icon-16pt">keyboard_arrow_up</i>
-                                        </p> -->
-                                    </div>
-                                </div>
-                                
-                                <!-- <i class="fas fa-video icon-32pt text-20"></i> -->
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 card-group-row__col">
-                        <div class="card card-group-row__card">
-                            <div class="card-body d-flex align-items-center">
-                                <div class="flex d-flex align-items-center">
-                                    <div class="h2 mb-0 mr-3">Total E-Books</div>
-                                    <div class="flex ">
-                                        <div class="card-title text-warning fs-2" id="total_books">500</div>
-                                        <!-- <p class="card-subtitle text-50 d-flex align-items-center">
-                                            31.5%
-                                            <i class="material-icons text-accent ml-4pt icon-16pt">keyboard_arrow_up</i>
-                                        </p> -->
-                                    </div>
-                                </div>
-                                
-                                <!-- <i class="fas fa-video icon-32pt text-20"></i> -->
-                                
-                            </div>
-                        </div>
-                    </div>
 
-                    
-                </div>
-                 <!-- stats end -->
-
-
-                <!-- sales start -->
-               <div class="row mb-lg-16pt">
-                <div class="page-separator justify-content-between">
-                    <div class="page-separator__text fonsize">Sales Reviews</div>
-                    
-                </div>
-                <div class="row " >
-                    <div class="col-md-12 d-flex justify-content-center">
-                        <div class="text-center fs-2">
-                            <h5>Total Sales........Rs.5 Crore</h5>
-                        </div>
-                            <div class="dropdown" style="margin-left: 24px;">
-                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                  Sales
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                  <li><a class="dropdown-item" href="#">30 Days</a></li>
-                                  <li><a class="dropdown-item" href="#">60 Days</a></li>
-                                  <li><a class="dropdown-item" href="#">90 Days</a></li>
-                                </ul>
-                            </div>
-                            
-                        
                     </div>
-                    
-                
-                </div>
-                
-                
-                
-                <div class="container " style="margin-top:100px;">
-                    
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <ul class="nav nav-pills mb-3 justify-content-around" id="pills-tab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
-                                        data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
-                                        aria-selected="true" style="border: 1px solid gray;">Daily</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                                        data-bs-target="#pills-profile" type="button" role="tab"
-                                        aria-controls="pills-profile" aria-selected="false" style="border: 1px solid gray;">Week</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                        data-bs-target="#pills-contact" type="button" role="tab"
-                                        aria-controls="pills-contact" aria-selected="false" style="border: 1px solid gray;">Month</button>
-                                </li>
-    
-                            </ul>
-                            <div class="tab-content" id="pills-tabContent">
-                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
-                                    aria-labelledby="pills-home-tab" tabindex="0">
+                    <!-- stats start -->
+                    <div class="row card-group-row mb-lg-8pt justify-content-center">
+                        <div class="col-lg-4 col-md-4 card-group-row__col">
+                            <div class="card card-group-row__card">
+                                <div class="card-body d-flex align-items-center">
+                                    <div class="flex d-flex  align-items-center">
 
-
-                                    <div class="container">
-                                        
-                                        <div class="col-lg-8 d-flex align-items-center">
-                                            <div class="flex"
-                                                 style="max-width: 100%">
-                
-                                                <div class="chart"
-                                                     style="height: 250px;">
-                                                    <canvas id="performanceChart"
-                                                            class="chart-canvas js-update-chart-line"
-                                                            data-chart-line-border-color="primary"
-                                                            data-chart-prefix="$"
-                                                            data-chart-suffix="k"
-                                                            data-chart-points="true"></canvas>
-                                                </div>
-                
-                                            </div>
-                                        </div>
-                                        
-                                        
-                                            <div class="graph_img ">
-                                                <img src="komal-img.jpg" class="" alt="">
-                                            </div>
-                                        
-                                    </div>
-                                        
-    
-    
-    
-                                        
-                                    
-                                </div>
-                                <div class="tab-pane fade" id="pills-profile" role="tabpanel"
-                                    aria-labelledby="pills-profile-tab" tabindex="0">
-                                    <div class="container ">
-                                        <div class="row text-center pooj mb-3">
-                                            <div class="col-md-12 ">
-                                                <h4 style=" margin-top: 20px;">What is your Name?</h4>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, provident
-                                                    earum! </p>
-                                            </div>
-                                        </div>
-    
-    
-    
-                                        <div class="row">
-                                            <div class="col-lg-12 d-flex pooj align-items-center mb-3"
-                                                onclick="window.location.href='profile.html'">
-    
-                                                <div class="avtar text-center">
-                                                    <img src="komal-img.jpg" height="60" width="60" class="rounded-circle "
-                                                        alt="">
-                                                    <h6>Name</h6>
-                                                </div>
-    
-                                                <div class="range">
-                                                    <div class="www mb-1">
-    
-                                                    </div>
-                                                    <div class="d-flex justify-content-between">
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="../../public/images/Label.jpeg" class="rounded-circle"
-                                                                height="40px" width="40px" alt="">
-                                                            <div class="text-dark fw-bold ms-1">1234</div>
-                                                        </div>
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="../../public/images/pic2.jpeg" class="rounded-circle"
-                                                                height="40px" width="40px" alt="">
-                                                            <div class="text-dark fw-bold ms-1">1234</div>
-                                                        </div>
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="../../public/images/pic3.jpeg" class="rounded-circle"
-                                                                height="40px" width="40px" alt="">
-                                                            <div class="text-dark fw-bold ms-1">1234</div>
-                                                        </div>
-    
-                                                    </div>
-                                                </div>
-                                                <div class="rank ">
-    
-                                                    <div class="row justify-content-center">
-                                                        <div class="col-md-2 w-100 text-center">
-    
-                                                            <span class="badge badge-primary fw-bold">1</span>
-                                                        </div>
-                                                    </div>
-    
-                                                </div>
-    
-                                            </div>
-                                            <div class="col-lg-12 d-flex pooj align-items-center mb-3"
-                                                onclick="window.location.href='profile.html'">
-    
-                                                <div class="avtar text-center">
-                                                    <img src="komal-img.jpg" height="60" width="60" class="rounded-circle "
-                                                        alt="">
-                                                    <h6>Name</h6>
-                                                </div>
-    
-                                                <div class="range">
-                                                    <div class="www mb-1">
-    
-                                                    </div>
-                                                    <div class="d-flex justify-content-between">
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="../../public/images/Label.jpeg" class="rounded-circle"
-                                                                height="40px" width="40px" alt="">
-                                                            <div class="text-dark fw-bold ms-1">1234</div>
-                                                        </div>
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="../../public/images/pic2.jpeg" class="rounded-circle"
-                                                                height="40px" width="40px" alt="">
-                                                            <div class="text-dark fw-bold ms-1">1234</div>
-                                                        </div>
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="../../public/images/pic3.jpeg" class="rounded-circle"
-                                                                height="40px" width="40px" alt="">
-                                                            <div class="text-dark fw-bold ms-1">1234</div>
-                                                        </div>
-    
-                                                    </div>
-                                                </div>
-                                                <div class="rank ">
-    
-                                                    <div class="row justify-content-center">
-                                                        <div class="col-md-2 w-100 text-center">
-    
-                                                            <span class="badge badge-primary fw-bold">1</span>
-                                                        </div>
-                                                    </div>
-    
-                                                </div>
-    
-                                            </div>
-                                            
+                                        <div class="h2 mb-0 ">Total Students </div>
+                                        <div class="flex">
+                                            <div class="card-title text-warning fs-2 " id="total_students">10K</div>
+                                            <!-- <p class="card-subtitle text-50 d-flex align-items-center">
+                                            31.5%
+                                            <i class="material-icons text-accent ml-4pt icon-16pt">keyboard_arrow_up</i>
+                                        </p> -->
                                         </div>
                                     </div>
+                                    <!-- <i class="material-icons icon-32pt text-20 ml-8pt">assessment</i> -->
+
                                 </div>
-                                <div class="tab-pane fade" id="pills-contact" role="tabpanel"
-                                    aria-labelledby="pills-contact-tab" tabindex="0">
-                                    <div class="container ">
-                                        <div class="row text-center pooj mb-3">
-                                            <div class="col-md-12 ">
-                                                <h4 style=" margin-top: 20px;">What is your Name?</h4>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, provident
-                                                    earum! </p>
-                                            </div>
-                                        </div>
-    
-    
-    
-                                        <div class="row">
-                                            <div class="col-lg-12 d-flex pooj align-items-center mb-3"
-                                                onclick="window.location.href='profile.html'">
-    
-                                                <div class="avtar text-center">
-                                                    <img src="komal-img.jpg" height="60" width="60" class="rounded-circle "
-                                                        alt="">
-                                                    <h6>Name</h6>
-                                                </div>
-    
-                                                <div class="range">
-                                                    <div class="www mb-1">
-    
-                                                    </div>
-                                                    <div class="d-flex justify-content-between">
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="../../public/images/Label.jpeg" class="rounded-circle"
-                                                                height="40px" width="40px" alt="">
-                                                            <div class="text-dark fw-bold ms-1">1234</div>
-                                                        </div>
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="../../public/images/pic2.jpeg" class="rounded-circle"
-                                                                height="40px" width="40px" alt="">
-                                                            <div class="text-dark fw-bold ms-1">1234</div>
-                                                        </div>
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="../../public/images/pic3.jpeg" class="rounded-circle"
-                                                                height="40px" width="40px" alt="">
-                                                            <div class="text-dark fw-bold ms-1">1234</div>
-                                                        </div>
-    
-                                                    </div>
-                                                </div>
-                                                <div class="rank ">
-    
-                                                    <div class="row justify-content-center">
-                                                        <div class="col-md-2 w-100 text-center">
-    
-                                                            <span class="badge badge-primary fw-bold">1</span>
-                                                        </div>
-                                                    </div>
-    
-                                                </div>
-    
-                                            </div>
-                                            <div class="col-lg-12 d-flex pooj align-items-center mb-3"
-                                                onclick="window.location.href='profile.html'">
-    
-                                                <div class="avtar text-center">
-                                                    <img src="komal-img.jpg" height="60" width="60" class="rounded-circle "
-                                                        alt="">
-                                                    <h6>Name</h6>
-                                                </div>
-    
-                                                <div class="range">
-                                                    <div class="www mb-1">
-    
-                                                    </div>
-                                                    <div class="d-flex justify-content-between">
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="../../public/images/Label.jpeg" class="rounded-circle"
-                                                                height="40px" width="40px" alt="">
-                                                            <div class="text-dark fw-bold ms-1">1234</div>
-                                                        </div>
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="../../public/images/pic2.jpeg" class="rounded-circle"
-                                                                height="40px" width="40px" alt="">
-                                                            <div class="text-dark fw-bold ms-1">1234</div>
-                                                        </div>
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="../../public/images/pic3.jpeg" class="rounded-circle"
-                                                                height="40px" width="40px" alt="">
-                                                            <div class="text-dark fw-bold ms-1">1234</div>
-                                                        </div>
-    
-                                                    </div>
-                                                </div>
-                                                <div class="rank ">
-    
-                                                    <div class="row justify-content-center">
-                                                        <div class="col-md-2 w-100 text-center">
-    
-                                                            <span class="badge badge-primary fw-bold">1</span>
-                                                        </div>
-                                                    </div>
-    
-                                                </div>
-    
-                                            </div>
-                                            
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 card-group-row__col">
+                            <div class="card card-group-row__card">
+                                <div class="card-body d-flex align-items-center">
+                                    <div class="flex d-flex align-items-center">
+                                        <div class="h2 mb-0 mr-3">Paid Students</div>
+                                        <div class="flex">
+                                            <div class="card-title text-warning fs-2" id="total_paid_students">5K</div>
+                                            <!-- <p class="card-subtitle text-50 d-flex align-items-center">
+                                            31.5%
+                                            <i class="material-icons text-accent ml-4pt icon-16pt">keyboard_arrow_up</i>
+                                        </p> -->
                                         </div>
                                     </div>
+                                    <!-- <i class="material-icons icon-32pt text-20 ml-8pt">assessment</i> -->
+                                    <!-- <i class="fas fa-trophy  icon-32pt text-20 "></i> -->
                                 </div>
-    
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 card-group-row__col">
+                            <div class="card card-group-row__card">
+                                <div class="card-body d-flex align-items-center">
+                                    <div class="flex d-flex align-items-center">
+                                        <div class="h2 mb-0 mr-3">Courses(Videos)</div>
+                                        <div class="flex ">
+                                            <div class="card-title text-warning fs-2" id="total_courses">100</div>
+                                            <!-- <p class="card-subtitle text-50 d-flex align-items-center">
+                                            31.5%
+                                            <i class="material-icons text-accent ml-4pt icon-16pt">keyboard_arrow_up</i>
+                                        </p> -->
+                                        </div>
+                                    </div>
+
+
+                                    <!-- <i class="fas fa-keyboard icon-32pt text-20 "></i> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 card-group-row__col">
+                            <div class="card card-group-row__card">
+                                <div class="card-body d-flex align-items-center">
+                                    <div class="flex d-flex align-items-center">
+                                        <div class="h2 mb-0 mr-3">Total Test</div>
+                                        <div class="flex ">
+                                            <div class="card-title text-warning fs-2" style="margin-left:60px;"
+                                                id="total_test">10K</div>
+                                            <!-- <p class="card-subtitle text-50 d-flex align-items-center">
+                                            31.5%
+                                            <i class="material-icons text-accent ml-4pt icon-16pt">keyboard_arrow_up</i>
+                                        </p> -->
+                                        </div>
+                                    </div>
+
+                                    <!-- <i class="fas fa-video icon-32pt text-20"></i> -->
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 card-group-row__col">
+                            <div class="card card-group-row__card">
+                                <div class="card-body d-flex align-items-center">
+                                    <div class="flex d-flex align-items-center">
+                                        <div class="h2 mb-0 mr-3">Total Question</div>
+                                        <div class="flex ">
+                                            <div class="card-title text-warning fs-2" id="total_question">10K</div>
+                                            <!-- <p class="card-subtitle text-50 d-flex align-items-center">
+                                            31.5%
+                                            <i class="material-icons text-accent ml-4pt icon-16pt">keyboard_arrow_up</i>
+                                        </p> -->
+                                        </div>
+                                    </div>
+
+                                    <!-- <i class="fas fa-video icon-32pt text-20"></i> -->
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 card-group-row__col">
+                            <div class="card card-group-row__card">
+                                <div class="card-body d-flex align-items-center">
+                                    <div class="flex d-flex align-items-center">
+                                        <div class="h2 mb-0 mr-3">Total E-Books</div>
+                                        <div class="flex ">
+                                            <div class="card-title text-warning fs-2" id="total_books">500</div>
+                                            <!-- <p class="card-subtitle text-50 d-flex align-items-center">
+                                            31.5%
+                                            <i class="material-icons text-accent ml-4pt icon-16pt">keyboard_arrow_up</i>
+                                        </p> -->
+                                        </div>
+                                    </div>
+
+                                    <!-- <i class="fas fa-video icon-32pt text-20"></i> -->
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- stats end -->
+
+
+                    <!-- sales start -->
+                    <div class="row mb-lg-16pt">
+                        <div class="page-separator justify-content-between">
+                            <div class="page-separator__text fonsize">Sales Reviews</div>
+
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-12 d-flex justify-content-center">
+                                <div class="text-center fs-2">
+                                    <h5>Total Sales........Rs.5 Crore</h5>
+                                </div>
+                                <div class="dropdown" style="margin-left: 24px;">
+                                    <button class="btn btn-primary dropdown-toggle" type="button"
+                                        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Sales
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="#">30 Days</a></li>
+                                        <li><a class="dropdown-item" href="#">60 Days</a></li>
+                                        <li><a class="dropdown-item" href="#">90 Days</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="container " style="margin-top:100px;">
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <ul class="nav nav-pills mb-3 justify-content-around" id="pills-tab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                                                data-bs-target="#pills-home" type="button" role="tab"
+                                                aria-controls="pills-home" aria-selected="true"
+                                                style="border: 1px solid gray;">Daily</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                                data-bs-target="#pills-profile" type="button" role="tab"
+                                                aria-controls="pills-profile" aria-selected="false"
+                                                style="border: 1px solid gray;">Week</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                                data-bs-target="#pills-contact" type="button" role="tab"
+                                                aria-controls="pills-contact" aria-selected="false"
+                                                style="border: 1px solid gray;">Month</button>
+                                        </li>
+
+                                    </ul>
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                            aria-labelledby="pills-home-tab" tabindex="0">
+
+
+                                            <div class="container">
+
+                                                <div class="col-lg-8 d-flex align-items-center">
+                                                    <div class="flex" style="max-width: 100%">
+
+                                                        <div class="chart" style="height: 250px;">
+                                                            <canvas id="performanceChart"
+                                                                class="chart-canvas js-update-chart-line"
+                                                                data-chart-line-border-color="primary"
+                                                                data-chart-prefix="$" data-chart-suffix="k"
+                                                                data-chart-points="true"></canvas>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="graph_img ">
+                                                    <img src="komal-img.jpg" class="" alt="">
+                                                </div>
+
+                                            </div>
+
+
+
+
+
+
+                                        </div>
+                                        <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                            aria-labelledby="pills-profile-tab" tabindex="0">
+                                            <div class="container ">
+                                                <div class="row text-center pooj mb-3">
+                                                    <div class="col-md-12 ">
+                                                        <h4 style=" margin-top: 20px;">What is your Name?</h4>
+                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                            Minus, provident
+                                                            earum! </p>
+                                                    </div>
+                                                </div>
+
+
+
+                                                <div class="row">
+                                                    <div class="col-lg-12 d-flex pooj align-items-center mb-3"
+                                                        onclick="window.location.href='profile.html'">
+
+                                                        <div class="avtar text-center">
+                                                            <img src="komal-img.jpg" height="60" width="60"
+                                                                class="rounded-circle " alt="">
+                                                            <h6>Name</h6>
+                                                        </div>
+
+                                                        <div class="range">
+                                                            <div class="www mb-1">
+
+                                                            </div>
+                                                            <div class="d-flex justify-content-between">
+                                                                <div class="d-flex align-items-center">
+                                                                    <img src="../../public/images/Label.jpeg"
+                                                                        class="rounded-circle" height="40px"
+                                                                        width="40px" alt="">
+                                                                    <div class="text-dark fw-bold ms-1">1234</div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center">
+                                                                    <img src="../../public/images/pic2.jpeg"
+                                                                        class="rounded-circle" height="40px"
+                                                                        width="40px" alt="">
+                                                                    <div class="text-dark fw-bold ms-1">1234</div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center">
+                                                                    <img src="../../public/images/pic3.jpeg"
+                                                                        class="rounded-circle" height="40px"
+                                                                        width="40px" alt="">
+                                                                    <div class="text-dark fw-bold ms-1">1234</div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="rank ">
+
+                                                            <div class="row justify-content-center">
+                                                                <div class="col-md-2 w-100 text-center">
+
+                                                                    <span class="badge badge-primary fw-bold">1</span>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-lg-12 d-flex pooj align-items-center mb-3"
+                                                        onclick="window.location.href='profile.html'">
+
+                                                        <div class="avtar text-center">
+                                                            <img src="komal-img.jpg" height="60" width="60"
+                                                                class="rounded-circle " alt="">
+                                                            <h6>Name</h6>
+                                                        </div>
+
+                                                        <div class="range">
+                                                            <div class="www mb-1">
+
+                                                            </div>
+                                                            <div class="d-flex justify-content-between">
+                                                                <div class="d-flex align-items-center">
+                                                                    <img src="../../public/images/Label.jpeg"
+                                                                        class="rounded-circle" height="40px"
+                                                                        width="40px" alt="">
+                                                                    <div class="text-dark fw-bold ms-1">1234</div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center">
+                                                                    <img src="../../public/images/pic2.jpeg"
+                                                                        class="rounded-circle" height="40px"
+                                                                        width="40px" alt="">
+                                                                    <div class="text-dark fw-bold ms-1">1234</div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center">
+                                                                    <img src="../../public/images/pic3.jpeg"
+                                                                        class="rounded-circle" height="40px"
+                                                                        width="40px" alt="">
+                                                                    <div class="text-dark fw-bold ms-1">1234</div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="rank ">
+
+                                                            <div class="row justify-content-center">
+                                                                <div class="col-md-2 w-100 text-center">
+
+                                                                    <span class="badge badge-primary fw-bold">1</span>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                                            aria-labelledby="pills-contact-tab" tabindex="0">
+                                            <div class="container ">
+                                                <div class="row text-center pooj mb-3">
+                                                    <div class="col-md-12 ">
+                                                        <h4 style=" margin-top: 20px;">What is your Name?</h4>
+                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                            Minus, provident
+                                                            earum! </p>
+                                                    </div>
+                                                </div>
+
+
+
+                                                <div class="row">
+                                                    <div class="col-lg-12 d-flex pooj align-items-center mb-3"
+                                                        onclick="window.location.href='profile.html'">
+
+                                                        <div class="avtar text-center">
+                                                            <img src="komal-img.jpg" height="60" width="60"
+                                                                class="rounded-circle " alt="">
+                                                            <h6>Name</h6>
+                                                        </div>
+
+                                                        <div class="range">
+                                                            <div class="www mb-1">
+
+                                                            </div>
+                                                            <div class="d-flex justify-content-between">
+                                                                <div class="d-flex align-items-center">
+                                                                    <img src="../../public/images/Label.jpeg"
+                                                                        class="rounded-circle" height="40px"
+                                                                        width="40px" alt="">
+                                                                    <div class="text-dark fw-bold ms-1">1234</div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center">
+                                                                    <img src="../../public/images/pic2.jpeg"
+                                                                        class="rounded-circle" height="40px"
+                                                                        width="40px" alt="">
+                                                                    <div class="text-dark fw-bold ms-1">1234</div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center">
+                                                                    <img src="../../public/images/pic3.jpeg"
+                                                                        class="rounded-circle" height="40px"
+                                                                        width="40px" alt="">
+                                                                    <div class="text-dark fw-bold ms-1">1234</div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="rank ">
+
+                                                            <div class="row justify-content-center">
+                                                                <div class="col-md-2 w-100 text-center">
+
+                                                                    <span class="badge badge-primary fw-bold">1</span>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-lg-12 d-flex pooj align-items-center mb-3"
+                                                        onclick="window.location.href='profile.html'">
+
+                                                        <div class="avtar text-center">
+                                                            <img src="komal-img.jpg" height="60" width="60"
+                                                                class="rounded-circle " alt="">
+                                                            <h6>Name</h6>
+                                                        </div>
+
+                                                        <div class="range">
+                                                            <div class="www mb-1">
+
+                                                            </div>
+                                                            <div class="d-flex justify-content-between">
+                                                                <div class="d-flex align-items-center">
+                                                                    <img src="../../public/images/Label.jpeg"
+                                                                        class="rounded-circle" height="40px"
+                                                                        width="40px" alt="">
+                                                                    <div class="text-dark fw-bold ms-1">1234</div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center">
+                                                                    <img src="../../public/images/pic2.jpeg"
+                                                                        class="rounded-circle" height="40px"
+                                                                        width="40px" alt="">
+                                                                    <div class="text-dark fw-bold ms-1">1234</div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center">
+                                                                    <img src="../../public/images/pic3.jpeg"
+                                                                        class="rounded-circle" height="40px"
+                                                                        width="40px" alt="">
+                                                                    <div class="text-dark fw-bold ms-1">1234</div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="rank ">
+
+                                                            <div class="row justify-content-center">
+                                                                <div class="col-md-2 w-100 text-center">
+
+                                                                    <span class="badge badge-primary fw-bold">1</span>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-               </div>
 
-               <!-- sales end -->
+                    <!-- sales end -->
 
-                <!-- corses start -->
-            <div class="row mb-lg-16pt" id="parentDiv">
-                <div class="page-separator">
-                    <div class="page-separator__text fonsize">Total Courses</div>
-                </div>
-               </div>
-
-               <!-- courses end -->
-
-
-               <!-- Latest Courses start -->
-               <div class="row mb-lg-16pt">
-                <div class="page-separator justify-content-between">
-                    <div class="page-separator__text fonsize">Latest Users</div>
-                    <div class="page-separator__text">
-                        <a href="admin_addstudent1.html" class="btn btn-primary" role="button" style="color:white;">Add Student</a>
+                    <!-- corses start -->
+                    <div class="row mb-lg-16pt" id="parentDiv">
+                        <div class="page-separator">
+                            <div class="page-separator__text fonsize">Total Courses</div>
+                        </div>
                     </div>
-                </div>
-                <table class="table caption-top" id="table_student_list">
-                    <caption>List of Latest Users</caption>
-                    <thead>
-                      <tr>
-                        <th scope="col">SNo.</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email Id</th>
-                        <th scope="col">Phone No.</th>
-                        <th scope="col">User Type</th>
-                        <th scope="col">Registrstion No.</th>
-                        
-                      </tr>
-                    </thead>
-                    <tbody>
-                     
-                    </tbody>
-                  </table>
+
+                    <!-- courses end -->
 
 
-               </div>
-               <!-- Latest Courses end-->
+                    <!-- Latest Courses start -->
+                    <div class="row mb-lg-16pt">
+                        <div class="page-separator justify-content-between">
+                            <div class="page-separator__text fonsize">Latest Users</div>
+                            <div class="page-separator__text">
+                                <a href="admin_addstudent1.html" class="btn btn-primary" role="button"
+                                    style="color:white;">Add Student</a>
+                            </div>
+                        </div>
+                        <table class="table caption-top" id="table_student_list">
+                            <caption>List of Latest Users</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">SNo.</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Email Id</th>
+                                    <th scope="col">Phone No.</th>
+                                    <th scope="col">User Type</th>
+                                    <th scope="col">Registrstion No.</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                    <!-- Latest Courses end-->
 
 
 
-                
-                
+
+
 
 
 
                 </div>
             </div>
 
-           
-
-        
-
-
-      
 
 
 
 
 
 
-           
-
-
-           
 
 
 
 
-            
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -990,7 +1022,8 @@
                                                         style="height: 25px;">
                                                 </div>
                                                 <div class="contact-content">
-                                                    <a href="tel:+91 9827237654" style="color: white;">+91 9827237654</a>
+                                                    <a href="tel:+91 9827237654" style="color: white;">+91
+                                                        9827237654</a>
 
                                                     <!-- <p style="color: white;">+91 6394477615</p> -->
                                                 </div>
@@ -1003,7 +1036,8 @@
                                                 <div class="contact-content" style="    margin-left: 22px;
                                                 margin-top: -23px;">
 
-                                                    <a href="email:support@intelligencecareerinstitute.com" style="color: white;    ">support@intelligencecareerinstitute.com</a>
+                                                    <a href="email:support@intelligencecareerinstitute.com"
+                                                        style="color: white;    ">support@intelligencecareerinstitute.com</a>
                                                 </div>
                                             </div>
                                             <div class="contact-item">
@@ -1108,7 +1142,7 @@
                     <li class="sidebar-menu-item ">
                         <a class="sidebar-menu-button" href="admin-dashboard-question-bank.html">
                             <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">local_library</span>
-                            
+
                             <span class="sidebar-menu-text">Question Bank</span>
                         </a>
                     </li>
@@ -1136,7 +1170,7 @@
                             <span class="sidebar-menu-text"> Courses Video</span>
                         </a>
                     </li>
-                   
+
                     <li class="sidebar-menu-item">
                         <a class="sidebar-menu-button" href="admin-dashboard_ebook1.html">
                             <i class="fas fa-book sidebar-menu-icon sidebar-menu-icon--left"></i>
@@ -1161,8 +1195,8 @@
                             <span class="sidebar-menu-text"> Setting</span>
                         </a>
                     </li>
-                   
-                   
+
+
                     <li class="sidebar-menu-item">
                         <a class="sidebar-menu-button" href="admin-dashboard-profile-1.html">
                             <i class="fas fa-user sidebar-menu-icon sidebar-menu-icon--left"></i>
@@ -1175,15 +1209,15 @@
                             <span class="sidebar-menu-text">Logout</span>
                         </a>
                     </li>
-                 
+
                 </ul>
-             
-              
 
-                
-              
 
-               
+
+
+
+
+
 
                 <!-- // END Sidebar Content -->
 
@@ -1223,106 +1257,115 @@
     <script src="assetss/js/isotope.pkgd.js"></script>
     <script src="assetss/js/functions.js"></script>
     <script>
-        window.addEventListener('DOMContentLoaded',()=>{
+        window.addEventListener('DOMContentLoaded', () => {
             fetchDashboardData();
             const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
-             console.log(token);
-             const isLoggedIn = !!token;
-             let name = '';
-             let email ='';
- 
-             if (isLoggedIn) {
-                 const jwtvalue = token.split('=')[1];
+            console.log(token);
+            const isLoggedIn = !!token;
+            let name = '';
+            let email = '';
+
+            if (isLoggedIn) {
+                const jwtvalue = token.split('=')[1];
                 // Decode the JWT manually
-                 const decodedToken = JSON.parse(atob(jwtvalue.split('.')[1]));
-                 name = decodedToken.name;
-                 email = decodedToken.email;
-                 document.getElementById('admin_login_btn').innerText = name;
-                 document.getElementById('admin_login_btn').setAttribute('href','#');
-                 
- 
-             }
-             else{
-                window.location.href = 'admin-dashboard-login.html';
-             }
-        })
-        async function fetchDashboardData(){
-            // Show the loader before fetching data
-  showLoader();
-            await fetch('https://ici-backend.onrender.com/api/totalStudents').then((res)=>{
-                return res.json();
-            }).then((data)=>{
-                console.log("total students",data);
-                displayEle(data,'total_students');
-                populateTable(data,'Free');
-            }).catch((err)=>{
-                console.log(err);
-            })
+                const decodedToken = JSON.parse(atob(jwtvalue.split('.')[1]));
+                name = decodedToken.name;
+                email = decodedToken.email;
+                document.getElementById('admin_login_btn').innerText = name;
+                document.getElementById('admin_login_btn').setAttribute('href', '#');
 
-            await fetch('https://ici-backend.onrender.com/api/paidStudents').then((res)=>{
-                return res.json();
-            }).then((data)=>{
-                console.log("total paid students",data);
-                displayEle(data,'total_paid_students');
-            }).catch((err)=>{
-                console.log(err);
-            })
-            await fetch('https://ici-backend.onrender.com/api/courses').then((res)=>{
-                return res.json();
-            }).then((data)=>{
-                console.log('total courses', data);
-                displayEle(data,'total_courses');
-                displayCourses(data);
-            }).catch((err)=>{
-                console.log(err);
-            })
-
-            await fetch('https://ici-backend.onrender.com/api/totalTests').then((res)=>{
-                return res.json();
-            }).then((data)=>{
-                console.log('total test', data);
-                displayEle(data,'total_test');
-            }).catch((err)=>{
-                console.log(err);
-            })
-            await fetch('https://ici-backend.onrender.com/api/ncert-books').then((res)=>{
-                return res.json();
-            }).then((data)=>{
-                console.log("total books",data);
-                displayEle(data,'total_books');
-                hideLoader();
-            }).catch((err)=>{
-                console.log(err);
-            })
-        }
-        function displayEle(data,id){
-            const parentEle  = document.getElementById(id);
-            parentEle.innerText =" "+ data.length;
-            if (id=== 'total_test'){
-                document.getElementById('total_question').innerText = data.length * 20;
 
             }
+            else {
+                window.location.href = 'admin-dashboard-login.html';
+            }
+        })
+        async function fetchDashboardData() {
+            // Show the loader before fetching data
+            showLoader();
+            await fetch('https://ici-backend.onrender.com/api/totalStudents').then((res) => {
+                return res.json();
+            }).then((data) => {
+                console.log("total students", data);
+                displayEle(data, 'total_students');
+                populateTable(data, 'Free');
+            }).catch((err) => {
+                console.log(err);
+            })
+
+            await fetch('https://ici-backend.onrender.com/api/paidStudents').then((res) => {
+                return res.json();
+            }).then((data) => {
+                console.log("total paid students", data);
+                displayEle(data, 'total_paid_students');
+            }).catch((err) => {
+                console.log(err);
+            })
+            await fetch('https://ici-backend.onrender.com/api/courses').then((res) => {
+                return res.json();
+            }).then((data) => {
+                console.log('total courses', data);
+                displayEle(data, 'total_courses');
+                displayCourses(data);
+            }).catch((err) => {
+                console.log(err);
+            })
+
+            await fetch('http://localhost:3000/api/totalTests').then((res) => {
+                return res.json();
+            }).then((data) => {
+                console.log('total question set', data);
+                displayEle(data, 'total_question');
+            }).catch((err) => {
+                console.log(err);
+            })
+            await fetch('https://ici-backend.onrender.com/api/ncert-books').then((res) => {
+                return res.json();
+            }).then((data) => {
+                console.log("total books", data);
+                displayEle(data, 'total_books');
+                hideLoader();
+            }).catch((err) => {
+                console.log(err);
+            })
+            await fetch('http://localhost:3000/testNumber').then((res) => {
+                return res.json();
+            }).then((data) => {
+                console.log('total test', data);
+                displayEle(data, 'total_test');
+            }).catch((err) => {
+                console.log(err);
+            })
         }
-        function populateTable(data,userType){
+        function displayEle(data, id) {
+            const parentEle = document.getElementById(id);
+
+            if (id === 'total_question' || id === 'total_test') {
+                parentEle.innerText = data.total;
+            } else {
+                parentEle.innerText = " " + data.length;
+            }
+        }
+        function populateTable(data, userType) {
 
             console.log("running table");
             console.log(data);
-//             {
-//   "id": 5,
-//   "name": "Test user 2",
-//   "email": "user2@gmail.com",
-//   "password": "$2b$10$2TpyEZ/iGhUYVnQRXNOkQOr2adPUdAyBEUGs3WUjq2vCfEoqdQsXu",
-//   "doj": "2023-05-24T18:30:00.000Z"
-// }
-            const tablebody  =document.querySelector('#table_student_list tbody');
-            for(let i=0;i<data.length;i++){
-                const student  = data[i];
+            //             {
+            //   "id": 5,
+            //   "name": "Test user 2",
+            //   "email": "user2@gmail.com",
+            //   "password": "$2b$10$2TpyEZ/iGhUYVnQRXNOkQOr2adPUdAyBEUGs3WUjq2vCfEoqdQsXu",
+            //   "doj": "2023-05-24T18:30:00.000Z"
+            // }
+            const tablebody = document.querySelector('#table_student_list tbody');
+            for (let i = 0; i < data.length; i++) {
+                const student = data[i];
 
                 const row = document.createElement('tr');
 
                 const idcell = document.createElement('td');
-                idcell.setAttribute('scope','row');
-                idcell.textContent = i+1;
+                idcell.setAttribute('scope', 'row');
+                idcell.textContent = i + 1;
                 row.appendChild(idcell);
 
                 const dojcell = document.createElement('td');
@@ -1330,7 +1373,7 @@
                 dojcell.textContent = dataObj;
                 row.appendChild(dojcell);
 
-                const namecell  =document.createElement('td');
+                const namecell = document.createElement('td');
                 namecell.textContent = student.name;
                 row.appendChild(namecell);
 
@@ -1358,14 +1401,14 @@
         }
 
         function displayCourses(data) {
-  var parentDiv = document.getElementById('parentDiv');
+            var parentDiv = document.getElementById('parentDiv');
 
-  // Iterate over the data array
-  data.forEach(function(course) {
-    // Create the div elements and set their attributes and innerHTML
-    var div = document.createElement('div');
-    div.className = 'col-lg-3';
-    div.innerHTML = `
+            // Iterate over the data array
+            data.forEach(function (course) {
+                // Create the div elements and set their attributes and innerHTML
+                var div = document.createElement('div');
+                div.className = 'col-lg-3';
+                div.innerHTML = `
       <div class="card card-sm card--elevated p-relative o-hidden overlay overlay--primary-dodger-blue js-overlay mdk-reveal js-mdk-reveal"
            data-partial-height="44"
            data-toggle="popover"
@@ -1385,15 +1428,15 @@
       </div>
     `;
 
-    // Update the text content of the card title
-    var cardTitle = div.querySelector('#text_content');
-    cardTitle.textContent = course.chapter_name +"->" +course.subject_name+"::"+course.class;
+                // Update the text content of the card title
+                var cardTitle = div.querySelector('#text_content');
+                cardTitle.textContent = course.chapter_name + "->" + course.subject_name + "::" + course.class;
 
-    // Append the created div to the parent div
-    parentDiv.appendChild(div);
-  });
-}
-        
+                // Append the created div to the parent div
+                parentDiv.appendChild(div);
+            });
+        }
+
     </script>
     <script>
         (function () {
@@ -1412,40 +1455,50 @@
     </script>
     <script src="../../public/js/page.ui-charts.js"></script>
     <script src="../../public/js/chartjs-rounded-bar.js"></script>
-        <script src="../../public/js/chartjs.js"></script>
-        <script src="../../public/vendor/Chart.min.js"></script>
+    <script src="../../public/js/chartjs.js"></script>
+    <script src="../../public/vendor/Chart.min.js"></script>
 
-        <script>
-            // Show the loader and apply background blur when the page starts loading
-            window.addEventListener('load',async function() {
-                console.log('loader is loaded')
-              const loader = document.querySelector('.loader');
-              const content = document.querySelector('.blur');
-              
-              loader.style.display = 'block';
-              content.classList.add('blur');
-              
-            
-               // Hide the loader and remove background blur after 10 seconds
-                setTimeout(function() {
-                    console.log('stopping the loader')
-                    loader.style.display = 'none';
-                    content.classList.remove('blur');
-                }, 25000);
-            });
-        
-            // Hide the loader and remove background blur when the page finishes loading
-            // window.addEventListener('DOMContentLoaded', function() {
-             
-            // });
-            function hideLoader(){
-                const loader = document.querySelector('.loader');
-              const content = document.querySelector('.blur');
-              
-              loader.style.display = 'none';
-              content.classList.remove('blur');
-            }
-          </script>
+    <script>
+        // Wait for the page to load
+document.addEventListener("DOMContentLoaded", function(event) {
+  // Create the loader container element
+  var loaderContainer = document.createElement("div");
+  loaderContainer.setAttribute("id", "loader-container");
+  loaderContainer.style.position = "fixed";
+  loaderContainer.style.top = "0";
+  loaderContainer.style.left = "0";
+  loaderContainer.style.width = "100%";
+  loaderContainer.style.height = "100%";
+  loaderContainer.style.display = "flex";
+  loaderContainer.style.alignItems = "center";
+  loaderContainer.style.justifyContent = "center";
+  loaderContainer.style.zIndex = "9999";
+  loaderContainer.style.backdropFilter = "blur(8px)";
+  loaderContainer.style.webkitBackdropFilter = "blur(8px)";
+
+  // Create the loader element
+  var loader = document.createElement("div");
+  loader.setAttribute("id", "loader");
+  loader.style.border = "16px solid #f3f3f3";
+  loader.style.borderTop = "16px solid #3498db";
+  loader.style.borderRadius = "50%";
+  loader.style.width = "120px";
+  loader.style.height = "120px";
+  loader.style.animation = "spin 2s linear infinite";
+
+  // Append the loader to the container
+  loaderContainer.appendChild(loader);
+
+  // Append the container to the document body
+  document.body.appendChild(loaderContainer);
+
+  // Hide the loader after 10 seconds
+  setTimeout(function() {
+    loaderContainer.style.display = "none";
+  }, 5000);
+});
+
+    </script>
 
 </body>
 

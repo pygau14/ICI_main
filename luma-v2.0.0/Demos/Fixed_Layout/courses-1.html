@@ -39,34 +39,40 @@
     <link rel="stylesheet" href="assetss/css/style.css">
     <link rel="stylesheet" type="text/css" href="loader.css">
     <style>
-        .fonsize{
-            font-size:18px;
-            
+        .fonsize {
+            font-size: 18px;
+
 
         }
-         /* <!-- Footer CSS --> */
-    .footer-bottom {
+
+        /* <!-- Footer CSS --> */
+        .footer-bottom {
             padding: 0px 0;
             background: #fff;
         }
+
         .contact-item {
             border-radius: 0px;
             padding: 0px 0px;
             box-shadow: 0 0px 0px rgba(136, 136, 136, 0.1);
             background: transparent;
         }
+
         .footer-content11 {
             margin-left: 35px;
         }
+
         .para {
             color: white;
             margin: 2px 16px 4px -24px;
             text-align: justify;
         }
-        .footer-wrapper01{
+
+        .footer-wrapper01 {
             width: 1368px;
             margin-left: -21px;
         }
+
         @media only screen and (max-width:600px) {
             .lab-ul01 {
                 margin-left: 1px !important;
@@ -76,6 +82,7 @@
             .header01 {
                 margin-top: 1px !important;
             }
+
             .fone {
                 margin-top: -64px !important;
             }
@@ -87,230 +94,237 @@
             .para {
                 margin: 32px 16px 4px -1px !important;
             }
-            .footer06{
-            margin-left:0px!important;
-        }
-        .header01 {
+
+            .footer06 {
+                margin-left: 0px !important;
+            }
+
+            .header01 {
                 margin-top: 1px !important;
             }
-            .footer-wrapper01{
-                width: 392px!important;
-                margin-left: -21px!important;
+
+            .footer-wrapper01 {
+                width: 392px !important;
+                margin-left: -21px !important;
+            }
+
         }
-        
-        }
+
         @media (min-width: 1200px) {
             .header-section.header-fixed {
                 top: -5px;
             }
         }
+
         /* Base styles */
-    * {
-      box-sizing: border-box;
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f1f1f1;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f1f1f1;
+        }
 
-    .course-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      gap: 20px;
-    }
+        .course-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 20px;
+        }
 
-    .course {
-      width: calc(30% - 10px);
-      height : calc(auto-10px);
-      background-color: #fff;
-      border-radius: 5px;
-      padding: 15px;
-      cursor: pointer;
-      position: relative;
-      transition: background-color 0.3s;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-    }
+        .course {
+            width: calc(30% - 10px);
+            height: calc(auto-10px);
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 15px;
+            cursor: pointer;
+            position: relative;
+            transition: background-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
 
-    .course:hover {
-      background-color: #b6aaaa;
-    }
+        .course:hover {
+            background-color: #b6aaaa;
+        }
 
-    .pause-icon {
-      width: 100%;
-      height: 180px;
-      background-color: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-size: 24px;
-    }
+        .pause-icon {
+            width: 100%;
+            height: 180px;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+        }
 
-    .course-info {
-      flex-grow: 1;
-    }
+        .course-info {
+            flex-grow: 1;
+        }
 
-    .course-heading {
-      font-weight: bold;
-    }
+        .course-heading {
+            font-weight: bold;
+        }
 
-    .course-subheading {
-      color: #888;
-      margin-top: 5px;
-    }
+        .course-subheading {
+            color: #888;
+            margin-top: 5px;
+        }
 
-    .course-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 10px;
-      color: #888;
-      font-size: 14px;
-    }
+        .course-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+            color: #888;
+            font-size: 14px;
+        }
 
-    .popover {
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      position: absolute;
-      top: calc(100% - 100px);
-      left: 50px;
-      width : 200px;
-      z-index: 1;
-      display: none;
-    }
+        .popover {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            position: absolute;
+            top: calc(100% - 100px);
+            left: 50px;
+            width: 200px;
+            z-index: 1;
+            display: none;
+        }
 
-    .popover.active {
-      display: block;
-    }
+        .popover.active {
+            display: block;
+        }
 
-    .popover-heading {
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
+        .popover-heading {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
 
-    .popover-subheading {
-      color: #888;
-      margin-top: 5px;
-      margin-bottom: 10px;
-    }
+        .popover-subheading {
+            color: #888;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
 
-    .popover-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+        .popover-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-    .popover-list-item {
-      margin-bottom: 5px;
-    }
+        .popover-list-item {
+            margin-bottom: 5px;
+        }
 
-    .popover-list-item:hover {
-      color: blue;
-      cursor: pointer;
-    }
+        .popover-list-item:hover {
+            color: blue;
+            cursor: pointer;
+        }
 
-    .wishlist_btn{
-      width : 100%;
-      height : 50px;
-      border: 1px solid white;
-      background-color: rgb(44, 226, 44);
-      color: white;
-      text-align: center;
-      transition: background-color .3s;
-    }
+        .wishlist_btn {
+            width: 100%;
+            height: 50px;
+            border: 1px solid white;
+            background-color: rgb(44, 226, 44);
+            color: white;
+            text-align: center;
+            transition: background-color .3s;
+        }
 
-    .wishlist_btn:hover{
-      background-color: rgb(5, 61, 5);
-    }
-    .moreinfo_btn{
-      width : 100%;
-      height : 50px;
-      border: 1px solid white;
-      background-color: rgb(44, 226, 44);
-      color: white;
-      text-align: center;
-      transition: background-color .3s;
-    }
+        .wishlist_btn:hover {
+            background-color: rgb(5, 61, 5);
+        }
 
-    .moreinfo_btn:hover{
-      background-color: rgb(5, 61, 5);
-    }
+        .moreinfo_btn {
+            width: 100%;
+            height: 50px;
+            border: 1px solid white;
+            background-color: rgb(44, 226, 44);
+            color: white;
+            text-align: center;
+            transition: background-color .3s;
+        }
 
-    /* Star rating */
-    .star {
-  display: inline-block;
-  font-size: 18px;
-  color: gold;
-  line-height: 1;
-}
+        .moreinfo_btn:hover {
+            background-color: rgb(5, 61, 5);
+        }
 
-.star.filled::before {
-  content: "\2605";
-}
+        /* Star rating */
+        .star {
+            display: inline-block;
+            font-size: 18px;
+            color: gold;
+            line-height: 1;
+        }
 
-.star.half-filled::before {
-  content: "\2605";
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  width: 50%;
-  vertical-align: bottom;
-  line-height: 1;
-}
+        .star.filled::before {
+            content: "\2605";
+        }
 
-.star.half-filled::after {
-  content: "\2606";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 100%;
-  color: gold;
-  overflow: hidden;
-  vertical-align: bottom;
-  line-height: 1;
-}
+        .star.half-filled::before {
+            content: "\2605";
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            width: 50%;
+            vertical-align: bottom;
+            line-height: 1;
+        }
 
-.star.empty::before {
-  content: "\2606";
-}
+        .star.half-filled::after {
+            content: "\2606";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 100%;
+            color: gold;
+            overflow: hidden;
+            vertical-align: bottom;
+            line-height: 1;
+        }
+
+        .star.empty::before {
+            content: "\2606";
+        }
 
 
-    /* Pagination */
-    .pagination {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
 
-    .pagination button {
-      background-color: #fff;
-      border: 0px solid black;
-      border-radius: 50%;
-      width: 60px;
-      height: 40px;
-      margin: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      padding-bottom: 15px;
-      padding-left: 13px;
-      padding-top: 10px;
-    }
+        .pagination button {
+            background-color: #fff;
+            border: 0px solid black;
+            border-radius: 50%;
+            width: 60px;
+            height: 40px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            padding-bottom: 15px;
+            padding-left: 13px;
+            padding-top: 10px;
+        }
 
-    .pagination button.active {
-      background-color: #a19c9c;
-    }
-    .pagination button:hover{
-        background-color: #dfdc59;
-    }
+        .pagination button.active {
+            background-color: #a19c9c;
+        }
+
+        .pagination button:hover {
+            background-color: #dfdc59;
+        }
     </style>
 </head>
 
@@ -335,10 +349,10 @@
     </div>
     <div class="loader">
         <div class="loader-content"></div>
-      </div>
+    </div>
 
     <!-- Header Layout -->
-    <div class="mdk-header-layout js-mdk-header-layout blur" >
+    <div class="mdk-header-layout js-mdk-header-layout blur">
 
         <!-- Header -->
 
@@ -437,7 +451,7 @@
                            
                         </ul> -->
 
-                
+
                 </div>
 
 
@@ -513,9 +527,11 @@
                                     </ul>
                                 </div>
 
-                                <a href="student-dashboard-login.html" id="login_btn" class="login"><i class="icofont-user"></i>
+                                <a href="student-dashboard-login.html" id="login_btn" class="login"><i
+                                        class="icofont-user"></i>
                                     <span>LOG IN</span> </a>
-                                <a href="student-dashboard-signup.html" id="signup_btn" class="signup"><i class="icofont-users"></i>
+                                <a href="student-dashboard-signup.html" id="signup_btn" class="signup"><i
+                                        class="icofont-users"></i>
                                     <span>SIGN UP</span>
                                 </a>
 
@@ -533,7 +549,7 @@
             </header>
             <!-- header section ending here -->
             <!-- new header end -->
-     
+
             <!-- <script src="loader.js"></script> -->
 
             <!-- Header Layout Content -->
@@ -555,9 +571,11 @@
                                             class="text-muted text-headings text-uppercase mr-3 d-none d-sm-block fonsize">Sort
                                             by</small>
 
-                                        <a href="#" class="sort desc small text-headings text-uppercase fonsize">Newest</a>
+                                        <a href="#"
+                                            class="sort desc small text-headings text-uppercase fonsize">Newest</a>
 
-                                        <a href="#" class="sort small text-headings text-uppercase ml-2 fonsize">Popularity</a>
+                                        <a href="#"
+                                            class="sort small text-headings text-uppercase ml-2 fonsize">Popularity</a>
 
                                     </div>
 
@@ -569,12 +587,13 @@
                                 </div>
 
                                 <div class="page-separator">
-                                    <div class="page-separator__text fonsize" id="courses_heading"> <span class="text-danger mx-2  ">
+                                    <div class="page-separator__text fonsize" id="courses_heading"> <span
+                                            class="text-danger mx-2  ">
                                             our </span> Popular Courses</div>
                                 </div>
 
                                 <div id="course-list" class="row card-group-row course-container">
-                                   
+
 
                                 </div>
 
@@ -615,7 +634,7 @@
                                 </div>
 
                                 <div id="chem-course-list" class="row card-group-row course-container">
-                                    
+
 
                                 </div>
 
@@ -776,43 +795,49 @@
                                     <li class="sidebar-menu-item active">
                                         <a href="" class="sidebar-menu-button">
                                             <span
-                                            class="material-icons sidebar-menu-icon sidebar-menu-icon--left">code</span>
-                                            <span class="sidebar-menu-text fonsize" onclick="filterCourses(event , 'chemistry')">Chemistry</span>
+                                                class="material-icons sidebar-menu-icon sidebar-menu-icon--left">code</span>
+                                            <span class="sidebar-menu-text fonsize"
+                                                onclick="filterCourses(event , 'chemistry')">Chemistry</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item">
                                         <a href="" class="sidebar-menu-button">
                                             <span
                                                 class="material-icons sidebar-menu-icon sidebar-menu-icon--left">brush</span>
-                                            <span class="sidebar-menu-text fonsize" onclick="filterCourses(event , 'physics')">Physics</span>
+                                            <span class="sidebar-menu-text fonsize"
+                                                onclick="filterCourses(event , 'physics')">Physics</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item">
                                         <a href="" class="sidebar-menu-button">
                                             <span
                                                 class="material-icons sidebar-menu-icon sidebar-menu-icon--left">settings_cell</span>
-                                            <span class="sidebar-menu-text fonsize" onclick="filterCourses(event , 'botany')">Botany</span>
+                                            <span class="sidebar-menu-text fonsize"
+                                                onclick="filterCourses(event , 'botany')">Botany</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item">
                                         <a href="" class="sidebar-menu-button">
                                             <span
                                                 class="material-icons sidebar-menu-icon sidebar-menu-icon--left">android</span>
-                                            <span class="sidebar-menu-text fonsize" onclick="filterCourses(event , 'zoology')">Zoology</span>
+                                            <span class="sidebar-menu-text fonsize"
+                                                onclick="filterCourses(event , 'zoology')">Zoology</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item">
                                         <a href="" class="sidebar-menu-button">
                                             <span
                                                 class="material-icons sidebar-menu-icon sidebar-menu-icon--left">business_center</span>
-                                            <span class="sidebar-menu-text fonsize" onclick="filterCourses(event , 'maths')">Maths</span>
+                                            <span class="sidebar-menu-text fonsize"
+                                                onclick="filterCourses(event , 'maths')">Maths</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item">
                                         <a href="" class="sidebar-menu-button">
                                             <!-- <span
                                                 class="material-icons sidebar-menu-icon sidebar-menu-icon--left">business_center</span> -->
-                                            <span class="sidebar-menu-text fonsize" onclick="resetCourses()">RESET</span>
+                                            <span class="sidebar-menu-text fonsize"
+                                                onclick="resetCourses()">RESET</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -830,14 +855,16 @@
                                         <div class="custom-control custom-checkbox">
                                             <input class="custom-control-input" type="checkbox" value=""
                                                 id="filtersCheck02">
-                                            <label class="custom-control-label fonsize" for="filtersCheck02">Archive</label>
+                                            <label class="custom-control-label fonsize"
+                                                for="filtersCheck02">Archive</label>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox">
                                             <input class="custom-control-input" type="checkbox" value=""
                                                 id="filtersCheck06">
-                                            <label class="custom-control-label fonsize" for="filtersCheck06">Unity</label>
+                                            <label class="custom-control-label fonsize"
+                                                for="filtersCheck06">Unity</label>
                                         </div>
                                     </div>
 
@@ -860,7 +887,8 @@
                                         <div class="custom-control custom-checkbox">
                                             <input class="custom-control-input" type="checkbox" value=""
                                                 id="filtersCheck05">
-                                            <label class="custom-control-label fonsize" for="filtersCheck05">Android</label>
+                                            <label class="custom-control-label fonsize"
+                                                for="filtersCheck05">Android</label>
                                         </div>
                                     </div>
                                 </div>
@@ -878,7 +906,8 @@
                                         <div class="custom-control custom-checkbox">
                                             <input class="custom-control-input" type="checkbox" value=""
                                                 id="filtersCheck08">
-                                            <label class="custom-control-label fonsize" for="filtersCheck08">Free</label>
+                                            <label class="custom-control-label fonsize"
+                                                for="filtersCheck08">Free</label>
                                         </div>
                                     </div>
 
@@ -886,14 +915,16 @@
                                         <div class="custom-control custom-checkbox">
                                             <input class="custom-control-input" type="checkbox" value=""
                                                 id="filtersCheck09">
-                                            <label class="custom-control-label fonsize" for="filtersCheck09">Beginner</label>
+                                            <label class="custom-control-label fonsize"
+                                                for="filtersCheck09">Beginner</label>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox">
                                             <input class="custom-control-input" type="checkbox" value=""
                                                 id="filtersCheck10">
-                                            <label class="custom-control-label fonsize" for="filtersCheck10">Advanced</label>
+                                            <label class="custom-control-label fonsize"
+                                                for="filtersCheck10">Advanced</label>
                                         </div>
                                     </div>
                                 </div>
@@ -911,14 +942,16 @@
                                         <div class="custom-control custom-checkbox">
                                             <input class="custom-control-input" type="checkbox" value=""
                                                 id="filtersCheck12">
-                                            <label class="custom-control-label fonsize" for="filtersCheck12">Episode</label>
+                                            <label class="custom-control-label fonsize"
+                                                for="filtersCheck12">Episode</label>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox">
                                             <input class="custom-control-input" type="checkbox" value=""
                                                 id="filtersCheck13">
-                                            <label class="custom-control-label fonsize" for="filtersCheck13">Video</label>
+                                            <label class="custom-control-label fonsize"
+                                                for="filtersCheck13">Video</label>
                                         </div>
                                     </div>
 
@@ -926,21 +959,24 @@
                                         <div class="custom-control custom-checkbox">
                                             <input class="custom-control-input" type="checkbox" value=""
                                                 id="filtersCheck14">
-                                            <label class="custom-control-label fonsize" for="filtersCheck14">Article</label>
+                                            <label class="custom-control-label fonsize"
+                                                for="filtersCheck14">Article</label>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox">
                                             <input class="custom-control-input" type="checkbox" value=""
                                                 id="filtersCheck15">
-                                            <label class="custom-control-label fonsize" for="filtersCheck15">Book</label>
+                                            <label class="custom-control-label fonsize"
+                                                for="filtersCheck15">Book</label>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox">
                                             <input class="custom-control-input" type="checkbox" value=""
                                                 id="filtersCheck16">
-                                            <label class="custom-control-label fonsize" for="filtersCheck16">Screencast</label>
+                                            <label class="custom-control-label fonsize"
+                                                for="filtersCheck16">Screencast</label>
                                         </div>
                                     </div>
                                 </div>
@@ -992,11 +1028,12 @@
                                 <div class="col" style="margin-top: -59px;">
                                     <a href="index.html"><img src="assetss/images/about/logo-footer.png"
                                             style="margin-top: 47px;width: 87%;"></a>
-                                    <p class="para" style="margin-top:39px">Welcome to Intelligence Career Institute, the
+                                    <p class="para" style="margin-top:39px">Welcome to Intelligence Career Institute,
+                                        the
                                         top
                                         centre in
                                         Lucknow, Uttar Pradesh, for preparing for academic and competitive exams.</p>
-    
+
                                 </div>
                                 <div class="col">
                                     <div class="footer-item">
@@ -1008,14 +1045,16 @@
                                                 <div>
                                                     <div class="content">
                                                         <ul class="lab-ul">
-                                                            <li><a href="Our-mission.html" class="mission">Our Mission</a>
+                                                            <li><a href="Our-mission.html" class="mission">Our
+                                                                    Mission</a>
                                                             </li>
                                                             <li><a href="Our-vision.html" class="mission">Our Vision</a>
                                                             </li>
                                                             <li><a href="What-we-do.html" class="mission">What We Do</a>
                                                             </li>
-                                                            <li><a href="our-team.html" class="mission">Our Teams</a></li>
-    
+                                                            <li><a href="our-team.html" class="mission">Our Teams</a>
+                                                            </li>
+
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -1037,16 +1076,18 @@
                                                             </li>
                                                             <li><a href="course-10th.html" class="mission">Grade Ten</a>
                                                             </li>
-                                                            <li><a href="course-11.html" class="mission">Grade Eleven</a>
+                                                            <li><a href="course-11.html" class="mission">Grade
+                                                                    Eleven</a>
                                                             </li>
-                                                            <li><a href="course-12th.html" class="mission">Grade Twelve</a>
+                                                            <li><a href="course-12th.html" class="mission">Grade
+                                                                    Twelve</a>
                                                             </li>
                                                             <li><a href="course-jee.html" class="mission">JEE</a>
                                                             </li>
                                                             <li><a href="course-neet.html" class="mission">NEET</a>
                                                             </li>
-    
-    
+
+
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -1068,15 +1109,15 @@
                                                                     E-Book</a></li>
                                                             <li><a href="test-form.html" class="mission">Question
                                                                     Practice</a></li>
-    
+
                                                             <li><a href="mcq.html" class="mission">Test</a></li>
                                                         </ul>
-    
+
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-    
+
                                     </div>
                                 </div>
                                 <div class="col">
@@ -1092,8 +1133,9 @@
                                                             style="height: 25px;">
                                                     </div>
                                                     <div class="contact-content">
-                                                        <a href="tel:+91 9827237654" style="color: white;">+91 9827237654</a>
-    
+                                                        <a href="tel:+91 9827237654" style="color: white;">+91
+                                                            9827237654</a>
+
                                                         <!-- <p style="color: white;">+91 6394477615</p> -->
                                                     </div>
                                                 </div>
@@ -1104,8 +1146,9 @@
                                                     </div>
                                                     <div class="contact-content" style="    margin-left: 22px;
                                                     margin-top: -23px;">
-    
-                                                        <a href="email:support@intelligencecareerinstitute.com" style="color: white;    ">support@intelligencecareerinstitute.com</a>
+
+                                                        <a href="email:support@intelligencecareerinstitute.com"
+                                                            style="color: white;    ">support@intelligencecareerinstitute.com</a>
                                                     </div>
                                                 </div>
                                                 <div class="contact-item">
@@ -1114,24 +1157,24 @@
                                                             style="height: 25px;">
                                                     </div>
                                                     <div class="contact-content">
-    
+
                                                         <p style="    color: white;margin: -26px 0px 3px 24px;">1st
                                                             Floor,Prince
                                                             Complex Nawal Kishore Rd,Hazratganj,Lucknow,226001</p>
                                                     </div>
                                                 </div>
-    
-    
-    
+
+
+
                                             </div>
-    
+
                                         </div>
                                     </div>
                                 </div>
                                 <ul class="lab-ul social-icons" style="    padding: 14px;">
                                     <li>
-                                        <a href="https://www.facebook.com/intelligencecareerinstitute" class="facebook"><i
-                                                class="icofont-facebook"></i></a>
+                                        <a href="https://www.facebook.com/intelligencecareerinstitute"
+                                            class="facebook"><i class="icofont-facebook"></i></a>
                                     </li>
                                     <li>
                                         <a href="https://youtube.com/@IntelligenceCareerInstitute" class="youtube"
@@ -1144,16 +1187,17 @@
                                         <a href="https://instagram.com/intelligencecareerinstitute?igshid=YmMyMTA2M2Y="
                                             class="instagram"><i class="icofont-instagram"></i></a>
                                     </li>
-    
+
                                 </ul>
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="footer-bottom style-2">
                         <div class="container">
                             <div class="section-wrapper">
-                                <p>&copy; 2023 <a href="index.html">Intelligence Career Institute</a> Designed Developed by
+                                <p>&copy; 2023 <a href="index.html">Intelligence Career Institute</a> Designed Developed
+                                    by
                                     <a href="https://zolov.io/" target="_blank">Zolovio</a>
                                 </p>
                             </div>
@@ -1174,33 +1218,33 @@
         <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
             <div class="mdk-drawer__content">
                 <div class="sidebar sidebar-dark-pickled-bluewood sidebar-left" data-perfect-scrollbar>
-    
+
                     <!-- Sidebar Content -->
-    
+
                     <div class="d-flex align-items-center navbar-height">
                         <form action="index.html" class="search-form search-form--black mx-16pt pr-0 pl-16pt">
                             <input type="text" class="form-control pl-0" placeholder="Search">
                             <button class="btn" type="submit"><i class="material-icons">search</i></button>
                         </form>
                     </div>
-    
+
                     <a href="index.html" class="sidebar-brand ">
                         <!-- <img class="sidebar-brand-icon" src="public/images/illustration/student/128/white.svg" alt="Luma"> -->
-    
+
                         <span class="avatar avatar-xl sidebar-brand-icon h-auto">
-    
+
                             <span class="avatar-title rounded bg-primary"><img
                                     src="public/images/illustration/student/128/white.svg" class="img-fluid"
                                     alt="logo" /></span>
-    
+
                         </span>
-    
+
                         <span>Luma</span>
                     </a>
-    
+
                     <div class="sidebar-heading">Student</div>
                     <ul class="sidebar-menu">
-    
+
                         <li class="sidebar-menu-item active">
                             <a class="sidebar-menu-button" href="student-dashboard-1.html">
                                 <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">timeline</span>
@@ -1215,7 +1259,8 @@
                         </li>
                         <li class="sidebar-menu-item">
                             <a class="sidebar-menu-button" href="student-myquiz.html">
-                                <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">local_library</span>
+                                <span
+                                    class="material-icons sidebar-menu-icon sidebar-menu-icon--left">local_library</span>
                                 <span class="sidebar-menu-text">My Test</span>
                             </a>
                         </li>
@@ -1227,7 +1272,8 @@
                         </li>
                         <li class="sidebar-menu-item">
                             <a class="sidebar-menu-button" href="student-dashboard-profile-1.html">
-                                <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">account_box</span>
+                                <span
+                                    class="material-icons sidebar-menu-icon sidebar-menu-icon--left">account_box</span>
                                 <span class="sidebar-menu-text">My Profile</span>
                             </a>
                         </li>
@@ -1237,18 +1283,18 @@
                                 <span class="sidebar-menu-text">Logout</span>
                             </a>
                         </li>
-                     
+
                     </ul>
-                 
-                  
-    
-                    
-                  
-    
-                   
-    
+
+
+
+
+
+
+
+
                     <!-- // END Sidebar Content -->
-    
+
                 </div>
             </div>
         </div>
@@ -1285,94 +1331,94 @@
         <script src="assetss/js/isotope.pkgd.js"></script>
         <script src="assetss/js/functions.js"></script>
         <script>
-            
+
             let chemData = [];
             let botData = [];
-            let phyData =[];
+            let phyData = [];
             let zooData = [];
             let mathData = [];
             let bioData = [];
             let name = '';
             let email = '';
             let isLoggedIn = false;
-            window.addEventListener('DOMContentLoaded',()=>{
+            window.addEventListener('DOMContentLoaded', () => {
                 fetchCourses();
                 const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
-            console.log(token);
-            isLoggedIn = !!token;
-            
+                console.log(token);
+                isLoggedIn = !!token;
 
-            if (isLoggedIn) {
-                const jwtvalue = token.split('=')[1];
-               // Decode the JWT manually
-                const decodedToken = JSON.parse(atob(jwtvalue.split('.')[1]));
-                name = decodedToken.name;
-                email = decodedToken.email;
-                document.getElementById('login_btn').innerText = name;
-                document.getElementById('login_btn').setAttribute('href','#');
-                document.getElementById('signup_btn').innerText = 'Logout';
-                document.getElementById('signup_btn').setAttribute('href','#');
-                document.getElementById('signup_btn').addEventListener('click',()=>{
-                    // Remove the token cookie
-                    document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-                    window.location.href = '  student-dashboard-login.html'
-                })
 
-            }
-                
+                if (isLoggedIn) {
+                    const jwtvalue = token.split('=')[1];
+                    // Decode the JWT manually
+                    const decodedToken = JSON.parse(atob(jwtvalue.split('.')[1]));
+                    name = decodedToken.name;
+                    email = decodedToken.email;
+                    document.getElementById('login_btn').innerText = name;
+                    document.getElementById('login_btn').setAttribute('href', '#');
+                    document.getElementById('signup_btn').innerText = 'Logout';
+                    document.getElementById('signup_btn').setAttribute('href', '#');
+                    document.getElementById('signup_btn').addEventListener('click', () => {
+                        // Remove the token cookie
+                        document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+                        window.location.href = '  student-dashboard-login.html'
+                    })
+
+                }
+
             })
-            async function fetchCourses(){
+            async function fetchCourses() {
                 // Show the loader before fetching data
-//  showLoader();
+                //  showLoader();
                 console.log('fetching the course')
                 try {
-                   await fetch('https://ici-backend.onrender.com/api/courses').then((res)=>{
+                    await fetch('https://ici-backend.onrender.com/api/courses').then((res) => {
                         return res.json();
-                    }).then((data)=>{
-                            console.log(data);
-                            displayCourses(data,'course-list','.pagination_popular');
-                            data.map((obj)=>{
-                                if(obj.subject_name.toLowerCase() === 'chemistry'){
-                                    chemData.push(obj);
-                                }else if(obj.subject_name.toLowerCase() === 'botany'){
-                                    botData.push(obj);
-                                }else if(obj.subject_name.toLowerCase() === 'physics'){
-                                    phyData.push(obj);
-                                }else if(obj.subject_name.toLowerCase() === 'zoology'){
-                                    zooData.push(obj);
-                                }else if(obj.subject_name.toLowerCase() === 'biology'){
-                                    bioData.push(obj);
-                                }else{
-                                    mathData.push(obj);
-                                }
-                            })
-                            displayCourses(chemData,'chem-course-list','.pagination_chem');
-                            displayCourses(botData,'bot-course-list','.pagination_bot');
-                            displayCourses(phyData,'phy-course-list','.pagination_phy');
-                            displayCourses(zooData,'zoo-course-list','.pagination_zoo');
-                        
-                            // setTimeout(hideLoader(),55000);
+                    }).then((data) => {
+                        console.log(data);
+                        displayCourses(data, 'course-list', '.pagination_popular');
+                        data.map((obj) => {
+                            if (obj.subject_name.toLowerCase() === 'chemistry') {
+                                chemData.push(obj);
+                            } else if (obj.subject_name.toLowerCase() === 'botany') {
+                                botData.push(obj);
+                            } else if (obj.subject_name.toLowerCase() === 'physics') {
+                                phyData.push(obj);
+                            } else if (obj.subject_name.toLowerCase() === 'zoology') {
+                                zooData.push(obj);
+                            } else if (obj.subject_name.toLowerCase() === 'biology') {
+                                bioData.push(obj);
+                            } else {
+                                mathData.push(obj);
+                            }
+                        })
+                        displayCourses(chemData, 'chem-course-list', '.pagination_chem');
+                        displayCourses(botData, 'bot-course-list', '.pagination_bot');
+                        displayCourses(phyData, 'phy-course-list', '.pagination_phy');
+                        displayCourses(zooData, 'zoo-course-list', '.pagination_zoo');
+
+                        // setTimeout(hideLoader(),55000);
                     });
-                }catch(error){
+                } catch (error) {
                     console.log(error);
                 }
             }
-            function filterCourses(event,subject_name){
+            function filterCourses(event, subject_name) {
                 console.log(subject_name)
                 event.preventDefault();
                 let dataArr = [];
-                if (subject_name === 'chemistry'){
+                if (subject_name === 'chemistry') {
                     console.log('chemDATA is selected');
                     dataArr = chemData;
-                }else if(subject_name === 'physics'){
+                } else if (subject_name === 'physics') {
                     dataArr = phyData;
-                }else if(subject_name === 'biology'){
+                } else if (subject_name === 'biology') {
                     dataArr = bioData;
-                }else if(subject_name === 'botany'){
+                } else if (subject_name === 'botany') {
                     dataArr = botData;
-                }else if(subject_name === 'zoology'){
+                } else if (subject_name === 'zoology') {
                     dataArr = zooData;
-                }else {
+                } else {
                     dataArr = mathData;
                 }
                 document.getElementById('chem-course-list').style.display = 'none';
@@ -1380,7 +1426,7 @@
                 document.getElementById('phy-course-list').style.display = 'none';
                 document.getElementById('zoo-course-list').style.display = 'none';
 
-                document.getElementById('courses_heading').innerText ='our '+ subject_name +' Courses' ;
+                document.getElementById('courses_heading').innerText = 'our ' + subject_name + ' Courses';
 
                 document.querySelector('.pagination_chem').style.display = 'none';
                 document.querySelector('.pagination_bot').style.display = 'none';
@@ -1392,20 +1438,20 @@
                 document.getElementById('bot_course_heading').style.display = 'none';
                 document.getElementById('zoo_course_heading').style.display = 'none';
 
-                
-                
 
-                displayCourses(dataArr,'course-list','.pagination_popular');
-                
-                
+
+
+                displayCourses(dataArr, 'course-list', '.pagination_popular');
+
+
             }
-            function resetCourses(){
+            function resetCourses() {
                 document.getElementById('chem-course-list').style.display = 'block';
                 document.getElementById('bot-course-list').style.display = 'block';
                 document.getElementById('phy-course-list').style.display = 'block';
                 document.getElementById('zoo-course-list').style.display = 'block';
 
-                document.getElementById('courses_heading').innerText ='Our Popular Courses' ;
+                document.getElementById('courses_heading').innerText = 'Our Popular Courses';
 
                 document.querySelector('.pagination_chem').style.display = 'block';
                 document.querySelector('.pagination_bot').style.display = 'block';
@@ -1417,7 +1463,7 @@
                 document.getElementById('bot_course_heading').style.display = 'block';
                 document.getElementById('zoo_course_heading').style.display = 'block';
             }
-            function displayCourses(courses, parentID ,pagination_class){
+            function displayCourses(courses, parentID, pagination_class) {
                 // Render course list
                 const itemsPerPage = 4;
                 let currentPage = 1;
@@ -1433,212 +1479,212 @@
                     const currentCourses = courses.slice(start, end);
 
                     currentCourses.forEach((course) => {
-                    const courseElement = document.createElement("div");
-                    courseElement.classList.add("course");
+                        const courseElement = document.createElement("div");
+                        courseElement.classList.add("course");
 
-                    const pauseIcon = document.createElement("div");
-                    pauseIcon.textContent = "⏸️";
-                    pauseIcon.classList.add("pause-icon");
-                    courseElement.appendChild(pauseIcon);
+                        const pauseIcon = document.createElement("div");
+                        pauseIcon.textContent = "⏸️";
+                        pauseIcon.classList.add("pause-icon");
+                        courseElement.appendChild(pauseIcon);
 
-                    const courseInfo = document.createElement("div");
-                    courseInfo.classList.add("course-info");
+                        const courseInfo = document.createElement("div");
+                        courseInfo.classList.add("course-info");
 
-                    const courseHeading = document.createElement("h3");
-                    courseHeading.classList.add("course-heading");
-                    courseHeading.textContent = `${course.subject_name} - ${course.class}`;
-                    courseInfo.appendChild(courseHeading);
+                        const courseHeading = document.createElement("h3");
+                        courseHeading.classList.add("course-heading");
+                        courseHeading.textContent = `${course.subject_name} - ${course.class}`;
+                        courseInfo.appendChild(courseHeading);
 
-                    const courseSubheading = document.createElement("p");
-                    courseSubheading.classList.add("course-subheading");
-                    courseSubheading.textContent = course.chapter_name;
-                    courseInfo.appendChild(courseSubheading);
+                        const courseSubheading = document.createElement("p");
+                        courseSubheading.classList.add("course-subheading");
+                        courseSubheading.textContent = course.chapter_name;
+                        courseInfo.appendChild(courseSubheading);
 
-                    const ratings = course.topic_list.map((topic) => parseInt(topic.rating));
-                    const avgRating = ratings.reduce((total, rating) => total + rating, 0) / ratings.length;
+                        const ratings = course.topic_list.map((topic) => parseInt(topic.rating));
+                        const avgRating = ratings.reduce((total, rating) => total + rating, 0) / ratings.length;
 
-                    const ratingElement = document.createElement("div");
+                        const ratingElement = document.createElement("div");
                         ratingElement.classList.add("rating");
 
                         const fullStars = Math.floor(avgRating);
                         const decimalPart = avgRating - fullStars;
 
                         for (let i = 0; i < 5; i++) {
-                        const star = document.createElement("span");
-                        star.classList.add("star");
+                            const star = document.createElement("span");
+                            star.classList.add("star");
 
-                        if (i < Math.floor(avgRating)) {
-                            star.classList.add("filled");
-                        } else if (i === Math.floor(avgRating) && decimalPart >= 0.5) {
-                            star.classList.add("half-filled");
-                        } else {
-                            star.classList.add("empty");
-                        }
+                            if (i < Math.floor(avgRating)) {
+                                star.classList.add("filled");
+                            } else if (i === Math.floor(avgRating) && decimalPart >= 0.5) {
+                                star.classList.add("half-filled");
+                            } else {
+                                star.classList.add("empty");
+                            }
 
-                        ratingElement.appendChild(star);
+                            ratingElement.appendChild(star);
                         }
 
                         courseInfo.appendChild(ratingElement);
 
 
 
-                    const courseMeta = document.createElement("div");
-                    courseMeta.classList.add("course-meta");
+                        const courseMeta = document.createElement("div");
+                        courseMeta.classList.add("course-meta");
 
-                    const courseMetaText = document.createElement("p");
-                    courseMetaText.textContent = `${course.topic_list.length} Lessons`;
-                    courseMeta.appendChild(courseMetaText);
+                        const courseMetaText = document.createElement("p");
+                        courseMetaText.textContent = `${course.topic_list.length} Lessons`;
+                        courseMeta.appendChild(courseMetaText);
 
-                    const wishlistBtn = document.createElement('button');
-                    wishlistBtn.setAttribute('class','wishlist_btn');
-                    wishlistBtn.innerText = 'Add to Profile';
-                    const id = 'id_wish'+course.chapter_name;
-                    wishlistBtn.setAttribute('id',id);
+                        const wishlistBtn = document.createElement('button');
+                        wishlistBtn.setAttribute('class', 'wishlist_btn');
+                        wishlistBtn.innerText = 'Add to Profile';
+                        const id = 'id_wish' + course.chapter_name;
+                        wishlistBtn.setAttribute('id', id);
 
-                    const moreinfoBtn = document.createElement('button');
-                    moreinfoBtn.setAttribute('class','moreinfo_btn');
-                    moreinfoBtn.innerText = 'More Info';
-                    const id2 = 'id_more'+course.chapter_name;
-                    moreinfoBtn.setAttribute('id',id2);
+                        const moreinfoBtn = document.createElement('button');
+                        moreinfoBtn.setAttribute('class', 'moreinfo_btn');
+                        moreinfoBtn.innerText = 'More Info';
+                        const id2 = 'id_more' + course.chapter_name;
+                        moreinfoBtn.setAttribute('id', id2);
 
-                    courseInfo.appendChild(courseMeta);
-                    courseElement.appendChild(courseInfo);
-                    courseElement.appendChild(wishlistBtn);
-                    courseElement.appendChild(moreinfoBtn);
+                        courseInfo.appendChild(courseMeta);
+                        courseElement.appendChild(courseInfo);
+                        courseElement.appendChild(wishlistBtn);
+                        courseElement.appendChild(moreinfoBtn);
 
-                    wishlistBtn.addEventListener('click',()=>{
-                        wishlist(course);
-                    })
-                    
-                    moreinfoBtn.addEventListener('click',()=>{
-                        moreinfo(course);
-                    })
+                        wishlistBtn.addEventListener('click', () => {
+                            wishlist(course);
+                        })
 
-                    const popover = document.createElement("div");
-                    popover.classList.add("popover");
+                        moreinfoBtn.addEventListener('click', () => {
+                            moreinfo(course);
+                        })
 
-                    // popover.addEventListener('mouseout',()=>{
-                    //     popover.style.display = 'none';
-                    // })
+                        const popover = document.createElement("div");
+                        popover.classList.add("popover");
 
-                    const popoverHeading = document.createElement("h4");
-                    popoverHeading.classList.add("popover-heading");
-                    popoverHeading.textContent ='> '+ course.chapter_name;
-                    popover.appendChild(popoverHeading);
+                        // popover.addEventListener('mouseout',()=>{
+                        //     popover.style.display = 'none';
+                        // })
 
-                    const popoverSubheading = document.createElement("p");
-                    popoverSubheading.classList.add("popover-subheading");
-                    popoverSubheading.textContent = `${course.subject_name} - ${course.class}`;
-                    popover.appendChild(popoverSubheading);
+                        const popoverHeading = document.createElement("h4");
+                        popoverHeading.classList.add("popover-heading");
+                        popoverHeading.textContent = '> ' + course.chapter_name;
+                        popover.appendChild(popoverHeading);
 
-                    const popoverList = document.createElement("ul");
-                    popoverList.classList.add("popover-list");
+                        const popoverSubheading = document.createElement("p");
+                        popoverSubheading.classList.add("popover-subheading");
+                        popoverSubheading.textContent = `${course.subject_name} - ${course.class}`;
+                        popover.appendChild(popoverSubheading);
 
-                    course.topic_list.forEach((topic,index) => {
-                        console.log(topic.topic_name);
-                        const popoverListItem = document.createElement("li");
-                        popoverListItem.classList.add("popover-list-item");
-                        popoverListItem.textContent =(index+1)+" "+ topic.topic_name;
-                        popoverListItem.addEventListener("mouseover", () => {
-                        popoverListItem.style.color = "blue";
+                        const popoverList = document.createElement("ul");
+                        popoverList.classList.add("popover-list");
+
+                        course.topic_list.forEach((topic, index) => {
+                            console.log(topic.topic_name);
+                            const popoverListItem = document.createElement("li");
+                            popoverListItem.classList.add("popover-list-item");
+                            popoverListItem.textContent = (index + 1) + " " + topic.topic_name;
+                            popoverListItem.addEventListener("mouseover", () => {
+                                popoverListItem.style.color = "blue";
+                            });
+                            popoverListItem.addEventListener("mouseout", () => {
+                                popoverListItem.style.color = "";
+                            });
+                            popoverList.appendChild(popoverListItem);
+
                         });
-                        popoverListItem.addEventListener("mouseout", () => {
-                        popoverListItem.style.color = "";
+
+                        popover.appendChild(popoverList);
+
+                        const popoverMeta = document.createElement("div");
+                        popoverMeta.classList.add("course-meta");
+
+                        const avgRatingText = document.createElement("p");
+                        avgRatingText.textContent = `Rating: ${avgRating.toFixed(1)}` + " ";
+
+                        const courseCountText = document.createElement("p");
+                        courseCountText.textContent = " " + ` Courses: ${course.topic_list.length}`;
+
+
+                        popoverMeta.appendChild(avgRatingText);
+                        popoverMeta.appendChild(courseCountText);
+
+                        popover.appendChild(popoverMeta);
+                        courseElement.appendChild(popover);
+
+                        courseElement.addEventListener("click", (event) => {
+                            event.stopPropagation();
+                            // popover.style.display = 'block';
+                            togglePopover(popover);
+
                         });
-                        popoverList.appendChild(popoverListItem);
-                        
-                    });
-
-                    popover.appendChild(popoverList);
-
-                    const popoverMeta = document.createElement("div");
-                    popoverMeta.classList.add("course-meta");
-
-                    const avgRatingText = document.createElement("p");
-                    avgRatingText.textContent = `Rating: ${avgRating.toFixed(1)}`+" ";
-
-                    const courseCountText = document.createElement("p");
-                    courseCountText.textContent =" "+` Courses: ${course.topic_list.length}`;
 
 
-                    popoverMeta.appendChild(avgRatingText);
-                    popoverMeta.appendChild(courseCountText);
-
-                    popover.appendChild(popoverMeta);
-                    courseElement.appendChild(popover);
-
-                    courseElement.addEventListener("click", (event) => {
-                        event.stopPropagation();
-                        // popover.style.display = 'block';
-                        togglePopover(popover);
-
-                    });
-
-                    
 
 
-                    courseList.appendChild(courseElement);
+                        courseList.appendChild(courseElement);
                     });
                 }
                 //function for wishlist functionality -
-                async function wishlist(course){
-                    if(isLoggedIn){
+                async function wishlist(course) {
+                    if (isLoggedIn) {
                         console.log(course);
-                        const nameValue  = name;
-                        const emailValue  = email;
+                        const nameValue = name;
+                        const emailValue = email;
                         const className = course.class;
                         const subject_name = course.subject_name;
                         const chapter_name = course.chapter_name;
                         let topics_name = "";
                         let course_url = "";
-                        course.topic_list.map((topic)=>{
-                            topics_name+=topic.topic_name+"+";
-                            course_url += topic.course_url+"+";
+                        course.topic_list.map((topic) => {
+                            topics_name += topic.topic_name + "+";
+                            course_url += topic.course_url + "+";
                         })
 
                         const formData = new FormData();
 
-                        formData.append('name',nameValue);
-                        formData.append('email',emailValue);
-                        formData.append('className',className);
-                        formData.append('subject_name',subject_name);
-                        formData.append('chapter_name',chapter_name);
-                        formData.append('topics_name',topics_name);
-                        formData.append('course_url',course_url);
+                        formData.append('name', nameValue);
+                        formData.append('email', emailValue);
+                        formData.append('className', className);
+                        formData.append('subject_name', subject_name);
+                        formData.append('chapter_name', chapter_name);
+                        formData.append('topics_name', topics_name);
+                        formData.append('course_url', course_url);
 
-                        const response  = await fetch('https://ici-backend.onrender.com/api/add-course',{
-                            method : 'POST',
-                            body : formData
+                        const response = await fetch('https://ici-backend.onrender.com/api/add-course', {
+                            method: 'POST',
+                            body: formData
                         })
 
-                        if(response.ok){
+                        if (response.ok) {
                             console.log('response was okay')
-                            const idValue = "id_wish"+course.chapter_name;
+                            const idValue = "id_wish" + course.chapter_name;
                             document.getElementById(idValue).innerText = 'Added';
                         }
-                        else{
+                        else {
                             alert('Error adding course, trying again.....')
                             wishlist(course);
                         }
                     }
-                    else{
-                        window.location.href ='student-dashboard-login.html'
+                    else {
+                        window.location.href = 'student-dashboard-login.html'
                     }
                 }
-                function moreinfo(course){
+                function moreinfo(course) {
                     localStorage.setItem('course', JSON.stringify(course));
                     window.location.href = 'student-course-1.html'
                 }
-                function renderPagination(){
+                function renderPagination() {
                     paginationContainer.innerHTML = "";
 
                     const prevButton = document.createElement("button");
                     prevButton.textContent = "Prev";
                     prevButton.disabled = currentPage === 1;
                     prevButton.addEventListener("click", () => {
-                    currentPage--;
-                    renderCourses(currentPage);
-                    renderPagination();
+                        currentPage--;
+                        renderCourses(currentPage);
+                        renderPagination();
                     });
                     paginationContainer.appendChild(prevButton);
 
@@ -1651,21 +1697,21 @@
                     nextButton.textContent = "Next";
                     nextButton.disabled = currentPage === totalPages;
                     nextButton.addEventListener("click", () => {
-                    currentPage++;
-                    renderCourses(currentPage);
-                    renderPagination();
+                        currentPage++;
+                        renderCourses(currentPage);
+                        renderPagination();
                     });
                     paginationContainer.appendChild(nextButton);
                 }
 
-                    function togglePopover(popover) {
+                function togglePopover(popover) {
                     popover.classList.toggle("active");
-                    }
+                }
 
-                    renderCourses(currentPage);
-                    renderPagination();
+                renderCourses(currentPage);
+                renderPagination();
 
-      }
+            }
         </script>
         <script>
             (function () {
@@ -1684,35 +1730,35 @@
         </script>
         <script>
             // Show the loader and apply background blur when the page starts loading
-            window.addEventListener('load',async function() {
+            window.addEventListener('load', async function () {
                 console.log('loader is loaded')
-              const loader = document.querySelector('.loader');
-              const content = document.querySelector('.blur');
-              
-              loader.style.display = 'block';
-              content.classList.add('blur');
-              
-            
-               // Hide the loader and remove background blur after 10 seconds
-                setTimeout(function() {
+                const loader = document.querySelector('.loader');
+                const content = document.querySelector('.blur');
+
+                loader.style.display = 'block';
+                content.classList.add('blur');
+
+
+                // Hide the loader and remove background blur after 10 seconds
+                setTimeout(function () {
                     console.log('stopping the loader')
                     loader.style.display = 'none';
                     content.classList.remove('blur');
                 }, 25000);
             });
-        
+
             // Hide the loader and remove background blur when the page finishes loading
             // window.addEventListener('DOMContentLoaded', function() {
-             
+
             // });
-            function hideLoader(){
+            function hideLoader() {
                 const loader = document.querySelector('.loader');
-              const content = document.querySelector('.blur');
-              
-              loader.style.display = 'none';
-              content.classList.remove('blur');
+                const content = document.querySelector('.blur');
+
+                loader.style.display = 'none';
+                content.classList.remove('blur');
             }
-          </script>
+        </script>
 
 </body>
 
