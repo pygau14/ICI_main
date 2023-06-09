@@ -848,6 +848,7 @@
 
             if(response.ok){
                 const data = await response.json();
+                loaderContainer.style.display = 'none';
               
                 alert('login Successful');
                 localStorage.setItem('token',data.token);
@@ -888,10 +889,11 @@
         })()
     </script>
    <script>
+    var loaderContainer = null;
     // Wait for the page to load
 function loader(event) {
 // Create the loader container element
-var loaderContainer = document.createElement("div");
+loaderContainer = document.createElement("div");
 loaderContainer.setAttribute("id", "loader-container");
 loaderContainer.style.position = "fixed";
 loaderContainer.style.top = "0";
@@ -922,9 +924,9 @@ loaderContainer.appendChild(loader);
 document.body.appendChild(loaderContainer);
 
 // Hide the loader after 10 seconds
-setTimeout(function() {
-loaderContainer.style.display = "none";
-}, 5000);
+// setTimeout(function() {
+// loaderContainer.style.display = "none";
+// }, 5000);
 };
 
 </script>

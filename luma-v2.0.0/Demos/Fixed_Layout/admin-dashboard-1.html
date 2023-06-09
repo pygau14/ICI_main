@@ -1269,8 +1269,6 @@
             }
         })
         async function fetchDashboardData() {
-            // Show the loader before fetching data
-            showLoader();
             await fetch('https://ici-backend.onrender.com/api/totalStudents').then((res) => {
                 return res.json();
             }).then((data) => {
@@ -1312,7 +1310,6 @@
             }).then((data) => {
                 console.log("total books", data);
                 displayEle(data, 'total_books');
-                hideLoader();
             }).catch((err) => {
                 console.log(err);
             })
@@ -1321,6 +1318,8 @@
             }).then((data) => {
                 console.log('total test', data);
                 displayEle(data, 'total_test');
+                loaderContainer.style.display = 'none';
+                
             }).catch((err) => {
                 console.log(err);
             })
@@ -1448,9 +1447,10 @@
 
     <script>
         // Wait for the page to load
+        var loaderContainer = null;
 document.addEventListener("DOMContentLoaded", function(event) {
   // Create the loader container element
-  var loaderContainer = document.createElement("div");
+  loaderContainer = document.createElement("div");
   loaderContainer.setAttribute("id", "loader-container");
   loaderContainer.style.position = "fixed";
   loaderContainer.style.top = "0";
@@ -1481,9 +1481,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
   document.body.appendChild(loaderContainer);
 
   // Hide the loader after 10 seconds
-  setTimeout(function() {
-    loaderContainer.style.display = "none";
-  }, 5000);
+//   setTimeout(function() {
+//     loaderContainer.style.display = "none";
+//   }, 5000);
 });
 
     </script>
