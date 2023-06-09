@@ -39,6 +39,8 @@
     <link rel="stylesheet" href="assetss/css/lightcase.css">
     <link rel="stylesheet" href="assetss/css/style.css">
     <link rel="stylesheet" type="text/css" href="loader.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <style>
         .fonsize {
             font-size: 18px;
@@ -543,24 +545,10 @@
 
                                             <div class="container">
 
-                                                <div class="col-lg-8 d-flex align-items-center">
-                                                    <div class="flex" style="max-width: 100%">
-
-                                                        <div class="chart" style="height: 250px;">
-                                                            <canvas id="performanceChart"
-                                                                class="chart-canvas js-update-chart-line"
-                                                                data-chart-line-border-color="primary"
-                                                                data-chart-prefix="$" data-chart-suffix="k"
-                                                                data-chart-points="true"></canvas>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
+                                                <canvas id="mychart"></canvas>
 
 
-                                                <div class="graph_img ">
-                                                    <img src="komal-img.jpg" class="" alt="">
-                                                </div>
+                                              
 
                                             </div>
 
@@ -1499,6 +1487,36 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
     </script>
+    <script>
+        // Get the canvas element
+        var ctx = document.getElementById("mychart").getContext("2d");
+      
+        // Create the chart
+        var myChart = new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: ["January", "February", "March", "April", "May", "June"],
+            datasets: [
+              {
+                label: "My Dataset",
+                data: [10, 20, 30, 25, 40, 35],
+                borderColor: "rgba(255, 99, 132, 1)",
+                backgroundColor: "rgba(255, 99, 132, 0.2)",
+                tension: 0.4
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
+      
 
 </body>
 
