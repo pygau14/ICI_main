@@ -543,10 +543,10 @@
                                         
                                     </div>
                                     <div class="text-center">
-                                        <button class="btn btn-primary fonsize" onclick="generateQuestions('save')">Save</button>
+                                        <button class="btn btn-primary fonsize" onclick="generateQuestions('save',event)">Save</button>
                                         <!-- <button class="btn btn-primary fonsize" ><a href="#" style="color:white">Publish</a></button> -->
                                         <button class="button btn btn-primary fonsize" href="#"
-                                            onclick="generateQuestions('publish')">Publish</button>
+                                            onclick="generateQuestions('publish',event)">Publish</button>
 
                                       
 
@@ -959,7 +959,7 @@
             console.log(question_set,test_id);
             
 
-            const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+            const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token2='));
              console.log(token);
              const isLoggedIn = !!token;
              let name = '';
@@ -973,7 +973,7 @@
                  email = decodedToken.email;
                  document.getElementById('admin_login_btn').innerText = name;
                  document.getElementById('admin_login_btn').setAttribute('href','#');
-                 fetchSets(question_set);
+                 fetchSets(question_set,event);
  
              }
              else{
@@ -983,9 +983,8 @@
            
 
         })
-        async function fetchSets(question_set ){
-            // Show the loader before fetching data
-  showLoader();
+        async function fetchSets(question_set,event ){
+            loader(event);
             await fetch(`https://ici-backend.onrender.com/question-paper?questionSet=${question_set}`).then((res)=>{
                 return res.json();
             }).then((data)=>{
@@ -993,7 +992,7 @@
                 console.log(data);
                 data.forEach((questionObj)=>{
                     createQuestionElement(questionObj);
-                    hideLoader();
+                    loaderContainer.style.display = 'none';
                 })
             }).catch((err)=>{
                 console.log(err);
@@ -1085,7 +1084,7 @@
             
       }
 
-      function generateQuestions(status){
+      function generateQuestions(status,event){
         const selectedQuestions = [];
 
         const checkboxes = document.querySelectorAll(".form-check-input");
@@ -1109,7 +1108,7 @@
         // Show the confirmation popup
         const confirmation = confirm(msg);
         // Show the loader before fetching data
-  showLoader();
+        loader(event);
         if(confirmation){
             const data = {
                 test_id : test_id,
@@ -1128,7 +1127,7 @@
             .then((response) => response.json())
             .then((data) => {
                 console.log(data.message); 
-                hideLoader();
+                loaderContainer.style.display = 'none';
                 alert(data.message);
                 window.location.href = 'admin-dashboard-1.html';
                 
@@ -1170,36 +1169,47 @@
     </script>
 
 <script>
-    // Show the loader and apply background blur when the page starts loading
-    window.addEventListener('load',async function() {
-        console.log('loader is loaded')
-      const loader = document.querySelector('.loader');
-      const content = document.querySelector('.blur');
-      
-      loader.style.display = 'block';
-      content.classList.add('blur');
-      
-    
-       // Hide the loader and remove background blur after 10 seconds
-        setTimeout(function() {
-            console.log('stopping the loader')
-            loader.style.display = 'none';
-            content.classList.remove('blur');
-        }, 25000);
-    });
+    // Wait for the page to load
+    var loaderContainer = null;
+    function loader(event) {
+        // Create the loader container element
+        loaderContainer = document.createElement("div");
+        loaderContainer.setAttribute("id", "loader-container");
+        loaderContainer.style.position = "fixed";
+        loaderContainer.style.top = "0";
+        loaderContainer.style.left = "0";
+        loaderContainer.style.width = "100%";
+        loaderContainer.style.height = "100%";
+        loaderContainer.style.display = "flex";
+        loaderContainer.style.alignItems = "center";
+        loaderContainer.style.justifyContent = "center";
+        loaderContainer.style.zIndex = "9999";
+        loaderContainer.style.backdropFilter = "blur(8px)";
+        loaderContainer.style.webkitBackdropFilter = "blur(8px)";
 
-    // Hide the loader and remove background blur when the page finishes loading
-    // window.addEventListener('DOMContentLoaded', function() {
-     
-    // });
-    function hideLoader(){
-        const loader = document.querySelector('.loader');
-      const content = document.querySelector('.blur');
-      
-      loader.style.display = 'none';
-      content.classList.remove('blur');
-    }
-  </script>
+        // Create the loader element
+        var loader = document.createElement("div");
+        loader.setAttribute("id", "loader");
+        loader.style.border = "16px solid #f3f3f3";
+        loader.style.borderTop = "16px solid #3498db";
+        loader.style.borderRadius = "50%";
+        loader.style.width = "120px";
+        loader.style.height = "120px";
+        loader.style.animation = "spin 2s linear infinite";
+
+        // Append the loader to the container
+        loaderContainer.appendChild(loader);
+
+        // Append the container to the document body
+        document.body.appendChild(loaderContainer);
+
+        // Hide the loader after 10 seconds
+        //   setTimeout(function() {
+        //     loaderContainer.style.display = "none";
+        //   }, 5000);
+    };
+
+</script>
 
 </body>
 

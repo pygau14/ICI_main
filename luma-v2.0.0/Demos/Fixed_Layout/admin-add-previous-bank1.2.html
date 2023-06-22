@@ -1051,7 +1051,7 @@
     <script src="../../public/vendor/dropzone.min.js"></script>
     <script src="../../public/js/dropzone.js"></script>
     <script>
-        const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+        const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token2='));
              console.log(token);
              const isLoggedIn = !!token;
              let name = '';
@@ -1114,37 +1114,7 @@
         }
     </script>
 
-<script>
-    // Show the loader and apply background blur when the page starts loading
-    window.addEventListener('load',async function() {
-        console.log('loader is loaded')
-      const loader = document.querySelector('.loader');
-      const content = document.querySelector('.blur');
-      
-      loader.style.display = 'block';
-      content.classList.add('blur');
-      
-    
-       // Hide the loader and remove background blur after 10 seconds
-        setTimeout(function() {
-            console.log('stopping the loader')
-            loader.style.display = 'none';
-            content.classList.remove('blur');
-        }, 25000);
-    });
 
-    // Hide the loader and remove background blur when the page finishes loading
-    // window.addEventListener('DOMContentLoaded', function() {
-     
-    // });
-    function hideLoader(){
-        const loader = document.querySelector('.loader');
-      const content = document.querySelector('.blur');
-      
-      loader.style.display = 'none';
-      content.classList.remove('blur');
-    }
-  </script>
 </body>
 
 </html>

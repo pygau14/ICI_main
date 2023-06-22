@@ -492,7 +492,7 @@
                                 <div class="form-group">
                                     <label class="form-label fonsize" for="email">Categories</label>
                                     <select class="form-select form-select-md mb-3"
-                                        aria-label=".form-select-md example" id="class_option" onchange="fetchChapters()">
+                                        aria-label=".form-select-md example" id="class_option" onchange="fetchChapters(event)">
                                         <option selected value="">Choose Your Class</option>
                                         <option value="9th">Grade 9th</option>
                                         <option value="10th">Grade 10th</option>
@@ -507,7 +507,7 @@
                                 <div class="form-group">
                                     <label class="form-label fonsize" for="email">Subject</label>
                                     <select class="form-select form-select-md mb-3"
-                                        aria-label=".form-select-md example" id="subject_option" onchange="fetchChapters()">
+                                        aria-label=".form-select-md example" id="subject_option" onchange="fetchChapters(event)">
                                         <option selected value="">Choose Your Subject</option>
                                         <option value="Physics">Physics</option>
                                         <option value="Maths">Maths</option>
@@ -521,7 +521,7 @@
                                 <div class="form-group">
                                     <label class="form-label fonsize" for="email">Chapter</label>
                                     <select class="form-select form-select-md mb-3"
-                                        aria-label=".form-select-md example" id="chapter_option" onchange="fetchTopics()">
+                                        aria-label=".form-select-md example" id="chapter_option" onchange="fetchTopics(event)">
                                         <option selected>Choose Your Chapter</option>
                                         
                                     </select>
@@ -544,7 +544,7 @@
                                 <div class="form-group">
                                     <label class="form-label fonsize" for="email">Topic</label>
                                     <select class="form-select form-select-md mb-3"
-                                        aria-label=".form-select-md example" id="topic_option" onchange="fetchTests()">
+                                        aria-label=".form-select-md example" id="topic_option" onchange="fetchTests(event)">
                                         <option selected>Choose Your Topic</option>
                                         
                                     </select>
@@ -553,7 +553,7 @@
                                 <div class="form-group">
                                     <label class="form-label fonsize" for="email">Test Set</label>
                                     <select class="form-select form-select-md mb-3"
-                                        aria-label=".form-select-md example" id="test_option" onchange="fetchTopics()">
+                                        aria-label=".form-select-md example" id="test_option" onchange="fetchTopics(event)">
                                         <option selected>Choose Your Test Set</option>
                                         
                                     </select>
@@ -562,7 +562,7 @@
                                 
 
                                 <div class="text-center">
-                                    <button class="btn btn-primary fonsize" onclick="manageTest()"> Submit</button>
+                                    <button class="btn btn-primary fonsize" onclick="manageTest(event)"> Submit</button>
                                 </div>
                             </div>
                         </div>
@@ -974,7 +974,7 @@
     <script src="assetss/js/functions.js"></script>
     <script>
         window.addEventListener('DOMContentLoaded',()=>{
-            const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+            const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token2='));
              console.log(token);
              const isLoggedIn = !!token;
              let name = '';
@@ -998,7 +998,8 @@
     </script>
     <script>
         let mainArr_test = [];
-        async function fetchChapters() {
+        async function fetchChapters(event) {
+            loader(event)
             const classValue = document.getElementById('class_option').value;
             const subjectValue = document.getElementById('subject_option').value;
             console.log(classValue, subjectValue);
@@ -1008,6 +1009,7 @@
                 }).then((data) => {
                     const chapters = [...new Set(data)];
                     loadoptions(chapters, 'chapter_option');
+                    loaderContainer.style.display = 'none';
                 }).catch((e) => {
                     console.log(e);
                 })
@@ -1027,7 +1029,8 @@
             })
         }
 
-        async function fetchTopics() {
+        async function fetchTopics(event) {
+            loader(event);
             const classValue = document.getElementById('class_option').value;
             const subjectValue = document.getElementById('subject_option').value;
             const chapterValue = document.getElementById('chapter_option').value;
@@ -1038,13 +1041,15 @@
                 console.log(data);
                 const topics = [...new Set(data)];
                 loadoptions(topics, 'topic_option');
+                loaderContainer.style.display('none');
             }).catch((err) => {
                 console.log(err);
             })
 
         }
 
-        async function fetchTests() {
+        async function fetchTests(event) {
+            loader(event)
             const classValue = document.getElementById('class_option').value;
             const subjectValue = document.getElementById('subject_option').value;
             const chapterValue = document.getElementById('chapter_option').value;
@@ -1059,13 +1064,15 @@
                     test_ids.push(test.test_id);
                 })
                 loadoptions(test_ids, 'test_option');
+                loaderContainer.style.display = 'none';
                 // console.log(mainArr_test);
             }).catch((err) => {
                 console.log(err);
             })
         }
 
-        async function manageTest(){
+        async function manageTest(event){
+            loader(event)
             const classValue = document.getElementById('class_option').value;
             const subjectValue = document.getElementById('subject_option').value;
             const chapterValue = document.getElementById('chapter_option').value;
@@ -1077,6 +1084,7 @@
                 return res.json();
             }).then((data)=>{
                 localStorage.setItem('save-test-questions',JSON.stringify(data));
+                loaderContainer.style.display = 'none';
                 window.location.href = 'admin-dashboard-saved-questions-questionbank.html.html'
             })
 
@@ -1126,37 +1134,48 @@
             $(id).style.display = 'none';
         }
     </script>
-     <script>
-        // Show the loader and apply background blur when the page starts loading
-        window.addEventListener('load',async function() {
-            console.log('loader is loaded')
-          const loader = document.querySelector('.loader');
-          const content = document.querySelector('.blur');
-          
-          loader.style.display = 'block';
-          content.classList.add('blur');
-          
-        
-           // Hide the loader and remove background blur after 10 seconds
-            setTimeout(function() {
-                console.log('stopping the loader')
-                loader.style.display = 'none';
-                content.classList.remove('blur');
-            }, 25000);
-        });
-    
-        // Hide the loader and remove background blur when the page finishes loading
-        // window.addEventListener('DOMContentLoaded', function() {
-         
-        // });
-        function hideLoader(){
-            const loader = document.querySelector('.loader');
-          const content = document.querySelector('.blur');
-          
-          loader.style.display = 'none';
-          content.classList.remove('blur');
-        }
-      </script>
+   <script>
+    // Wait for the page to load
+    var loaderContainer = null;
+    function loader(event) {
+        // Create the loader container element
+        loaderContainer = document.createElement("div");
+        loaderContainer.setAttribute("id", "loader-container");
+        loaderContainer.style.position = "fixed";
+        loaderContainer.style.top = "0";
+        loaderContainer.style.left = "0";
+        loaderContainer.style.width = "100%";
+        loaderContainer.style.height = "100%";
+        loaderContainer.style.display = "flex";
+        loaderContainer.style.alignItems = "center";
+        loaderContainer.style.justifyContent = "center";
+        loaderContainer.style.zIndex = "9999";
+        loaderContainer.style.backdropFilter = "blur(8px)";
+        loaderContainer.style.webkitBackdropFilter = "blur(8px)";
+
+        // Create the loader element
+        var loader = document.createElement("div");
+        loader.setAttribute("id", "loader");
+        loader.style.border = "16px solid #f3f3f3";
+        loader.style.borderTop = "16px solid #3498db";
+        loader.style.borderRadius = "50%";
+        loader.style.width = "120px";
+        loader.style.height = "120px";
+        loader.style.animation = "spin 2s linear infinite";
+
+        // Append the loader to the container
+        loaderContainer.appendChild(loader);
+
+        // Append the container to the document body
+        document.body.appendChild(loaderContainer);
+
+        // Hide the loader after 10 seconds
+        //   setTimeout(function() {
+        //     loaderContainer.style.display = "none";
+        //   }, 5000);
+    };
+
+</script>
 </body>
 
 </html>

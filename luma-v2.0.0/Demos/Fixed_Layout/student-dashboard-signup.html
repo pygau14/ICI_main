@@ -157,7 +157,7 @@
                 <div class="mdk-header__bg-front"
                     style="background-image: url(../../public/images/photodune-4161018-group-of-students-m.jpg);"></div>
             </div>
-            <div class="mdk-header__content justify-content-center">
+            <div style="display: none;" class="mdk-header__content justify-content-center">
 
                 <div class="navbar navbar-expand navbar-dark-pickled-bluewood bg-transparent will-fade-background"
                     id="default-navbar" data-primary>
@@ -591,6 +591,7 @@
 
                         </div>
                     </div>
+                    <div id="error_message" ></div>
                     
                     <div class="page-separator justify-content-center m-0 mt-2">
                         <div class="page-separator__text fonsize">or sign-in with</div>
@@ -600,7 +601,7 @@
                             <a href="#"
                                class="btn btn-secondary btn-block-xs "><i class="fab fa-facebook me-2 fonsize"></i> Facebook</a>
                            
-                            <a href="http://localhost:3000/auth/google"
+                            <a href="https://ici-backend.onrender.com/auth/google"
                                class="btn btn-secondary btn-block-xs "><i class="fab fa-google me-2 fonsize"></i> Google+</a>
                         </div>
                     </div>
@@ -1069,12 +1070,15 @@
 
 
             if(response.ok){
-                 
+                 loaderContainer.style.display = 'none';
                 alert('Sign Up Sucessful');
                 window.location.href = 'student-dashboard-login.html'
             }else {
                 const data = await response.json();
-                console.log(response.message)
+                console.log(data);
+               
+                document.getElementById('error_message').innerText = data.message
+                loaderContainer.style.display = 'none';
             }
 
 }
@@ -1099,10 +1103,11 @@
     </script>
 
 <script>
+    var loaderContainer = null;
     // Wait for the page to load
 function loader(event) {
 // Create the loader container element
-var loaderContainer = document.createElement("div");
+loaderContainer = document.createElement("div");
 loaderContainer.setAttribute("id", "loader-container");
 loaderContainer.style.position = "fixed";
 loaderContainer.style.top = "0";
@@ -1132,10 +1137,7 @@ loaderContainer.appendChild(loader);
 // Append the container to the document body
 document.body.appendChild(loaderContainer);
 
-// Hide the loader after 10 seconds
-setTimeout(function() {
-loaderContainer.style.display = "none";
-}, 5000);
+
 };
 
 </script>

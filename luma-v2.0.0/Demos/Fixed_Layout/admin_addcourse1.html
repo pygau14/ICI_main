@@ -367,8 +367,8 @@
                             <div class="form-group">
                                 <label class="form-label fonsize"
                                        for="email">Class</label>
-                                <select id="select_class" onchange="fetchSubjects()" class="form-select form-select-md mb-3" aria-label=".form-select-md example">
-                                    <option selected>Choose Your Class</option>
+                                <select id="select_class" onchange="fetchSubjects(event)" class="form-select form-select-md mb-3" aria-label=".form-select-md example">
+                                    <option selected value="">Choose Your Class</option>
                                     <option value="9th">9th</option>
                                     <option value="10th">10th</option>
                                     <option value="11th">11th</option>
@@ -380,14 +380,14 @@
                             <div class="form-group">
                                 <label class="form-label fonsize"
                                        for="email">Subject</label>
-                                <select id="select_subject" class="form-select form-select-md mb-3" aria-label=".form-select-md example">
-                                    <option selected>Choose Your Subject</option>
+                                <select id="select_subject" onchange="fetchChapters(event)" class="form-select form-select-md mb-3" aria-label=".form-select-md example">
+                                    <option selected value="">Choose Your Subject</option>
                                   </select>
                             </div>
                             <div class="form-group">
                                 <label class="form-label fonsize"
                                        for="email">Chapter</label>
-                                <select id="select_chapter" class="form-select form-select-md mb-3" aria-label=".form-select-md example">
+                                <select id="select_chapter" onchange="fetchTopics(event)" class="form-select form-select-md mb-3" aria-label=".form-select-md example">
                                     <option selected>Choose Your Chapter</option>
                                   </select>
                             </div>
@@ -812,7 +812,7 @@
     <script src="assetss/js/functions.js"></script>
     <script>
         window.addEventListener('DOMContentLoaded',()=>{
-            const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+            const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token2='));
              console.log(token);
              const isLoggedIn = !!token;
              let name = '';
@@ -835,9 +835,8 @@
         })
     </script>
     <script>
-        function fetchSubjects(){
-            // Show the loader before fetching data
-            showLoader();
+        function fetchSubjects(event){
+            loader(event);
             document.getElementById('select_subject').addEventListener('change',fetchChapters)
             const selectedClass = document.getElementById('select_class').value;
             if(!selectedClass) return ;
@@ -846,7 +845,7 @@
                 return res.json();
             }).then((data)=>{
                 populateDropDowns('select_subject',data);
-                hideLoader();
+                loaderContainer.style.display = 'none';
             })
         }
         function populateDropDowns(dropdownID,data){
@@ -859,9 +858,8 @@
                 dropdown.appendChild(optionEle);
             });
         }
-        function fetchChapters(){
-            // Show the loader before fetching data
-  showLoader();
+        function fetchChapters(event){
+            loader(event);
             document.getElementById('select_chapter').addEventListener('change',fetchTopics);
             const selectedClass = document.getElementById('select_class').value;
             const subject_name = document.getElementById('select_subject').value;
@@ -872,12 +870,11 @@
                 return res.json();
             }).then((data)=>{
                 populateDropDowns('select_chapter',data);
-                hideLoader();
+                loaderContainer.style.display = 'none';
             })
         }
-        function fetchTopics(){
-            // Show the loader before fetching data
-  showLoader();
+        function fetchTopics(event){
+            loader(event);
             console.log('running fetchTopics');
             const selectedClass = document.getElementById('select_class').value;
             const chapter_name = document.getElementById('select_chapter').value;
@@ -889,7 +886,7 @@
             }).then((data)=>{
                 console.log(data);
                 populateDropDowns('select_topic',data);
-                hideLoader();
+                loaderContainer.style.display = 'none';
             })
         }
     </script>
@@ -910,36 +907,47 @@
     </script>
 
 <script>
-    // Show the loader and apply background blur when the page starts loading
-    window.addEventListener('load',async function() {
-        console.log('loader is loaded')
-      const loader = document.querySelector('.loader');
-      const content = document.querySelector('.blur');
-      
-      loader.style.display = 'block';
-      content.classList.add('blur');
-      
-    
-       // Hide the loader and remove background blur after 10 seconds
-        setTimeout(function() {
-            console.log('stopping the loader')
-            loader.style.display = 'none';
-            content.classList.remove('blur');
-        }, 25000);
-    });
+    // Wait for the page to load
+    var loaderContainer = null;
+    function loader(event) {
+        // Create the loader container element
+        loaderContainer = document.createElement("div");
+        loaderContainer.setAttribute("id", "loader-container");
+        loaderContainer.style.position = "fixed";
+        loaderContainer.style.top = "0";
+        loaderContainer.style.left = "0";
+        loaderContainer.style.width = "100%";
+        loaderContainer.style.height = "100%";
+        loaderContainer.style.display = "flex";
+        loaderContainer.style.alignItems = "center";
+        loaderContainer.style.justifyContent = "center";
+        loaderContainer.style.zIndex = "9999";
+        loaderContainer.style.backdropFilter = "blur(8px)";
+        loaderContainer.style.webkitBackdropFilter = "blur(8px)";
 
-    // Hide the loader and remove background blur when the page finishes loading
-    // window.addEventListener('DOMContentLoaded', function() {
-     
-    // });
-    function hideLoader(){
-        const loader = document.querySelector('.loader');
-      const content = document.querySelector('.blur');
-      
-      loader.style.display = 'none';
-      content.classList.remove('blur');
-    }
-  </script>
+        // Create the loader element
+        var loader = document.createElement("div");
+        loader.setAttribute("id", "loader");
+        loader.style.border = "16px solid #f3f3f3";
+        loader.style.borderTop = "16px solid #3498db";
+        loader.style.borderRadius = "50%";
+        loader.style.width = "120px";
+        loader.style.height = "120px";
+        loader.style.animation = "spin 2s linear infinite";
+
+        // Append the loader to the container
+        loaderContainer.appendChild(loader);
+
+        // Append the container to the document body
+        document.body.appendChild(loaderContainer);
+
+        // Hide the loader after 10 seconds
+        //   setTimeout(function() {
+        //     loaderContainer.style.display = "none";
+        //   }, 5000);
+    };
+
+</script>
 
 </body>
 

@@ -289,11 +289,9 @@
                                     </ul>
                                 </div>
 
-                                <a href="student-dashboard-login.html" id="login_btn" class="login"><i class="icofont-user"></i>
+                                <a href="admin-dashboard-login.html" id="admin_login_btn" class="login"><i class="icofont-user"></i>
                                     <span>LOG IN</span> </a>
-                                <a href="student-dashboard-signup.html" id="signup_btn" class="signup"><i class="icofont-users"></i>
-                                    <span>SIGN UP</span>
-                                </a>
+                                
 
                                 <!-- toggle icons -->
                                 <div class="header-bar d-lg-none">
@@ -357,22 +355,9 @@
                         <div class="flex"
                              style="max-width: 100%">
 
-                            <div class="dropzone dropzone-multiple w-100 mb-24pt"
-                                 data-toggle="dropzone"
-                                 data-dropzone-multiple
-                                 data-dropzone-url="http://"
-                                 data-dropzone-files='["../../public/images/256_daniel-gaffey-1060698-unsplash.jpg", "../../public/images/256_rsz_clem-onojeghuo-150467-unsplash.jpg", "../../public/images/256_rsz_florian-perennes-594195-unsplash.jpg"]'>
+                             <input class="dropzone-input" type="file" name="pdf">
 
-                                <div class="fallback">
-                                    <div class="custom-file">
-                                        <input type="file"
-                                               class="custom-file-input"
-                                               id="customFileUploadMultiple"
-                                               multiple>
-                                        <label class="custom-file-label"
-                                               for="customFileUploadMultiple">Choose file</label>
-                                    </div>
-                                </div>
+                               
                                 <div class="progress mt-16pt">
                                     <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
                                   </div>
@@ -408,13 +393,61 @@
 
                             </div>
                             <div class="text-center">
-                                <button class="btn btn-primary fonsize" onclick="myFunction()"><a href="#" style="color:white"> Publish</a></button>
+                                <button class="btn btn-primary fonsize" onclick="myFunction(event)"> Publish</button>
                             </div>
                             <script>
-                                function myFunction() {
-                                  alert("File is Successfully Uploaded");
+                                function myFunction(event) {
+                                    loader(event);
+                                    const fileInput = document.querySelector('.dropzone-input');
+
+                                    // Retrieve items from localStorage
+                                    const bookDetail = localStorage.getItem('bookDetail');
+
+                                    
+                                    // Check if bookDetail exists in localStorage
+                                    if (bookDetail) {
+                                        try {
+                                            console.log(bookDetail)
+                                            // Parse the bookDetail JSON string into an object
+                                            const bookDetailObj = JSON.parse(bookDetail);
+
+                                            // Extract className and subject_name from bookDetail object
+                                            const { className, subject } = bookDetailObj;
+                                            console.log(className, subject)
+                                            const file = fileInput.files[0];
+                                            console.log(file);
+
+                                            const formData = new FormData();
+                                            formData.append('className', className);
+                                            formData.append('subject_name', subject);
+                                            formData.append('pdf', file);
+
+                                            fetch('https://ici-backend.onrender.com/upload/ebook', {
+                                            method: 'POST',
+                                            body: formData
+                                            })
+                                            .then(response => response.text())
+                                            .then(result => {
+                                                console.log(result);
+                                                loaderContainer.style.display = 'none';
+                                                alert('File uploaded successfully!');
+                                                // Refresh the page
+                                                window.location.href = 'admin_add-e-book1.html';
+                                            })
+                                            .catch(error => {
+                                                console.error(error);
+                                            });
+
+
+                                        } catch (error) {
+                                                console.error('Error parsing bookDetail:', error);
+                                            }
+                                    } else {
+                                    console.log('bookDetail does not exist in localStorage');
+                                    }
+   
                                 }
-                                </script>
+                            </script>
 
                             
 
@@ -847,7 +880,7 @@
     </script>
      <script>
         window.addEventListener('DOMContentLoaded',()=>{
-            const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+            const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token2='));
              console.log(token);
              const isLoggedIn = !!token;
              let name = '';
@@ -875,36 +908,47 @@
         <script src="../../public/vendor/Chart.min.js"></script>
 
         <script>
-            // Show the loader and apply background blur when the page starts loading
-            window.addEventListener('load',async function() {
-                console.log('loader is loaded')
-              const loader = document.querySelector('.loader');
-              const content = document.querySelector('.blur');
-              
-              loader.style.display = 'block';
-              content.classList.add('blur');
-              
-            
-               // Hide the loader and remove background blur after 10 seconds
-                setTimeout(function() {
-                    console.log('stopping the loader')
-                    loader.style.display = 'none';
-                    content.classList.remove('blur');
-                }, 25000);
-            });
+            // Wait for the page to load
+            var loaderContainer = null;
+            function loader(event) {
+                // Create the loader container element
+                loaderContainer = document.createElement("div");
+                loaderContainer.setAttribute("id", "loader-container");
+                loaderContainer.style.position = "fixed";
+                loaderContainer.style.top = "0";
+                loaderContainer.style.left = "0";
+                loaderContainer.style.width = "100%";
+                loaderContainer.style.height = "100%";
+                loaderContainer.style.display = "flex";
+                loaderContainer.style.alignItems = "center";
+                loaderContainer.style.justifyContent = "center";
+                loaderContainer.style.zIndex = "9999";
+                loaderContainer.style.backdropFilter = "blur(8px)";
+                loaderContainer.style.webkitBackdropFilter = "blur(8px)";
         
-            // Hide the loader and remove background blur when the page finishes loading
-            // window.addEventListener('DOMContentLoaded', function() {
-             
-            // });
-            function hideLoader(){
-                const loader = document.querySelector('.loader');
-              const content = document.querySelector('.blur');
-              
-              loader.style.display = 'none';
-              content.classList.remove('blur');
-            }
-          </script>
+                // Create the loader element
+                var loader = document.createElement("div");
+                loader.setAttribute("id", "loader");
+                loader.style.border = "16px solid #f3f3f3";
+                loader.style.borderTop = "16px solid #3498db";
+                loader.style.borderRadius = "50%";
+                loader.style.width = "120px";
+                loader.style.height = "120px";
+                loader.style.animation = "spin 2s linear infinite";
+        
+                // Append the loader to the container
+                loaderContainer.appendChild(loader);
+        
+                // Append the container to the document body
+                document.body.appendChild(loaderContainer);
+        
+                // Hide the loader after 10 seconds
+                //   setTimeout(function() {
+                //     loaderContainer.style.display = "none";
+                //   }, 5000);
+            };
+        
+        </script>  
 
 </body>
 

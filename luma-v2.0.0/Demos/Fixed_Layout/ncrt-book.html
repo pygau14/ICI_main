@@ -1067,7 +1067,7 @@
             let zoology = [];
             let isLoggedIn = false;
 
-            window.addEventListener('DOMContentLoaded',()=>{
+            window.addEventListener('DOMContentLoaded',(event)=>{
                 fetchBooks();
                 const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
             console.log(token);
@@ -1097,9 +1097,8 @@
                 href = 'student-dashboard-login.html'
             }
             })
-            async function fetchBooks(){
-// Show the loader before fetching data
-showLoader();
+            async function fetchBooks(event){
+                loader(event);
                 await fetch('https://ici-backend.onrender.com/api/ncert-books').then((res)=>{
                     return res.json();
                 }).then((data)=>{
@@ -1124,7 +1123,7 @@ showLoader();
                     displayBooks(science.concat(chemistry),'parentDiv_chemistry');
                     displayBooks(botany,'parentDiv_botany');
                     displayBooks(maths,'parentDiv_maths');
-                    hideLoader();
+                    loaderContainer.style.display = 'none';
                 }).catch((err)=>{
                     console.error(err);
                 })
@@ -1163,7 +1162,7 @@ showLoader();
                     const lowestspanEle = document.createElement('span');
 
                     lowestspanEle.setAttribute('class','card-title text-white text-center fonsize');
-                    lowestspanEle.innerText = book.subject_name + "--" + book.class;
+                    
 
                     
                     innerspanEle.appendChild(lowestspanEle);
@@ -1174,27 +1173,38 @@ showLoader();
                     maindiv2.appendChild(imageEle);
                     maindiv2.appendChild(spanEle);
 
-                    const h3 = document.createElement('h8');
-                    h3.innerText ="-->"+book.subject_name.toUpperCase() + "  Class: " + book.class;
-                    h3.style.paddingLeft = '5px';
+                    
 
-                    maindiv2.appendChild(h3);
 
 
                     mainDiv.appendChild(maindiv2);
 
                     parentDiv.appendChild(mainDiv);
 
+                    
 
                     maindiv2.addEventListener('click',()=>{
                         if(isLoggedIn){
                             openPDF(book);
                         }else{
-                            window.location.href = 'http://127.0.0.1:5500/ICI-v2.0.0/Demos/Fixed_Layout/student-dashboard-login.html';
+                            window.location.href = 'student-dashboard-login.html';
                         }
                         
                     })
 
+
+                    mainDiv.addEventListener('mouseenter',()=>{
+                        imageEle.setAttribute('src','');
+                    imageEle.setAttribute('alt',book.subject_name.toUpperCase() + "|" + book.class+"|  "+book.pdf_fileName);
+                       
+                    
+                    });
+                    mainDiv.addEventListener('mouseleave',()=>{
+                    imageEle.setAttribute('src','https://cdn.vectorstock.com/i/preview-1x/11/00/science-book-and-atom-logo-vector-21371100.webp');
+                    imageEle.setAttribute('alt','course');
+                
+         
+                    })
                 }
 
 
@@ -1244,36 +1254,48 @@ showLoader();
         </script>
 
 <script>
-    // Show the loader and apply background blur when the page starts loading
-    window.addEventListener('load',async function() {
-        console.log('loader is loaded')
-      const loader = document.querySelector('.loader');
-      const content = document.querySelector('.blur');
-      
-      loader.style.display = 'block';
-      content.classList.add('blur');
-      
-    
-       // Hide the loader and remove background blur after 10 seconds
-        setTimeout(function() {
-            console.log('stopping the loader')
-            loader.style.display = 'none';
-            content.classList.remove('blur');
-        }, 25000);
-    });
+    // Wait for the page to load
+    var loaderContainer = null;
+    function loader(event) {
+        // Create the loader container element
+        loaderContainer = document.createElement("div");
+        loaderContainer.setAttribute("id", "loader-container");
+        loaderContainer.style.position = "fixed";
+        loaderContainer.style.top = "0";
+        loaderContainer.style.left = "0";
+        loaderContainer.style.width = "100%";
+        loaderContainer.style.height = "100%";
+        loaderContainer.style.display = "flex";
+        loaderContainer.style.alignItems = "center";
+        loaderContainer.style.justifyContent = "center";
+        loaderContainer.style.zIndex = "9999";
+        loaderContainer.style.backdropFilter = "blur(8px)";
+        loaderContainer.style.webkitBackdropFilter = "blur(8px)";
 
-    // Hide the loader and remove background blur when the page finishes loading
-    // window.addEventListener('DOMContentLoaded', function() {
-     
-    // });
-    function hideLoader(){
-        const loader = document.querySelector('.loader');
-      const content = document.querySelector('.blur');
-      
-      loader.style.display = 'none';
-      content.classList.remove('blur');
-    }
-  </script>
+        // Create the loader element
+        var loader = document.createElement("div");
+        loader.setAttribute("id", "loader");
+        loader.style.border = "16px solid #f3f3f3";
+        loader.style.borderTop = "16px solid #3498db";
+        loader.style.borderRadius = "50%";
+        loader.style.width = "120px";
+        loader.style.height = "120px";
+        loader.style.animation = "spin 2s linear infinite";
+
+        // Append the loader to the container
+        loaderContainer.appendChild(loader);
+
+        // Append the container to the document body
+        document.body.appendChild(loaderContainer);
+
+        // Hide the loader after 10 seconds
+        //   setTimeout(function() {
+        //     loaderContainer.style.display = "none";
+        //   }, 5000);
+    };
+
+</script>
+
 
 </body>
 

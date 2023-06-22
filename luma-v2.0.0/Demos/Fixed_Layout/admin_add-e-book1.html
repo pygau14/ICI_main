@@ -366,67 +366,43 @@
                  <!-- stats start -->
                  <div class="pt-32pt pt-sm-64pt pb-32pt">
                     <div class="container page__container">
-                        <form action="index.html"
+                        <div 
                               class="col-md-5 p-0 mx-auto">
                               
                             
                             <div class="form-group">
                                 <label class="form-label fonsize"
-                                       for="email">Subject</label>
-                                <select class="form-select form-select-md mb-3" aria-label=".form-select-md example">
-                                    <option selected>Choose Your Subject</option>
-                                    <option value="1">Physics</option>
-                                    <option value="2">Maths</option>
-                                    <option value="3">English</option>
-                                    <option value="4">Biology</option>
-                                    <option value="5">Zoology</option>
-                                    <option value="6">Botany</option>
+                                       for="email">Class</label>
+                                <select id="class_options" class="form-select form-select-md mb-3" aria-label=".form-select-md example" required>
+                                    <option selected value="">Choose Your Class</option>
+                                    <option value="9th">9th Grade</option>
+                                    <option value="10th">10th Grade</option>
+                                    <option value="11th">11th Grade</option>
+                                    <option value="12th">12th Grade</option>
+                                    <option value="JEE">JEE</option>
+                                    <option value="NEET">NEET</option>
                                   </select>
                             </div>
                             <div class="form-group">
                                 <label class="form-label fonsize"
-                                       for="email">Chapter</label>
-                                <select class="form-select form-select-md mb-3" aria-label=".form-select-md example">
-                                    <option selected>Choose Your Chapter</option>
-                                    <option value="1">Sets</option>
-                                    <option value="2">Profit and Loss</option>
-                                    <option value="3">Linear Equation</option>
-                                    <option value="4">Graphs</option>
-                                    <option value="5">Trigonometry</option>
-                                    <option value="6">Number System</option>
+                                       for="email">Subject Name</label>
+                                <select id="subject_options" class="form-select form-select-md mb-3" aria-label=".form-select-md example" required>
+                                    <option selected value="">Choose Your Subject</option>
+                                    <option value="Maths">Maths</option>
+                                    <option value="Physics">Physics</option>
+                                    <option value="Chemistry">Chemistry</option>
+                                    <option value="Biology">Biology</option>
+                                    <option value="Zoology">Zoology</option>
+                                    <option value="Botany">Botany</option>
                                   </select>
                             </div>
-                            <div class="form-group">
-                                <label class="form-label fonsize"
-                                       for="email">Question Set</label>
-                                <select class="form-select form-select-md mb-3" aria-label=".form-select-md example">
-                                    <option selected>Choose Your Question Set</option>
-                                    <option value="1">Sets</option>
-                                    <option value="2">Profit and Loss</option>
-                                    <option value="3">Linear Equation</option>
-                                    <option value="4">Graphs</option>
-                                    <option value="5">Trigonometry</option>
-                                    <option value="6">Number System</option>
-                                  </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label fonsize"
-                                       for="email">Topic</label>
-                                <select class="form-select form-select-md mb-3" aria-label=".form-select-md example">
-                                    <option selected>Choose Your Topic</option>
-                                    <option value="1">Sets</option>
-                                    <option value="2">Profit and Loss</option>
-                                    <option value="3">Linear Equation</option>
-                                    <option value="4">Graphs</option>
-                                    <option value="5">Trigonometry</option>
-                                    <option value="6">Number System</option>
-                                  </select>
-                            </div>
+                           
+                           
 
                             <div class="text-center">
-                                <button class="btn btn-primary fonsize" ><a href="admin-dashboard-upload-e-book.html" style="color:white"> Submit</a></button>
+                                <button id="submitButton" onclick="sendData()" class="btn btn-primary fonsize" >Submit</button>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
                 
@@ -449,8 +425,7 @@
 
 
 
-            <div class="loader"></div>
-            <script src="loader.js"></script>
+           
            
 
 
@@ -841,7 +816,7 @@
     <script>
         window.addEventListener('DOMContentLoaded',()=>{
             
-            const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+            const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token2='));
              console.log(token);
              const isLoggedIn = !!token;
              let name = '';
@@ -857,7 +832,8 @@
                  document.getElementById('admin_login_btn').setAttribute('href','#');
                  
  
-             }else{
+             }
+            else{
                 window.location.href = 'admin-dashboard-login.html';
              }
         })
@@ -879,36 +855,36 @@
     </script>
 
 <script>
-    // Show the loader and apply background blur when the page starts loading
-    window.addEventListener('load',async function() {
-        console.log('loader is loaded')
-      const loader = document.querySelector('.loader');
-      const content = document.querySelector('.blur');
-      
-      loader.style.display = 'block';
-      content.classList.add('blur');
-      
     
-       // Hide the loader and remove background blur after 10 seconds
-        setTimeout(function() {
-            console.log('stopping the loader')
-            loader.style.display = 'none';
-            content.classList.remove('blur');
-        }, 25000);
-    });
 
-    // Hide the loader and remove background blur when the page finishes loading
-    // window.addEventListener('DOMContentLoaded', function() {
+    function sendData(){
      
-    // });
-    function hideLoader(){
-        const loader = document.querySelector('.loader');
-      const content = document.querySelector('.blur');
-      
-      loader.style.display = 'none';
-      content.classList.remove('blur');
+        // Get the reference to the class and subject dropdowns
+        const classDropdown = document.getElementById('class_options');
+        const subjectDropdown = document.getElementById('subject_options');
+
+        // Get the selected values from the dropdowns
+  const selectedClass = classDropdown.value;
+  const selectedSubject = subjectDropdown.value;
+        
+  if(selectedClass !== "" && selectedSubject !==""){
+    // Create an object to store the selected values
+    const bookDetail = {
+            className: selectedClass,
+            subject: selectedSubject
+        };
+
+        // Convert the object to a JSON string
+        const bookDetailJSON = JSON.stringify(bookDetail);
+
+        // Store the JSON string in localStorage
+        localStorage.setItem('bookDetail', bookDetailJSON);
+        window.location.href = "admin-dashboard-upload-e-book.html";
+  }
+        
     }
-  </script>
+
+</script>
 
 </body>
 

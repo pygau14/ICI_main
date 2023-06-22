@@ -118,12 +118,12 @@
 
         <!-- More spinner examples at https://github.com/tobiasahlin/SpinKit/blob/master/examples.html -->
     </div>
-     <!-- Loader container -->
-  <div id="loader-container">
-    <div id="loader"></div>
-  </div>
+    <!-- Loader container -->
+    <div id="loader-container">
+        <div id="loader"></div>
+    </div>
 
-      
+
 
     <!-- Header Layout -->
     <div class="mdk-header-layout js-mdk-header-layout">
@@ -287,7 +287,7 @@
                                                 <li><a href="ncrt-book.html">NCERT eBOOK</a></li>
                                                 <li><a href="test-form.html">Question Practice</a></li>
                                                 <li><a href="instruction_test.html">Test</a></li>
-                                                
+
                                             </ul>
                                         </li>
                                         <li>
@@ -548,7 +548,7 @@
                                                 <canvas id="mychart"></canvas>
 
 
-                                              
+
 
                                             </div>
 
@@ -987,7 +987,8 @@
                                                         <li><a href="test-form.html" class="mission">Question
                                                                 Practice</a></li>
 
-                                                        <li><a href="instruction_test.html" class="mission">Test</a></li>
+                                                        <li><a href="instruction_test.html" class="mission">Test</a>
+                                                        </li>
                                                     </ul>
 
                                                 </div>
@@ -1245,9 +1246,9 @@
     <script src="assetss/js/isotope.pkgd.js"></script>
     <script src="assetss/js/functions.js"></script>
     <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            fetchDashboardData();
-            const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+        window.addEventListener('DOMContentLoaded', (event) => {
+            fetchDashboardData(event);
+            const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token2='));
             console.log(token);
             const isLoggedIn = !!token;
             let name = '';
@@ -1268,7 +1269,8 @@
                 window.location.href = 'admin-dashboard-login.html';
             }
         })
-        async function fetchDashboardData() {
+        async function fetchDashboardData(event) {
+            loader(event);
             await fetch('https://ici-backend.onrender.com/api/totalStudents').then((res) => {
                 return res.json();
             }).then((data) => {
@@ -1319,7 +1321,7 @@
                 console.log('total test', data);
                 displayEle(data, 'total_test');
                 loaderContainer.style.display = 'none';
-                
+
             }).catch((err) => {
                 console.log(err);
             })
@@ -1448,75 +1450,75 @@
     <script>
         // Wait for the page to load
         var loaderContainer = null;
-document.addEventListener("DOMContentLoaded", function(event) {
-  // Create the loader container element
-  loaderContainer = document.createElement("div");
-  loaderContainer.setAttribute("id", "loader-container");
-  loaderContainer.style.position = "fixed";
-  loaderContainer.style.top = "0";
-  loaderContainer.style.left = "0";
-  loaderContainer.style.width = "100%";
-  loaderContainer.style.height = "100%";
-  loaderContainer.style.display = "flex";
-  loaderContainer.style.alignItems = "center";
-  loaderContainer.style.justifyContent = "center";
-  loaderContainer.style.zIndex = "9999";
-  loaderContainer.style.backdropFilter = "blur(8px)";
-  loaderContainer.style.webkitBackdropFilter = "blur(8px)";
+        function loader(event) {
+            // Create the loader container element
+            loaderContainer = document.createElement("div");
+            loaderContainer.setAttribute("id", "loader-container");
+            loaderContainer.style.position = "fixed";
+            loaderContainer.style.top = "0";
+            loaderContainer.style.left = "0";
+            loaderContainer.style.width = "100%";
+            loaderContainer.style.height = "100%";
+            loaderContainer.style.display = "flex";
+            loaderContainer.style.alignItems = "center";
+            loaderContainer.style.justifyContent = "center";
+            loaderContainer.style.zIndex = "9999";
+            loaderContainer.style.backdropFilter = "blur(8px)";
+            loaderContainer.style.webkitBackdropFilter = "blur(8px)";
 
-  // Create the loader element
-  var loader = document.createElement("div");
-  loader.setAttribute("id", "loader");
-  loader.style.border = "16px solid #f3f3f3";
-  loader.style.borderTop = "16px solid #3498db";
-  loader.style.borderRadius = "50%";
-  loader.style.width = "120px";
-  loader.style.height = "120px";
-  loader.style.animation = "spin 2s linear infinite";
+            // Create the loader element
+            var loader = document.createElement("div");
+            loader.setAttribute("id", "loader");
+            loader.style.border = "16px solid #f3f3f3";
+            loader.style.borderTop = "16px solid #3498db";
+            loader.style.borderRadius = "50%";
+            loader.style.width = "120px";
+            loader.style.height = "120px";
+            loader.style.animation = "spin 2s linear infinite";
 
-  // Append the loader to the container
-  loaderContainer.appendChild(loader);
+            // Append the loader to the container
+            loaderContainer.appendChild(loader);
 
-  // Append the container to the document body
-  document.body.appendChild(loaderContainer);
+            // Append the container to the document body
+            document.body.appendChild(loaderContainer);
 
-  // Hide the loader after 10 seconds
-//   setTimeout(function() {
-//     loaderContainer.style.display = "none";
-//   }, 5000);
-});
+            // Hide the loader after 10 seconds
+            //   setTimeout(function() {
+            //     loaderContainer.style.display = "none";
+            //   }, 5000);
+        };
 
     </script>
     <script>
         // Get the canvas element
         var ctx = document.getElementById("mychart").getContext("2d");
-      
+
         // Create the chart
         var myChart = new Chart(ctx, {
-          type: "line",
-          data: {
-            labels: ["January", "February", "March", "April", "May", "June"],
-            datasets: [
-              {
-                label: "My Dataset",
-                data: [10, 20, 30, 25, 40, 35],
-                borderColor: "rgba(255, 99, 132, 1)",
-                backgroundColor: "rgba(255, 99, 132, 0.2)",
-                tension: 0.4
-              }
-            ]
-          },
-          options: {
-            responsive: true,
-            scales: {
-              y: {
-                beginAtZero: true
-              }
+            type: "line",
+            data: {
+                labels: ["January", "February", "March", "April", "May", "June"],
+                datasets: [
+                    {
+                        label: "My Dataset",
+                        data: [10, 20, 30, 25, 40, 35],
+                        borderColor: "rgba(255, 99, 132, 1)",
+                        backgroundColor: "rgba(255, 99, 132, 0.2)",
+                        tension: 0.4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
             }
-          }
         });
-      </script>
-      
+    </script>
+
 
 </body>
 

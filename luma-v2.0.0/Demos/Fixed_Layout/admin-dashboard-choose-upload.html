@@ -295,11 +295,9 @@
                                     </ul>
                                 </div>
 
-                                <a href="student-dashboard-login.html" id="login_btn" class="login"><i class="icofont-user"></i>
+                                <a href="admin-dashboard-login.html" id="admin_login_btn" class="login"><i class="icofont-user"></i>
                                     <span>LOG IN</span> </a>
-                                <a href="student-dashboard-signup.html" id="signup_btn" class="signup"><i class="icofont-users"></i>
-                                    <span>SIGN UP</span>
-                                </a>
+                                
 
                                 <!-- toggle icons -->
                                 <div class="header-bar d-lg-none">
@@ -874,9 +872,10 @@
     </script>
      <script>
         window.addEventListener('DOMContentLoaded',()=>{
-            const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+            const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token2='));
              console.log(token);
              const isLoggedIn = !!token;
+             console.log(isLoggedIn);
              let name = '';
              let email ='';
  
@@ -901,36 +900,47 @@
         <script src="../../public/js/chartjs.js"></script>
         <script src="../../public/vendor/Chart.min.js"></script>
         <script>
-            // Show the loader and apply background blur when the page starts loading
-            window.addEventListener('load',async function() {
-                console.log('loader is loaded')
-              const loader = document.querySelector('.loader');
-              const content = document.querySelector('.blur');
-              
-              loader.style.display = 'block';
-              content.classList.add('blur');
-              
-            
-               // Hide the loader and remove background blur after 10 seconds
-                setTimeout(function() {
-                    console.log('stopping the loader')
-                    loader.style.display = 'none';
-                    content.classList.remove('blur');
-                }, 25000);
+            // Wait for the page to load
+            var loaderContainer = null;
+            document.addEventListener("DOMContentLoaded", function (event) {
+                // Create the loader container element
+                loaderContainer = document.createElement("div");
+                loaderContainer.setAttribute("id", "loader-container");
+                loaderContainer.style.position = "fixed";
+                loaderContainer.style.top = "0";
+                loaderContainer.style.left = "0";
+                loaderContainer.style.width = "100%";
+                loaderContainer.style.height = "100%";
+                loaderContainer.style.display = "flex";
+                loaderContainer.style.alignItems = "center";
+                loaderContainer.style.justifyContent = "center";
+                loaderContainer.style.zIndex = "9999";
+                loaderContainer.style.backdropFilter = "blur(8px)";
+                loaderContainer.style.webkitBackdropFilter = "blur(8px)";
+    
+                // Create the loader element
+                var loader = document.createElement("div");
+                loader.setAttribute("id", "loader");
+                loader.style.border = "16px solid #f3f3f3";
+                loader.style.borderTop = "16px solid #3498db";
+                loader.style.borderRadius = "50%";
+                loader.style.width = "120px";
+                loader.style.height = "120px";
+                loader.style.animation = "spin 2s linear infinite";
+    
+                // Append the loader to the container
+                loaderContainer.appendChild(loader);
+    
+                // Append the container to the document body
+                document.body.appendChild(loaderContainer);
+    
+                // Hide the loader after 10 seconds
+                  setTimeout(function() {
+                    loaderContainer.style.display = "none";
+                  }, 1000);
             });
-        
-            // Hide the loader and remove background blur when the page finishes loading
-            // window.addEventListener('DOMContentLoaded', function() {
-             
-            // });
-            function hideLoader(){
-                const loader = document.querySelector('.loader');
-              const content = document.querySelector('.blur');
-              
-              loader.style.display = 'none';
-              content.classList.remove('blur');
-            }
-          </script>
+    
+        </script>
 
 </body>
 

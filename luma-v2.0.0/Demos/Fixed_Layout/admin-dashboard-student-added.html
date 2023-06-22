@@ -363,95 +363,9 @@
                         
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>12/02/2023</td>
-                        <td>Mark</td>
-                        <td>abc@mail.com</td>
-                        <td>1234567895</td>
-                        <td>12345K</td>
-                        <td><div class="">
-                            <button class="btn btn-primary fonsize" ><a href="admin-dashboard-student-profile-1.html" style="color:white">View Profile</a></button>
-                        </div></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>12/02/2023</td>
-                        <td>Mark</td>
-                        <td>abc@mail.com</td>
-                        <td>1234567895</td>
-                        <td>12345K</td>
-                        <td><div class="">
-                            <button class="btn btn-primary fonsize" ><a href="admin-dashboard-student-profile-1.html" style="color:white">View Profile</a></button>
-                        </div></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>12/02/2023</td>
-                        <td>Mark</td>
-                        <td>abc@mail.com</td>
-                        <td>1234567895</td>
-                        <td>12345K</td>
-                        <td><div class="">
-                            <button class="btn btn-primary fonsize" ><a href="admin-dashboard-student-profile-1.html" style="color:white">View Profile</a></button>
-                        </div></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">4</th>
-                        <td>12/02/2023</td>
-                        <td>Mark</td>
-                        <td>abc@mail.com</td>
-                        <td>1234567895</td>
-                        <td>12345K</td>
-                        <td><div class="">
-                            <button class="btn btn-primary fonsize" ><a href="admin-dashboard-student-profile-1.html" style="color:white">View Profile</a></button>
-                        </div></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">5</th>
-                        <td>12/02/2023</td>
-                        <td>Mark</td>
-                        <td>abc@mail.com</td>
-                        <td>1234567895</td>
-                        <td>12345K</td>
-                        <td><div class="">
-                            <button class="btn btn-primary fonsize" ><a href="admin-dashboard-student-profile-1.html" style="color:white">View Profile</a></button>
-                        </div></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">6</th>
-                        <td>12/02/2023</td>
-                        <td>Mark</td>
-                        <td>abc@mail.com</td>
-                        <td>1234567895</td>
-                        <td>12345K</td>
-                        <td><div class="">
-                            <button class="btn btn-primary fonsize" ><a href="admin-dashboard-student-profile-1.html" style="color:white">View Profile</a></button>
-                        </div></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">7</th>
-                        <td>12/02/2023</td>
-                        <td>Mark</td>
-                        <td>abc@mail.com</td>
-                        <td>1234567895</td>
-                        <td>12345K</td>
-                        <td><div class="">
-                            <button class="btn btn-primary fonsize" ><a href="admin-dashboard-student-profile-1.html" style="color:white">View Profile</a></button>
-                        </div></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">8</th>
-                        <td>12/02/2023</td>
-                        <td>Mark</td>
-                        <td>abc@mail.com</td>
-                        <td>1234567895</td>
-                        <td>12345K</td>
-                        <td><div class="">
-                            <button class="btn btn-primary fonsize" ><a href="admin-dashboard-student-profile-1.html" style="color:white">View Profile</a></button>
-                        </div></td>
-                      </tr>
+                    <tbody id="students_table">
+                    
+                  
                     </tbody>
                   </table>
 
@@ -897,7 +811,8 @@
     <script src="assetss/js/isotope.pkgd.js"></script>
     <script src="assetss/js/functions.js"></script>
     <script>
-         const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+        window.addEventListener('DOMContentLoaded',(event)=>{
+            const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token2='));
              console.log(token);
              const isLoggedIn = !!token;
              let name = '';
@@ -911,11 +826,83 @@
                  email = decodedToken.email;
                  document.getElementById('admin_login_btn').innerText = name;
                  document.getElementById('admin_login_btn').setAttribute('href','#');
+                 const studentsTable = document.getElementById('students_table');
+                loader(event);
+                // Fetch data from the backend
+                fetch('https://ici-backend.onrender.com/students/details')
+                    .then((resp)=> {
+                        console.log(resp);
+                        return resp.json();
+                    })
+                    .then(data => {
+                        console.log(data);
+                    // Loop through the data and populate the table rows
+                    data.forEach((student, index) => {
+                        const { name, email, mobile_no, dob, country, state, city, street_address, school_name, institute_name, courses, subjects } = student;
+                        
+                        // Fetch additional data from the backend based on the email
+                        fetch(`http://localhost:3000/users?email=${email}`)
+                        .then(response => response.json())
+                        .then(userData => {
+                            const { doj, id } = userData;
+
+                            const date = new Date(doj);
+                            const day = String(date.getDate()).padStart(2, "0");
+                            const month = String(date.getMonth() + 1).padStart(2, "0");
+                            const year = date.getFullYear();
+                            const formattedDate = `${day}/${month}/${year}`;
+
+
+                            // Create table row and populate with data
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                            <td scope="row">${index + 1}</td>
+                            <td>${formattedDate}</td>
+                            <td>${name}</td>
+                            <td>${email}</td>
+                            <td>${mobile_no}</td>
+                            <td>${id}</td
+                            `;
+
+                            const td = document.createElement('td');
+                            
+                            const div = document.createElement('div');
+                            const button = document.createElement('button');
+                            button.setAttribute('class',"btn btn-primary fonsize");
+                            button.innerText = 'View Profile'
+                            button.addEventListener('click',()=>{
+                                storeSelectedStudent(student);
+                            });
+
+                            div.appendChild(button);
+
+                            td.appendChild(div);
+
+                            row.appendChild(td);
+
+                            studentsTable.appendChild(row);
+
+                           
+                        })
+                        
+                        .catch(error => console.log(error));
+                    });
+                    loaderContainer.style.display = 'none';
+                    })
+                    .catch(error => console.log(error));
+
                  
  
              }else{
                 window.location.href = 'admin-dashboard-login.html';
              }
+        })
+        function storeSelectedStudent(student){
+            const dataH = JSON.stringify(student);
+            localStorage.setItem('admin_student_selected',dataH);
+            window.location.href = 'admin-dashboard-student-profile-1.html';
+
+        }
     </script>
     <script>
         (function () {
@@ -938,36 +925,48 @@
         <script src="../../public/vendor/Chart.min.js"></script>
 
         <script>
-            // Show the loader and apply background blur when the page starts loading
-            window.addEventListener('load',async function() {
-                console.log('loader is loaded')
-              const loader = document.querySelector('.loader');
-              const content = document.querySelector('.blur');
-              
-              loader.style.display = 'block';
-              content.classList.add('blur');
-              
-            
-               // Hide the loader and remove background blur after 10 seconds
-                setTimeout(function() {
-                    console.log('stopping the loader')
-                    loader.style.display = 'none';
-                    content.classList.remove('blur');
-                }, 25000);
-            });
-        
-            // Hide the loader and remove background blur when the page finishes loading
-            // window.addEventListener('DOMContentLoaded', function() {
-             
-            // });
-            function hideLoader(){
-                const loader = document.querySelector('.loader');
-              const content = document.querySelector('.blur');
-              
-              loader.style.display = 'none';
-              content.classList.remove('blur');
-            }
-          </script>
+            // Wait for the page to load
+            var loaderContainer = null;
+            function loader(event) {
+                // Create the loader container element
+                loaderContainer = document.createElement("div");
+                loaderContainer.setAttribute("id", "loader-container");
+                loaderContainer.style.position = "fixed";
+                loaderContainer.style.top = "0";
+                loaderContainer.style.left = "0";
+                loaderContainer.style.width = "100%";
+                loaderContainer.style.height = "100%";
+                loaderContainer.style.display = "flex";
+                loaderContainer.style.alignItems = "center";
+                loaderContainer.style.justifyContent = "center";
+                loaderContainer.style.zIndex = "9999";
+                loaderContainer.style.backdropFilter = "blur(8px)";
+                loaderContainer.style.webkitBackdropFilter = "blur(8px)";
+    
+                // Create the loader element
+                var loader = document.createElement("div");
+                loader.setAttribute("id", "loader");
+                loader.style.border = "16px solid #f3f3f3";
+                loader.style.borderTop = "16px solid #3498db";
+                loader.style.borderRadius = "50%";
+                loader.style.width = "120px";
+                loader.style.height = "120px";
+                loader.style.animation = "spin 2s linear infinite";
+    
+                // Append the loader to the container
+                loaderContainer.appendChild(loader);
+    
+                // Append the container to the document body
+                document.body.appendChild(loaderContainer);
+    
+                // Hide the loader after 10 seconds
+                //   setTimeout(function() {
+                //     loaderContainer.style.display = "none";
+                //   }, 2000);
+            };
+    
+        </script>
+       
 
 </body>
 

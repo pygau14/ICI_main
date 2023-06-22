@@ -807,7 +807,7 @@
       <!-- Include the jsonwebtoken library -->
     <script src="https://cdn.jsdelivr.net/npm/jsonwebtoken@8.5.1"></script>
     <script>
-         const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token='));
+         const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('token2='));
              console.log(token);
              const isLoggedIn = !!token;
              let name = '';
@@ -851,9 +851,9 @@
                 loaderContainer.style.display = 'none';
               
                 alert('login Successful');
-                localStorage.setItem('token',data.token);
+                localStorage.setItem('token2',data.token);
                 // Store the JWT in a cookie
-                document.cookie = `token=${data.token}`;
+                document.cookie = `token2=${data.token}`;
                 document.getElementById('message').style.display = 'none';
                 document.getElementById('admin_login_btn').innerText = data.name;
         
